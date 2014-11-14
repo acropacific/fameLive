@@ -1,0 +1,1289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="http://www.wowza.com/forums">
+<!-- base href="http://www.wowza.com/forums/" --><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.2.2">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+
+		<meta name="keywords" content="streaming,engine,wowza,application,stream">
+		<meta name="description" content="Learn how Wowza Streaming Engine software supports various streaming protocols and output file formats.">
+
+
+
+
+
+<script src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/229276.js" id="hs-analytics"></script><script src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=422"><\/script>');
+		document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("2", 10);
+	var SIMPLEVERSION = "422";
+	var BBURL = "http://www.wowza.com/forums";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "vbcms";
+	var RELPATH = "content.php?621-Understanding-streaming-protocols-and-output-file-formats";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "http://www.wowza.com/forums/";
+// -->
+</script><script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/yuiloader-dom-event.js"></script><script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/connection-min.js"></script>
+<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin-core.js"></script>
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/main-rollup.css">
+        
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/popupmenu-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbulletin-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbulletin-chrome-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbulletin-formcontrols-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/editor-ie.css?d=1411165858" />
+	<![endif]-->
+
+<!--[if IE 6]><link rel="stylesheet" type="text/css" href="http://www.wowza.com/css/ie.css"><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://www.wowza.com/css/ie8.css"><![endif]-->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/fonts.css">
+<link rel="stylesheet" type="text/css" href="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/forum_overrides.css">
+
+<!-- ClickTale Top part -->
+
+<script type="text/javascript">
+
+var WRInitTime=(new Date()).getTime();
+
+</script>
+
+<!-- ClickTale end of Top part -->
+
+    
+    <title> Understanding streaming protocols and output file formats - Forum, Support | Wowza Media Systems </title>
+	
+		<link rel="stylesheet" type="text/css" href="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/cms-rollup.css">
+		
+	
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbcms-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/postbit-lite-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/postlist-ie.css?d=1411165858" />
+    <![endif]-->
+    <!--[if lt IE 7]>
+	<script type="text/javascript">
+		window.LESS_THAN_IE7 = true;
+	</script>
+    <![endif]-->
+	<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_overlay.js"></script>
+	<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_cms.js"></script>
+	<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_ajax_htmlloader.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/additional.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/replacement-vbulletin-ie.css?d=1411165858" />
+<![endif]-->
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-411633-2']);
+_gaq.push(['_setDomainName', 'wowza.com']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+ 
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!-- Google Code for Site Visitors Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1067980474;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "xfn7CLbdiwIQuq2g_QM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/conversion.js">
+</script><link charset="utf-8" type="text/css" media="screen" href="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/treeview.css" rel="stylesheet"></head><body style="text-align:left"><img alt="" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/a.gif" border="0" height="1" width="1">
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1067980474/?label=xfn7CLbdiwIQuq2g_QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+    <div id="global-header" class="clearfix">
+        <div class="logo">
+            <a href="http://www.wowza.com/"><img title="Wowza" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wowza-logo.png" alt="Wowza"></a>
+        </div>
+        <div id="toplinks" class="toplinks">
+            
+                <ul class="nouser">
+                    <li><a href="http://www.wowza.com/contact">Contact</a></li>
+                    
+                        <li><a href="http://www.wowza.com/forums/register.php" rel="nofollow">Register</a></li>
+                    
+                    <!--<li><a rel="help" href="faq.php">Help</a></li>-->
+                    <li>
+                        <script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_md5.js"></script>
+                        <form id="navbar_loginform" action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+                            <fieldset id="logindetails" class="logindetails">
+                                <div>
+                                    <div>
+                                        <input class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" type="text">
+                                        <input style="display: none;" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" type="password">
+                                        <input style="display: inline;" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Password" type="text">
+                                        <input class="loginbutton" tabindex="104" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" type="submit">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div id="remember" class="remember">
+                                <label for="cb_cookieuser_navbar">
+                                    <input name="cookieuser" value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" accesskey="c" tabindex="103" type="checkbox"><font color="#ffffff">&nbsp;Remember Me?</font>
+                                </label>
+                            </div>
+                            <input name="s" value="" type="hidden">
+                            <input name="securitytoken" value="guest" type="hidden">
+                            <input name="do" value="login" type="hidden">
+                            <input name="vb_login_md5password" type="hidden">
+                            <input name="vb_login_md5password_utf" type="hidden">
+                        </form>
+            	<script type="text/javascript">
+            	YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+            	YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+            	vB_XHTML_Ready.subscribe(function()
+            	{
+            	//
+            		YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+            		YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+            		YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+            		YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+            	});
+            	
+            	function navbar_username_focus(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		if (textbox.value == 'User Name')
+            		{
+            		//
+            			textbox.value='';
+            			textbox.style.color='';
+            		}
+            	}
+        
+            	function navbar_username_blur(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		if (textbox.value == '')
+            		{
+            		//
+            			textbox.value='User Name';
+            			textbox.style.color='';
+            		}
+            	}
+            	
+            	function navbar_password_hint(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		
+            		YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+            		YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+            		YAHOO.util.Dom.get('navbar_password').focus();
+            	}
+        
+            	function navbar_password(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		
+            		if (textbox.value == '')
+            		{
+            			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+            			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+            		}
+            	}
+            	</script>
+            		</li>
+            		
+            	</ul>
+            
+        </div>
+        <!--
+        <div>
+            <nav class="sub-nav">
+                <ul class="clearfix">
+                    <li>
+                        <a href="http://www.wowza.com/portal/account">Login</a>
+                    </li>
+                    <li class="endr">
+                        <a href="http://www.wowza.com/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        -->
+        <nav class="nav clearfix">
+            <ul>
+                <li><a href="http://www.wowza.com/streaming">Streaming</a></li>
+                <li><a href="http://www.wowza.com/products">Products</a></li>
+                <li><a href="http://www.wowza.com/pricing">Pricing</a></li>
+                <li><a href="http://www.wowza.com/pricing/installer">Downloads</a></li>
+                <li><a href="http://www.wowza.com/customers">Customers</a></li>
+                <li><a href="http://www.wowza.com/partners">Partners</a></li>
+            </ul>
+            <span class="blue"><a href="http://www.wowza.com/pricing/trial" class="over_bg01">Free Trial</a></span>
+        </nav>
+    </div>
+    <div class="ad_global_header">
+         
+         
+    </div>
+    <hr>
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		
+	
+		<li class="selected" id="vbtab_cms">
+			<a class="navtab" href="http://www.wowza.com/forums/content.php">Articles</a>
+		</li>
+		
+		
+			<ul class="floatcontainer">
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?1-Wowza-Media-Systems-Support-Articles-and-Forums">Welcome</a></li>
+						
+					
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?3-quick-start-guide">Wowza Streaming Engine Quick Start Guides</a></li>
+						
+					
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?4-tutorials">Tutorials</a></li>
+						
+					
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?188-documentation">Documentation</a></li>
+						
+					
+				
+			</ul>
+		
+
+	
+		<li id="vbtab_forum">
+			<a class="navtab" href="http://www.wowza.com/forums/forum.php">Forum</a>
+		</li>
+		
+		
+
+	
+		<li id="tab_ota0_780">
+			<a class="navtab" href="http://www.wowza.com/forums/forumdisplay.php?77-Find-a-Consultant&amp;tabid=70">Find a Consultant</a>
+		</li>
+		
+		
+
+		
+	</ul>
+
+	
+	<div id="globalsearch" class="globalsearch">
+		<form action="google.php" method="post" id="navbar_search" class="navbar_search">
+			
+			<input name="securitytoken" value="guest" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<span class="textboxcontainer"><span><input name="query" id="query" class="textbox" tabindex="99" type="text"></span></span>
+			<span class="buttoncontainer"><span><input class="searchbutton" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/search.png" name="submit" onclick="getElementById('navbar_search').setAttribute('action', 'google.php?query='+getElementById('query').value); document.getElementById('navbar_search').submit;" tabindex="100" type="image"></span></span>
+		</form>
+		<ul class="navbar_advanced_search">
+			<li style="display:inline-block;padding-right:20px;"><a href="http://www.wowza.com/forums/search.php" accesskey="4">Advanced Search</a></li>
+			<li style="display:inline-block;"><a href="http://www.wowza.com/forums/faq.php">Help</a></li>
+		</ul>
+	</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="http://www.wowza.com/forums/index.php" accesskey="1"><img title="Home" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/navbit-home.png" alt="Home"></a></li>
+		
+	<li class="navbit"><a href="http://www.wowza.com/forums/content.php">Home</a></li>
+
+	<li class="navbit"><a href="http://www.wowza.com/forums/content.php?3-quick-start-guide">Wowza Streaming Engine Quick Start Guides</a></li>
+
+		
+	<li class="navbit lastnavbit"><span>Understanding streaming protocols and output file formats</span></li>
+
+	</ul>
+	<hr>
+</div>
+
+ 
+<div id="ad_global_below_navbar"></div>
+
+
+	<form action="profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input name="do" value="dismissnotice" type="hidden">
+		<input name="s" value="" type="hidden">
+		<input name="securitytoken" value="guest" type="hidden">
+		<input id="dismiss_notice_hidden" name="dismiss_noticeid" value="" type="hidden">
+		<input name="url" value="" type="hidden">
+		<ol>
+			<li class="restore" id="navbar_notice_22">
+	
+	Wowza Streaming Engine 4.1 is now available! Click <a href="http://www.wowza.com/forums/content.php?634"> HERE</a> for release notes.
+</li>
+		</ol>
+	</form>
+
+
+
+<div class="vbcms_content">
+<div id="doc3" class="yui-tvb-l3">
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-u yui-panel">
+					<ul class="list_no_decoration widget_list" id="widgetlist_column1">
+<li><!-- styles defined in template: headinclude -->
+
+
+
+<div class="article_width" id="article_content">
+	<div class="title">
+                <h1 class="article_title cms_article_title"><span>Understanding streaming protocols and output file formats</span>
+                        
+		</h1>
+	</div>
+	<div class="article_author_date_comment_container">
+                
+		<div class="fullwidth">
+			
+			
+                        
+                        <div class="cms_clear"></div>
+                        
+				<div class=" article_username_container ">
+					
+						
+							Published on 08-11-2014  11:20 AM
+						
+					
+					
+						&nbsp;
+						&nbsp;
+					
+					
+						&nbsp;Number of Views: 2450
+						&nbsp;
+					
+				</div>
+			
+                       
+                        <div class="article_rating_container">
+                            	<a href="http://www.wowza.com/forums/content.php?621-Understanding-streaming-protocols-and-output-file-formats#comments" rel="nofollow"><span id="comments_top_count">0</span> <span id="comments_top_text"> Comments</span></a>
+				<img title="Comments" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/comment.png" alt="Comments" border="0">
+                        </div>
+                       
+		</div>
+	</div>
+    
+    <div class="clear"></div>
+	<div id="yui-gen1" class="article cms_clear restore postcontainer">This
+ article will help you understand how Wowza Streaming Engine™ software 
+supports various streaming protocols and output file formats.<br>
+<br>
+<h2>Contents</h2><hr><a href="http://www.wowza.com/forums/content.php?621#streamingProtocols">Supported streaming protocols</a><br>
+<div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#flashHTTP">Adobe HDS (Adobe Flash Player)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#cupertinostreaming">Apple HLS (iPhone, iPad, iPod touch, QuickTime, and more)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#smoothstreaming">Microsoft Smooth Streaming (Microsoft Silverlight and more)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#mpegdashstreaming">MPEG-DASH streaming (DASH clients)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#flashRTMP">Adobe RTMP (Adobe Flash Player)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#rtspstreaming">RTSP/RTP (QuickTime, VLC, 3GPP devices, set-top boxes, and more)</a></div><a href="http://www.wowza.com/forums/content.php?621#supportedMedia">Supported media file formats</a><br>
+<div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#mp4">MP4 (QuickTime container)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#flv">FLV (Flash Video)</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#mp3">MP3</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?621#smil">SMIL</a></div><a href="http://www.wowza.com/forums/content.php?621#seealso">Related articles</a><br>
+<br>
+<a name="streamingProtocols"></a><h2>Supported streaming protocols</h2><hr>A
+ single Wowza Streaming Engine application can be configured to deliver a
+ stream to Adobe Flash Player; Microsoft Silverlight; Apple iPhone, 
+iPad, or iPod touch devices; DASH players, and RTSP/RTP-based players at
+ the same time using the streaming protocols that are described in this 
+section.<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> For more information about any of the supported streaming protocols, see the <a href="http://www.wowza.com/resources/WowzaStreamingEngine_UsersGuide.pdf" target="_blank">Wowza Streaming Engine User's Guide (PDF)</a>.
+			
+		</div>
+	</div>
+</div><a name="flashHTTP"></a><h3>Adobe HDS (Adobe Flash Player)</h3>Wowza
+ Streaming Engine can stream adaptive bitrate live and video on demand 
+(VOD) content to Adobe Flash Player 10.1 or later using the Adobe HTTP 
+Dynamic Streaming (Adobe HDS) protocol. Adobe HDS is a chunk-based 
+streaming protocol that uses HTTP for delivery. All media-chunking and 
+packaging necessary to deliver a stream using this protocol is performed
+ by the Streaming Engine software. Adobe HDS is referred to as "San 
+Jose" streaming in the Streaming Engine configuration files.<br>
+<br>
+When streaming VOD content over Adobe HDS, Wowza Streaming Engine 
+supports MP4 files (QuickTime container) and MP3 files. FLV files aren't
+ supported. The Streaming Engine supports the following video and audio 
+codecs when using this streaming protocol:<br>
+<br>
+<div style="margin-left:40px"><b>Video</b><br>
+<ul><li style="">H.264</li><li style="">On2 VP6 (live only)</li><li style="">Screen video and Screen video 2 (live only)</li><li style="">Sorenson Spark (live only)</li></ul><br>
+<b>Audio</b><br>
+<ul><li style="">AAC, AAC Low Complexity (AAC LC), AAC High Efficiency (HE-AAC) v1 and v2</li><li style="">MP3</li><li style="">Nellymoser Asao (live only)</li><li style="">Speex (live only)</li></ul></div><br>
+Adobe HDS streaming leverages an XML manifest file to describe the list 
+of chunks available for streaming. An Adobe HDS streaming playlist URL 
+has the following form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://[wowza-ip-address]/[application]/[application-instance]/[stream-name]/manifest.f4m</font></span></div><br>
+<ul><li style=""><b>[wowza-ip-address]</b>: IP address or domain name and port of the the Wowza server (default port 1935)</li><li style=""><b>[application]</b>: Application name</li><li style=""><b>[application-instance]</b>: Application instance name (if omitted, defaults to <b>_definst_</b>)</li><li style=""><b>[stream-name]</b>: Stream name with stream prefix</li></ul><br>
+For example, to play the VOD file <b>mycoolvideo.mov</b> located on the Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b>, the URL is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://mycompany.com:1935/myapplication/mp4:mycoolvideo.mov/manifest.f4m</font></span></div><br>
+Adobe HDS streaming requires a Flash-based player that’s built using the
+ Open Source Media Framework (OSMF). The Wowza Streaming Engine software
+ installation has the following OSMF-based example players:<br>
+<br>
+<ul><li style="">[install-dir]/examples/VideoOnDemandStreaming/FlashHTTPPlayer/player.html</li><li style="">[install-dir]/examples/LiveVideoStreaming/FlashHTTPPlayer/player.html</li></ul><br>
+<a name="cupertinostreaming"></a><h3>Apple HLS (iPhone, iPad, iPod touch, QuickTime, and more)</h3>Wowza
+ Streaming Engine can stream adaptive bitrate live and VOD H.264, AAC, 
+and MP3 content to iOS-based devices (iPhone/iPad/iPod touch iOS version
+ 3.0 or later), QuickTime player (version 10 or later), Safari browser 
+(version 4.0 or later), and other devices such as the Roku and Amino 
+set-top boxes and some brands of smart TVs using the Apple HTTP Live 
+Streaming (Apple HLS) protocol. Apple HLS is a chunk-based streaming 
+protocol that uses HTTP for delivery. All media-chunking and packaging 
+necessary to deliver a stream using this protocol is performed by the 
+Streaming Engine. Apple HLS is referred to as "Cupertino" streaming in 
+the Streaming Engine configuration files.<br>
+<br>
+Wowza Streaming Engine populates the playlist file with metadata that 
+describes each of the available streams in an adaptive bitrate 
+presentation. This enables iOS-based players to intelligently select the
+ appropriate streams based on hardware device capabilities.<br>
+<br>
+The Streaming Engine supports the following video and audio codecs when using this streaming protocol:<br>
+<br>
+<div style="margin-left:40px"><b>Video</b><br>
+<ul><li style="">H.264</li></ul><br>
+<b>Audio</b><br>
+<ul><li style="">AAC, AAC Low Complexity (AAC LC), High Efficiency AAC (HE-AAC) v1</li><li style="">Dolby Digital 5.1 Surround Sound (AC-3) and Dolby Digital Plus (Enhanced AC-3 or E-AC-3)</li><li style="">MP3</li></ul></div><br>
+Apple HLS streaming leverages a playlist wrapper to describe the list of
+ chunks available for streaming. An Apple HLS streaming playlist URL has
+ the following form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://[wowza-ip-address]/[application]/[application-instance]/[stream-name]/playlist.m3u8</font></span></div><br>
+<ul><li style=""><b>[wowza-ip-address]</b>: IP address or domain name and port of the Wowza server (default port 1935)</li><li style=""><b>[application]</b>: Application name</li><li style=""><b>[application-instance]</b>: Application instance name (if omitted, defaults to <b>_definst_</b>)</li><li style=""><b>[stream-name]</b>: Stream name with stream prefix</li></ul><br>
+For example, to play the VOD file <b>mycoolvideo.mov</b> located on the Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b>, the URL is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://mycompany.com:1935/myapplication/mp4:mycoolvideo.mov/playlist.m3u8</font></span></div><br>
+The Wowza Streaming Engine software installation has the following Apple HLS-based example players:<br>
+<br>
+<ul><li style="">[install-dir]/examples/VideoOnDemandStreaming/IOSMacOSX/player.html</li><li style="">[install-dir]/examples/LiveVideoStreaming/IOSMacOSX/player.html</li></ul><br>
+<a name="smoothstreaming"></a><h3>Microsoft Smooth Streaming (Microsoft Silverlight and more)</h3>Wowza
+ Streaming Engine can stream adaptive bitrate live and VOD H.264, AAC, 
+and MP3 content to Microsoft Silverlight, Windows Phone devices, and 
+other devices using the Microsoft Smooth Streaming protocol. Microsoft 
+Silverlight is a cross-browser, cross-platform technology that exists on
+ many personal computing devices. Smooth Streaming is a chunk-based 
+streaming protocol that uses HTTP for delivery. All media chunking and 
+packaging necessary to deliver a stream using this protocol is performed
+ by the Streaming Engine so there's no need for an IIS web server.<br>
+<br>
+The Streaming Engine supports the following video and audio codecs when using this streaming protocol:<br>
+<br>
+<div style="margin-left:40px"><b>Video</b><br>
+<ul><li style="">H.264</li></ul><br>
+<b>Audio</b><br>
+<ul><li style="">AAC, AAC Low Complexity (AAC LC), AAC High Efficiency (HE-AAC) v1 and v2</li><li style="">MP3</li></ul></div><br>
+Smooth Streaming leverages a playlist wrapper (called a manifest) to 
+describe the list of chunks that are available for streaming. A Smooth 
+Streaming manifest URL has the following form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://[wowza-ip-address]/[application]/[application-instance]/[stream-name]/Manifest</font></span></div><br>
+<ul><li style=""><b>[wowza-ip-address]</b>: IP address or domain name and port of the Wowza server (default port 1935)</li><li style=""><b>[application]</b>: Application name</li><li style=""><b>[application-instance]</b>: Application instance name (if omitted, defaults to <b>_definst_</b>)</li><li style=""><b>[stream-name]</b>: Stream name with stream prefix</li></ul><br>
+For example, to play the VOD file <b>mycoolvideo.mov</b>, located on the Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b>, the URL is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://mycompany.com:1935/myapplication/mp4:mycoolvideo.mov/Manifest</font></span></div><br>
+The Wowza Streaming Engine software installation has the following Smooth Streaming-based example players:<br>
+<br>
+<ul><li style="">[install-dir]/examples/VideoOnDemandStreaming/SilverlightPlayer/player.html</li><li style="">[install-dir]/examples/LiveVideoStreaming/SilverlightPlayer/player.html</li></ul><br>
+<a name="mpegdashstreaming"></a><h3>MPEG-DASH streaming (DASH clients)</h3>Dynamic
+ Adaptive Streaming over HTTP (DASH), also known as MPEG-DASH, is a new 
+international standard for adaptive streaming that’s being adopted by 
+the streaming industry. Wowza Streaming Engine includes MPEG-DASH 
+technology for streaming live and VOD content over HTTP to select DASH 
+clients. MPEG-DASH is similar to proprietary adaptive streaming 
+technologies such as Adobe HDS, Apple HLS, and Microsoft Smooth 
+Streaming in that it’s a chunk-based streaming technology that uses HTTP
+ for delivery. All media-chunking and packaging necessary to deliver a 
+stream using this technology is performed by the Streaming Engine. Note 
+that in MPEG-DASH terminology, chunks are called "segments."<br>
+<br>
+The Streaming Engine supports the following video and audio codecs when using this streaming protocol:<br>
+<br>
+<div style="margin-left:40px"><b>Video</b><br>
+<ul><li style="">H.264</li></ul><br>
+<b>Audio</b><br>
+<ul><li style="">AAC, AAC Low Complexity (AAC LC), AAC High Efficiency (HE-AAC) v1 and v2</li><li style="">Dolby Digital 5.1 Surround Sound (AC-3) and Dolby Digital Plus (Enhanced AC-3 or E-AC-3)</li></ul></div><br>
+An MPEG-DASH server provides DASH clients with a list of the available 
+media chunk URLs in a Media Presentation Description (MPD) manifest. The
+ MPD describes chunk information such as timing, language, timed text, 
+and media characteristics (video resolution and bitrate). Clients 
+sequentially request media chunks based on network conditions, device 
+capabilities, and other factors to enable uninterrupted playback of the 
+adaptive bitrate media presentation. An MPEG-DASH MPD manifest URL has 
+the following form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://[wowza-ip-address]/[application]/[application-instance]/[stream-name]/manifest_mp[manifest-profile]_mv[manifest-variation].mpd</font></span></div><br>
+<ul><li style=""><b>[wowza-ip-address]</b>: IP address or domain name and port of the Wowza server (default port 1935)</li><li style=""><b>[application]</b>: Application name</li><li style=""><b>[application-instance]</b>: Application instance name (if omitted, defaults to <b>_definst_</b>)</li><li style=""><b>[stream-name]</b>: Stream name with stream prefix</li><li style=""><b>[manifest-profile]</b>: The manifest chunk profile (container and encoding formats).</li><li style=""><b>[manifest-variation]</b>: The chunk-addressing scheme token.</li></ul><br>
+<br>
+For example, to play the VOD file <b>mycoolvideo.mov</b>, located on the Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b>, the URL is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">http://mycompany.com:1935/myapplication/mp4:mycoolvideo.mov/manifest_mpm4sav_mvlist.mpd</font></span></div><br>
+The Wowza Streaming Engine software installation has the following DASH-based example players:<br>
+<br>
+<ul><li style="">[install-dir]/examples/VideoOnDemandStreaming/MPEGDASHPlayer/player.html</li><li style="">[install-dir]/examples/LiveVideoStreaming/MPEGDASHPlayer/player.html</li></ul><br>
+The MPEG-DASH standard (ISO/IEC 23009-1) defines segment container 
+formats for ISO Base Media File Format (ISOBMFF) and MPEG-2 Transport 
+Streams (MPEG-2 TS). MPEG-DASH is codec-agnostic and supports 
+multiplexed and non-multiplexed encoding. Multiple content protection 
+(DRM) schemes are supported; however, a Common Encryption (CENC) 
+standard (ISO/IEC 23001-7) is being developed in conjunction with 
+MPEG-DASH to allow content to be encrypted once and then streamed to 
+DASH clients that support different licensing systems.<br>
+<br>
+<a name="flashRTMP"></a><h3>Adobe RTMP (Adobe Flash Player)</h3>Wowza 
+Streaming Engine communicates with Adobe Flash Player using the Real 
+Time Messaging Protocol (RTMP). The Streaming Engine can deliver 
+adaptive bitrate live and VOD content to Flash Player using RTMP and it 
+supports other features such as shared objects, video recording, video 
+chat, remote procedure calls, and more. The Streaming Engine supports 
+all video and audio formats that Flash Player supports:<br>
+<br>
+<div style="margin-left:40px"><b>Video</b><br>
+<ul><li style="">H.264</li><li style="">On2 VP6</li><li style="">Sorenson Spark</li><li style="">Screen video and Screen video 2</li></ul><br>
+<b>Audio</b><br>
+<ul><li style="">AAC, AAC Low Complexity (AAC LC), AAC High Efficiency (HE-AAC) v1 and v2</li><li style="">MP3</li><li style="">Speex</li><li style="">Nellymoser Asao</li></ul></div><br>
+Adobe Flash Player is a cross-browser, cross-platform technology that 
+exists on many personal computing and mobile devices. The Adobe Flash 
+plugin runs SWF files that are generated by Flash authoring tools such 
+as the Adobe Flash authoring tool and Adobe Flex. ActionScript is the 
+most common Flash programming language. Using ActionScript, an SWF file 
+can be programmed to do many things within a webpage including playback 
+of streaming media. <br>
+<br>
+Wowza Streaming Engine and Adobe Flash Player communicate using a <b>NetConnection</b> object and media is streamed using a <b>NetStream</b> object. The <b>NetConnection.connect</b>
+ method is used to establish a connection between the Wowza server and 
+Adobe Flash Player. It takes an RTMP URL in the following form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">[protocol-method]://[wowza-ip-address]/[application]/[application-instance]</font></span></div><br>
+<ul><li style=""><b>[protocol-method]</b>: rtmp, rtmpe (encryption), rtmpt (tunneling), rtmpte (encryption and tunneling), or rtmps (tunneling over SSL)</li><li style=""><b>[wowza-ip-address]</b>: IP address or domain name and port of the Wowza server (default port 1935)</li><li style=""><b>[application]</b>: Application name</li><li style=""><b>[application-instance]</b>: Application instance name (if omitted, defaults to <b>_definst_</b>)</li></ul><br>
+For example, to connect to a Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b>, the URL to use in the <b>NetConnection.connect</b> method is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">rtmp://mycompany.com/myapplication</font></span></div><br>
+The <b>NetStream.play</b> method is used to start streaming. It takes a stream name as its first argument. For example, to play the media file <b>mycoolvideo.mov</b>, you would use the stream name <b>mp4:mycoolvideo.mov</b>. Some pre-built players combine the server connection URL used in the <b>NetConnection.connect</b> method and the stream name used in the <b>NetStream.play</b> method into a single URL. This URL takes the form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">[protocol-method]://[wowza-ip-address]/[application]/[application-instance]/[stream-name]</font></span></div><br>
+For example, to connect to a Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b> to play the video on demand file named <b>mycoolvideo.mov</b>, the URL is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">rtmp://mycompany.com/myapplication/mp4:mycoolvideo.mov</font></span></div><br>
+Adobe RTMP streaming requires a Flash-based player that's built using 
+the Open Source Media Framework (OSMF). The Wowza Streaming Engine 
+software installation has the following OSMF-based example players:<br>
+<br>
+<ul><li style="">[install-dir]/examples/VideoOnDemandStreaming/FlashRTMPPlayer/player.html</li><li style="">[install-dir]/examples/LiveVideoStreaming/FlashRTMPPlayer/player.html</li></ul><br>
+<a name="rtspstreaming"></a><h3>RTSP/RTP (QuickTime, VLC, 3GPP devices, set-top boxes, and more)</h3>Wowza
+ Streaming Engine can stream live H.264, AAC, and MP3 content to players
+ and devices that support the Real Time Streaming Protocol (RTSP), 
+Real-time Transport Protocol (RTP), and MPEG-2 Transport Stream protocol
+ (MPEG-2 TS). This includes players and devices such as QuickTime player
+ (version 10 or later), VideoLAN VLC player, set-top boxes, and 3GPP 
+devices. The Streaming Engine can also accept incoming streams from 
+encoding devices that use these protocols. The Streaming Engine supports
+ RTP and MPEG-2 TS input and output over UDP as well as multicast. In 
+addition, the Streaming Engine supports interleaved RTSP/RTP (RTP over 
+the RTSP TCP connection) and RTSP/RTP tunneling (RTSP/RTP over HTTP), 
+which enables RTSP/RTP to be delivered in network environments that 
+don't allow UDP transmission.<br>
+<br>
+An RTSP/RTP URL in Wowza Streaming Engine has the following form:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">rtsp://[wowza-ip-address]/[application]/[application-instance]/[stream-name]</font></span></div><br>
+<ul><li style=""><b>[wowza-ip-address]</b>: IP address or domain name and port of the Wowza server (default port 1935)</li><li style=""><b>[application]</b>: Application name</li><li style=""><b>[application-instance]</b>: Application instance name (if omitted, defaults to <b>_definst_</b>)</li><li style=""><b>[stream-name]</b>: Stream name with stream prefix</li></ul><br>
+For example, to play the live stream with the stream name <b>mylivestream</b>, located on the Wowza server at the address <b>mycompany.com</b>, using the application name <b>myapplication</b>, the URL is:<br>
+<br>
+<div style="margin-left:40px"><span style="font-family: Courier New"><font size="3">rtsp://mycompany.com:1935/myapplication/mylivestream</font></span></div><br>
+<a name="supportedMedia"></a><h2>Supported media file formats</h2><hr>Wowza
+ Streaming Engine supports the MP4 (QuickTime container), FLV (Flash 
+Video), and MP3 media file formats. To play video on demand content, the
+ proper prefix must be prepended to the file name to create a stream 
+name. For example, to play the MP4 file <b>mycoolvideo.mov</b>, use the stream name <b>mp4:mycoolvideo.mov</b>. This section describes some common file type prefixes.<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> For a complete list of supported media file types, see the <a href="http://www.wowza.com/resources/WowzaStreamingEngine_UsersGuide.pdf" target="_blank">Wowza Streaming Engine User's Guide (PDF)</a>.
+			
+		</div>
+	</div>
+</div><a name="mp4"></a><h3>MP4 (QuickTime container)</h3>This is the default media type, so the file name prefix and extension can be omitted.<div style="margin-left:40px"><b>Prefix:</b> mp4:<br>
+<b>Extensions:</b> .mp4, .f4v, .mov, .m4a, .m4v, .mp4a, .mp4v, .3gp, .3g2<br>
+<b>Example:</b> mp4:mycoolvideo.mov</div><br>
+<a name="flv"></a><h3>FLV (Flash Video)</h3><div style="margin-left:40px"><b>Prefix:</b> flv:<br>
+<b>Extension:</b> .flv<br>
+<b>Example:</b> flv:mycoolvideo.flv</div><br>
+<a name="mp3"></a><h3>MP3</h3><div style="margin-left:40px"><b>Prefix:</b> mp3:<br>
+<b>Extension:</b> .mp3<br>
+<b>Example:</b> mp3:mycoolsong.mp3</div><br>
+<a name="smil"></a><h3>SMIL</h3>Synchronized Multimedia Integration Language (SMIL) files are XML files used to configure adaptive bitrate streams.<div style="margin-left:40px"><b>Prefix:</b> smil:<br>
+<b>Extension:</b> .smil<br>
+<b>Example:</b> smil:myStream.smil</div><br>
+<a name="seealso"></a><h2>Related articles</h2><hr><ul><li style=""><a href="http://www.wowza.com/glossary/" target="_blank">Streaming Media Glossary</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?6" target="_blank">Media Players and Devices</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?508" target="_blank">How to do MPEG-DASH streaming</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?546" target="_blank">How to do adaptive bitrate streaming</a></li></ul><br>
+<hr><b>Updated:</b> For Wowza Streaming Engine 4.0.6 on 08-11-2014.<br>
+<ul>
+<li><a href="http://www.wowza.com/forums/forumdisplay.php?43">Click here, if you are having problems or would like to discuss this article.</a>
+</li><li>Leave a comment below, if there is some aspect of this article you would like to see changed or improved.
+</li></ul></div>
+
+	
+
+	
+		<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_lightbox.js"></script>
+		<script type="text/javascript">
+		<!--
+		vBulletin.register_control("vB_Lightbox_Container", "article_content", 1);
+		//-->
+		</script>
+	
+
+	
+
+	
+	<div class="cmslinks">
+
+		
+				<ol class="commalist">
+					<li>Categories:</li>
+					
+						<li><a href="http://www.wowza.com/forums/list.php?category/1-Adobe-Flash">Adobe Flash</a>, </li>
+					
+						<li><a href="http://www.wowza.com/forums/list.php?category/2-Apple-iOS">Apple iOS</a>, </li>
+					
+						<li><a href="http://www.wowza.com/forums/list.php?category/7-Microsoft-Silverlight">Microsoft Silverlight</a>, </li>
+					
+						<li><a href="http://www.wowza.com/forums/list.php?category/9-RTSP/RTP/1">RTSP/RTP</a>, </li>
+					
+						<li><a href="http://www.wowza.com/forums/list.php?category/21-MPEG-DASH">MPEG-DASH</a></li>
+					
+				</ol>
+		
+	
+	</div>
+
+    
+	<script type="text/javascript">
+	var THREADID = 38068;
+	var THIS_URL = "http://www.wowza.com/forums/content.php?621-Understanding-streaming-protocols-and-output-file-formats";
+	var MIN_CHARS = 0;
+	vbphrase['comment'] = "Comment";
+	vbphrase['comments'] = "Comments";
+</script>
+<div id="comments" class="cms_comments_page">
+	<a name="comments_start"></a>
+	
+	<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin-editor.js"></script>
+	<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_quick_edit.js"></script>
+	<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_post_loader.js"></script>
+	<div id="node_comments_hide"></div>
+	<!-- EDITOR IS BREAKING THE PAGE -->
+	
+</div>
+
+
+</div></li>
+</ul>
+				</div>
+			</div>
+		</div>
+		<div class="yui-b yui-sidebar">
+			<ul class="list_no_decoration widget_list" id="widgetlist_column2">
+<li><script type="text/javascript">
+<!--
+	var IMGDIR_MISC = "images/misc";
+	var vb_disable_ajax = parseInt("0", 10);
+
+        /* Start Sections Widget Configuration */
+        vbGlobal_SHOW_ALL_TREE_ELEMENTS_THRESHOLD = parseInt("5");
+        /* End Seections Widget Configuration */
+// -->
+</script>
+<script type="text/javascript">
+<!--
+	document.write('<script type="text/javascript" src="' + yuipath + '/treeview/treeview-min.js"></script>');
+	loadVbCss(yuipath + '/treeview/assets/skins/sam/treeview.css');
+//-->
+</script><script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/treeview-min.js"></script>
+<!-- end treeview css -->
+
+<!-- custom treeview styles defined at template: headinclude -->
+
+<!-- END VB Tree-Menu Implementation of YUI TreeView -->
+<div class="cms_widget">
+	<div class="block">
+		<div class="cms_widget_header">
+			<h3><img src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/sections.png" alt=""> Article List</h3>
+		</div>
+		<div class="cms_widget_content widget_content">
+			<div id="yui-tv-auto-id-0" class="vb-tree-menu"><div class="ygtvitem" id="ygtv0"><div class="ygtvchildren" id="ygtvc0"><div class="ygtvitem" id="ygtv1"><table id="ygtvtableel1" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt1" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel1" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel1" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?3-quick-start-guide" target="" title="Wowza Streaming Engine Quick Start Guides">Wowza Streaming Engine Quick Start Guides</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc1" style="display:none;"></div></div><div class="ygtvitem" id="ygtv2"><table id="ygtvtableel2" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt2" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel2" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel2" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?4-tutorials" target="" title="Tutorials">Tutorials</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc2" style="display:none;"></div></div><div class="ygtvitem" id="ygtv3"><table id="ygtvtableel3" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt3" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel3" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel3" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?188-documentation" target="" title="Documentation">Documentation</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc3" style="display:none;"></div></div><div class="ygtvitem" id="ygtv6"><table id="ygtvtableel6" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt6" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel6" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel6" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?5-general-tuning" target="" title="Performance Tuning">Performance Tuning</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc6" style="display:none;"></div></div><div class="ygtvitem" id="ygtv7"><table id="ygtvtableel7" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt7" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel7" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel7" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?197-software-updates" target="" title="Software Updates">Software Updates</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc7" style="display:none;"></div></div><div class="ygtvitem" id="ygtv8"><table id="ygtvtableel8" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt8" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel8" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel8" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?6-media-players-and-devices" target="" title="Media Players and Devices">Media Players and Devices</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc8" style="display:none;"></div></div><div class="ygtvitem" id="ygtv16"><table id="ygtvtableel16" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt16" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel16" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel16" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?8-live-streaming-and-encoders" target="" title="Live Streaming and Encoders">Live Streaming and Encoders</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc16" style="display:none;"></div></div><div class="ygtvitem" id="ygtv22"><table id="ygtvtableel22" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt22" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel22" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel22" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?9-video-on-demand-streaming" target="" title="Video On Demand Streaming">Video On Demand Streaming</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc22" style="display:none;"></div></div><div class="ygtvitem" id="ygtv23"><table id="ygtvtableel23" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt23" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel23" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel23" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?473-closed-captioning" target="" title="Closed Captioning">Closed Captioning</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc23" style="display:none;"></div></div><div class="ygtvitem" id="ygtv24"><table id="ygtvtableel24" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt24" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel24" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel24" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?11-server-administration" target="" title="Server Administration">Server Administration</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc24" style="display:none;"></div></div><div class="ygtvitem" id="ygtv26"><table id="ygtvtableel26" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt26" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel26" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel26" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?296-AddOn-Wowza-Transcoder" target="" title="AddOn: Wowza Transcoder">AddOn: Wowza Transcoder</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc26" style="display:none;"></div></div><div class="ygtvitem" id="ygtv27"><table id="ygtvtableel27" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt27" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel27" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel27" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?297-addon-wowza-ndvr" target="" title="AddOn: Wowza nDVR">AddOn: Wowza nDVR</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc27" style="display:none;"></div></div><div class="ygtvitem" id="ygtv28"><table id="ygtvtableel28" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt28" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel28" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel28" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?298-addon-wowza-drm" target="" title="AddOn: Wowza DRM">AddOn: Wowza DRM</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc28" style="display:none;"></div></div><div class="ygtvitem" id="ygtv29"><table id="ygtvtableel29" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt29" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel29" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel29" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?10-addon-packages" target="" title="AddOn: Other">AddOn: Other</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc29" style="display:none;"></div></div><div class="ygtvitem" id="ygtv30"><table id="ygtvtableel30" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt30" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel30" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel30" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?603-Cloud-Technologies" target="" title="Cloud Technologies">Cloud Technologies</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc30" style="display:none;"></div></div><div class="ygtvitem" id="ygtv39"><table id="ygtvtableel39" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt39" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel39" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel39" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?12-server-side-modules-and-code-samples" target="" title="Server-side Modules and Code Samples">Server-side Modules and Code Samples</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc39" style="display:none;"></div></div><div class="ygtvitem" id="ygtv44"><table id="ygtvtableel44" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt44" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel44" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel44" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?592-article-archive" target="" title="Article Archive">Article Archive</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc44" style="display:none;"></div></div><div class="ygtvitem" id="ygtv45"><table id="ygtvtableel45" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt45" class="ygtvcell ygtvln"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel45" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel45" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?218-List-of-All-Articles" target="" title="List of All Articles">List of All Articles</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc45" style="display:none;"></div></div></div></div></div>
+				<noscript>
+					<div class="cms_widget_sectionnav">
+						<div class="cms_widget_sectionnav_page">
+							
+								
+									<div class="active_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?3-quick-start-guide">Wowza Streaming Engine Quick Start Guides</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?4-tutorials">Tutorials</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?188-documentation">Documentation</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?547-white-papers">White Papers</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?642-wowza-streaming-engine-rest-api">Wowza Streaming Engine REST API</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?5-general-tuning">Performance Tuning</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?197-software-updates">Software Updates</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?6-media-players-and-devices">Media Players and Devices</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?17-general">General</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?18-adobe-flash">Adobe Flash</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?20-apple-ios-devices">Apple iOS Devices</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?19-microsoft-silverlight">Microsoft Silverlight</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?21-set-top-mobile-and-quicktime">Set-top, Mobile, and QuickTime</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?581-mpeg-dash">MPEG-DASH</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?566-wowza-example-players">Wowza Example Players</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?8-live-streaming-and-encoders">Live Streaming and Encoders</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?503-wowza-gocoder">Wowza GoCoder</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?27-specific-encoding-technologies">Specific Encoding Technologies</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?573-recording-live-streams">Recording Live Streams</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?533-troubleshooting-live-streaming">Troubleshooting Live Streaming</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?26-advanced-topics">Advanced Topics</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?9-video-on-demand-streaming">Video On Demand Streaming</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?473-closed-captioning">Closed Captioning</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?11-server-administration">Server Administration</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?619-security">Security</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?296-AddOn-Wowza-Transcoder">AddOn: Wowza Transcoder</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?297-addon-wowza-ndvr">AddOn: Wowza nDVR</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?298-addon-wowza-drm">AddOn: Wowza DRM</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?10-addon-packages">AddOn: Other</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?603-Cloud-Technologies">Cloud Technologies</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?7-Amazon">Amazon</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?22-quick-start-guide">Quick Start Guide</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?23-pre-built-amis-(amazon-machine-images)">Pre-built AMIs (Amazon Machine Images)</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?527-cloudfront-integration">CloudFront Integration</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?24-advanced-topics">Advanced Topics</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?607-google">Google</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?626-microsoft">Microsoft</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?604-rackspace">Rackspace</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?12-server-side-modules-and-code-samples">Server-side Modules and Code Samples</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?585-Module-Collection">Module Collection</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?28-basic-modules-and-code-samples">Basic</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?29-advanced">Advanced</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?30-httpproviders">HTTP Providers</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?592-article-archive">Article Archive</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?218-List-of-All-Articles">List of All Articles</a></div>
+							
+						</div>
+					</div>
+				</noscript>			
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	initVbTreeMenus(false);
+</script></li><li><div class="cms_widget category_widget">
+	<div class="block">
+		<div class="cms_widget_header">
+			<h3><img src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/categories.png" alt=""> Categories</h3>
+		</div>
+		<div class="cms_widget_content widget_content">
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/1-Adobe-Flash">Adobe Flash (91)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/2-Apple-iOS">Apple iOS (64)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/20-Closed-Captioning">Closed Captioning (7)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/15-Cloud">Cloud (22)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/3-Digital-Rights-Management">Digital Rights Management (8)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/4-IP-Camera">IP Camera (20)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/5-Live">Live (204)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/16-Live-Stream-Repeater">Live Stream Repeater (23)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/7-Microsoft-Silverlight">Microsoft Silverlight (43)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/8-Mobile">Mobile (32)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/21-MPEG-DASH">MPEG-DASH (14)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/9-RTSP/RTP/1">RTSP/RTP (52)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/10-Security">Security (41)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/11-Set-top-Box">Set-top Box (28)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/12-SHOUTcast/Icecast/1">SHOUTcast/Icecast (15)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/13-Video-Chat">Video Chat (6)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/6-Video-On-Demand">Video On Demand (106)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/14-Video-Recording">Video Recording (17)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/19-Wowza-DRM">Wowza DRM (6)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/18-Wowza-nDVR">Wowza nDVR (14)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/17-Wowza-Transcoder">Wowza Transcoder (34)</a>
+				</div>
+			
+		</div>
+	</div>
+</div></li>
+</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div style="clear: left">
+   
+   
+</div>
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="forum.php" method="get" id="footer_select" class="footer_select">
+
+		
+			<select name="styleid" onchange="switch_id(this, 'style')">
+				<optgroup label="Quick Style Chooser"><option class="hidden"></option></optgroup>
+				
+					
+					<optgroup label="&nbsp;Standard Styles">
+									
+					
+	<option value="5" class="" selected="selected">-- Wowza VB4</option>
+
+					
+					</optgroup>
+										
+				
+				
+					
+					<optgroup label="&nbsp;Mobile Styles">
+					
+					
+	<option value="6" class="">-- Default Mobile Style</option>
+
+					
+					</optgroup>
+										
+				
+			</select>	
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<!--  -->
+		<li><a href="http://www.wowza.com/">Wowza Media Systems</a></li>
+		
+		
+		<li><a href="http://www.wowza.com/forums/archive/index.php">Archive</a></li>
+		
+		
+		
+		<li><a href="http://www.wowza.com/forums/content.php?621-Understanding-streaming-protocols-and-output-file-formats#top" onclick="document.location.hash='top'; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT -7. The time now is <span class="time">10:53 PM</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	© 2014 Wowza Media Systems, LLC. All rights reserved
+	
+</div>
+ 
+
+</div>
+
+<!-- ClickTale Bottom part -->
+
+<div id="ClickTaleDiv" style="display: none;"></div>
+
+<script type="text/javascript">
+
+document.write(unescape("%3Cscript%20src='"+
+
+(document.location.protocol=='https:'?
+
+ 'https://clicktale.pantherssl.com/':
+
+ 'http://s.clicktale.net/')+
+
+"WRc5.js'%20type='text/javascript'%3E%3C/script%3E"));
+
+</script><script src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/WRc5.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var ClickTaleSSL=1;
+
+if(typeof ClickTale=='function') ClickTale(3694,0.12,"www09");
+
+</script>
+
+<!-- ClickTale end of Bottom part -->
+
+<!-- Async HubSpot Analytics -->
+<script type="text/javascript">
+	(function(d,s,i,r) {
+	if (d.getElementById(i)){return;}
+	var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+	n.id=i;n.src='//js.hubspot.com/analytics/'+(Math.ceil(new Date()/r)*r)+'/229276.js';
+	e.parentNode.insertBefore(n, e);
+	})(document,"script","hs-analytics",300000);
+</script>
+
+<!-- Google Code for Remarketing Tag -->
+
+<!--------------------------------------------------
+
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+
+--------------------------------------------------->
+
+<script type="text/javascript">
+
+	/* <![CDATA[ */
+
+	var google_conversion_id = 1067980474;
+
+	var google_custom_params = window.google_tag_params;
+
+	var google_remarketing_only = true;
+
+	/* ]]> */
+
+</script>
+
+<script type="text/javascript" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/conversion.js">
+
+</script><img alt="" src="Understanding%20streaming%20protocols%20and%20output%20file%20formats%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/a.html" border="0" height="1" width="1">
+
+<noscript>
+
+	<div style="display:inline;">
+
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1067980474/?value=0&amp;guid=ON&amp;script=0"/>
+
+	</div>
+
+</noscript>
+
+</body></html>

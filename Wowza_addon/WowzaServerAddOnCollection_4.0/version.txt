@@ -1,0 +1,121 @@
+build 12931
+
+* Updated VHostListenerAkamaiValidate to correct capitalization of property names
+* Updated ServerListenerStreamPublisher to allow new playlists to follow after non-repeating playlists
+
+build 12876
+
+* Added VHostListenerAkamaiValidate to validate Akamai G2O headers in Http Origin requests
+* Added HttpCustomResponseCode.  This Http Provider replaces the default one to return a specific HTTP status code
+
+build 12861
+
+* Added ModuleAVMix to allow mixing of audio and video tracks from different live sources
+* Added ModuleAnalytics to send connection data to stats collection services. Currently only works with Google Analytics
+
+build 12557
+
+* Fixed HttpRefererValidate to handle multiple HostPorts correctly
+
+build 12496
+
+* Fixed HttpRefererValidate to correctly handle referers with non-default http ports
+
+build 12412
+
+* Updated ServerListenerBanStreams to check if stream name is banned when a player requests it. Will prevent requests from starting mediaCasters automatically on liverepeater-edge or rtp-live applications
+
+build 12408
+
+* Updated ModuleMultitrackVOD to support URL encoded stream names
+* Updated HTTPRefererValidate to return a 404 if the application name is wrong
+
+build 12309
+
+* Updated ModuleAddAudioTrack to wait for source stream to start
+
+build 12078
+
+* Updated ModuleRefererValidate check the publisher user agent against the Core Security securityPublishValidEncoders property
+
+build 12508
+
+* Added ServerListenerBanStreams to be able to blacklist stream names that are not to be published
+* Added MediaCacheSourceSelector to be able to specify separate Media Cache sources for smil files and media content
+
+build 12054
+
+* Fixed ServerListenerStreamPublisher to check if vhost, application & appInstance names set in properties actually get loaded
+
+build 11942
+
+* Fixed ModuleLimitPublishedStreamBandwidth to check if the published stream is from an RTMP client
+
+build 11857
+
+* Added streamPublisherSendBroadcast property to ServerListenerStreamPublisher to control if RTMP clients are notified when a playlist switch occurs. Default value is true (messages will be sent)
+
+build 11824
+
+* Added ModuleMultiTrackVOD to be able to select multiple tracks from a single vod file for HLS multi-track playback
+
+build 11807
+
+* Updated ModuleTimedDisconnect to allow for a list of ip addresses that will not be disconnected
+
+build 11799
+
+* Added ModuleDuplicateStreams as a lightweight way to push streams to another appInstance
+
+build 11580
+
+* Added server listener to be able to set UDP port recycle time as a server property
+* Added ModuleRefererValidate as an alternative to ModuleHotlinkDenial
+
+build 11553
+
+* Fixed problem with ModuleCreateSnapShot so that H.264 snapshots are created properly
+* Fixed problem with StreamPublisher not detecting prefixes properly
+
+build 10804
+
+* Fixed problem with ModuleHotlinkDenial where an swf launched from a local folder was not being blocked
+
+build 10750
+
+* Fixed problem with ModuleLoopUntilLive where it was passing an un-trimmed name to the swapToLive and swapToPlaylist methods
+
+build 10696
+
+* Updated ServerListenerStreamPublisher to check for and remove prefixes from live source names in the schedule playlists
+
+build 10694
+
+* Fixed ModuleTranscoderTimedSnapshot transcoderTimedSnapshotStreamNames property handling where multiple stream names were not being handled properly
+* Resolved issue where the ModuleTranscoderTimedSnapshot worker thread was throwing an uncaught exception
+
+build 10682
+
+* Updated Module Collection for Wowza Streaming EngineTM software 4.0
+* Performed major code review of existing sample modules and classes in Module Collection
+* Added the following to the Module Collection
+	* ModuleAddAudioTrack - add an audio track to a live video that does not contain audio
+    * ModuleTimedDisconnect - disconnect players after a timeout period
+    * ModuleTranscoderTimedSnapshot - save a snapshot of a transcoder stream on a regular interval
+	* ModuleTranscoderControl - control which source streams are transcoded
+	* ServerListenerMediaCachePreload - preload content into Media Cache
+	* MediaCacheLocalFirstRandomAccessReader - load content form local storage dir if it exists otherwise get it from Media Cache
+	* VHostListenerLoadAndLockAppInstance - load and lock appInstances when a VHost starts or restarts
+* Removed the following from the Module Collection
+	* ModuleBlockDuplicateStreamNames - added to core security for Wowza Streaming Engine 4.0
+	* ModuleLimitConnectionsToApplication - added to core security for Wowza Streaming Engine 4.0
+	* ModuleOverridePlayBlacklistIP - added to core security for Wowza Streaming Engine 4.0
+	* ModuleOverridePlayRestrictIP - added to core security for Wowza Streaming Engine 4.0
+	* ModuleOverridePublishRestrictIP - added to core security for Wowza Streaming Engine 4.0
+	* ModuleRequireSecureConnection - added to core security for Wowza Streaming Engine 4.0
+	* ModuleOverrideReleaseStream - duplicate of ModuleBlockDuplicateStreamNames
+	* ModuleNoDuplicatePublishStreamname - duplicate of ModuleBlockDuplicateStreamNames
+	* ModuleEncryptionHandlerCupertinoStreaming - no longer needed
+	* ModuleFCSubscribe - no longer needed, built into core
+	* ModuleCalculateBitRate - no longer needed, built into core
+	

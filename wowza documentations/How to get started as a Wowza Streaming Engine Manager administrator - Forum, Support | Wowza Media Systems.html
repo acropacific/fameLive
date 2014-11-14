@@ -1,0 +1,1360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="http://www.wowza.com/forums">
+<!-- base href="http://www.wowza.com/forums/" --><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.2.2">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+
+		<meta name="keywords" content="streaming,server,wowza,engine,click">
+		<meta name="description" content="This guide will help you create and manage streaming apps and perform administrative tasks in Wowza Streaming Engine Manager.">
+
+
+
+
+
+<script src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/229276.js" id="hs-analytics"></script><script src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=422"><\/script>');
+		document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("2", 10);
+	var SIMPLEVERSION = "422";
+	var BBURL = "http://www.wowza.com/forums";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "vbcms";
+	var RELPATH = "content.php?625-How-to-get-started-as-a-Wowza-Streaming-Engine-Manager-administrator";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "http://www.wowza.com/forums/";
+// -->
+</script><script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/yuiloader-dom-event.js"></script><script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/connection-min.js"></script>
+<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin-core.js"></script>
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/main-rollup.css">
+        
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/popupmenu-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbulletin-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbulletin-chrome-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbulletin-formcontrols-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/editor-ie.css?d=1411165858" />
+	<![endif]-->
+
+<!--[if IE 6]><link rel="stylesheet" type="text/css" href="http://www.wowza.com/css/ie.css"><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://www.wowza.com/css/ie8.css"><![endif]-->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/fonts.css">
+<link rel="stylesheet" type="text/css" href="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/forum_overrides.css">
+
+<!-- ClickTale Top part -->
+
+<script type="text/javascript">
+
+var WRInitTime=(new Date()).getTime();
+
+</script>
+
+<!-- ClickTale end of Top part -->
+
+    
+    <title> How to get started as a Wowza Streaming Engine Manager administrator - Forum, Support | Wowza Media Systems </title>
+	
+		<link rel="stylesheet" type="text/css" href="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/cms-rollup.css">
+		
+	
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/vbcms-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/postbit-lite-ie.css?d=1411165858" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/postlist-ie.css?d=1411165858" />
+    <![endif]-->
+    <!--[if lt IE 7]>
+	<script type="text/javascript">
+		window.LESS_THAN_IE7 = true;
+	</script>
+    <![endif]-->
+	<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_overlay.js"></script>
+	<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_cms.js"></script>
+	<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_ajax_htmlloader.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/additional.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00005l/replacement-vbulletin-ie.css?d=1411165858" />
+<![endif]-->
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-411633-2']);
+_gaq.push(['_setDomainName', 'wowza.com']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+ 
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!-- Google Code for Site Visitors Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1067980474;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "xfn7CLbdiwIQuq2g_QM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/conversion.js">
+</script><link charset="utf-8" type="text/css" media="screen" href="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/treeview.css" rel="stylesheet"></head><body style="text-align:left"><img alt="" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/a.gif" border="0" height="1" width="1">
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1067980474/?label=xfn7CLbdiwIQuq2g_QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+    <div id="global-header" class="clearfix">
+        <div class="logo">
+            <a href="http://www.wowza.com/"><img title="Wowza" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wowza-logo.png" alt="Wowza"></a>
+        </div>
+        <div id="toplinks" class="toplinks">
+            
+                <ul class="nouser">
+                    <li><a href="http://www.wowza.com/contact">Contact</a></li>
+                    
+                        <li><a href="http://www.wowza.com/forums/register.php" rel="nofollow">Register</a></li>
+                    
+                    <!--<li><a rel="help" href="faq.php">Help</a></li>-->
+                    <li>
+                        <script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_md5.js"></script>
+                        <form id="navbar_loginform" action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+                            <fieldset id="logindetails" class="logindetails">
+                                <div>
+                                    <div>
+                                        <input class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" type="text">
+                                        <input style="display: none;" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" type="password">
+                                        <input style="display: inline;" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Password" type="text">
+                                        <input class="loginbutton" tabindex="104" value="Log in" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" type="submit">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div id="remember" class="remember">
+                                <label for="cb_cookieuser_navbar">
+                                    <input name="cookieuser" value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" accesskey="c" tabindex="103" type="checkbox"><font color="#ffffff">&nbsp;Remember Me?</font>
+                                </label>
+                            </div>
+                            <input name="s" value="" type="hidden">
+                            <input name="securitytoken" value="guest" type="hidden">
+                            <input name="do" value="login" type="hidden">
+                            <input name="vb_login_md5password" type="hidden">
+                            <input name="vb_login_md5password_utf" type="hidden">
+                        </form>
+            	<script type="text/javascript">
+            	YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+            	YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+            	vB_XHTML_Ready.subscribe(function()
+            	{
+            	//
+            		YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+            		YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+            		YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+            		YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+            	});
+            	
+            	function navbar_username_focus(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		if (textbox.value == 'User Name')
+            		{
+            		//
+            			textbox.value='';
+            			textbox.style.color='';
+            		}
+            	}
+        
+            	function navbar_username_blur(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		if (textbox.value == '')
+            		{
+            		//
+            			textbox.value='User Name';
+            			textbox.style.color='';
+            		}
+            	}
+            	
+            	function navbar_password_hint(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		
+            		YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+            		YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+            		YAHOO.util.Dom.get('navbar_password').focus();
+            	}
+        
+            	function navbar_password(e)
+            	{
+            	//
+            		var textbox = YAHOO.util.Event.getTarget(e);
+            		
+            		if (textbox.value == '')
+            		{
+            			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+            			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+            		}
+            	}
+            	</script>
+            		</li>
+            		
+            	</ul>
+            
+        </div>
+        <!--
+        <div>
+            <nav class="sub-nav">
+                <ul class="clearfix">
+                    <li>
+                        <a href="http://www.wowza.com/portal/account">Login</a>
+                    </li>
+                    <li class="endr">
+                        <a href="http://www.wowza.com/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        -->
+        <nav class="nav clearfix">
+            <ul>
+                <li><a href="http://www.wowza.com/streaming">Streaming</a></li>
+                <li><a href="http://www.wowza.com/products">Products</a></li>
+                <li><a href="http://www.wowza.com/pricing">Pricing</a></li>
+                <li><a href="http://www.wowza.com/pricing/installer">Downloads</a></li>
+                <li><a href="http://www.wowza.com/customers">Customers</a></li>
+                <li><a href="http://www.wowza.com/partners">Partners</a></li>
+            </ul>
+            <span class="blue"><a href="http://www.wowza.com/pricing/trial" class="over_bg01">Free Trial</a></span>
+        </nav>
+    </div>
+    <div class="ad_global_header">
+         
+         
+    </div>
+    <hr>
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		
+	
+		<li class="selected" id="vbtab_cms">
+			<a class="navtab" href="http://www.wowza.com/forums/content.php">Articles</a>
+		</li>
+		
+		
+			<ul class="floatcontainer">
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?1-Wowza-Media-Systems-Support-Articles-and-Forums">Welcome</a></li>
+						
+					
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?3-quick-start-guide">Wowza Streaming Engine Quick Start Guides</a></li>
+						
+					
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?4-tutorials">Tutorials</a></li>
+						
+					
+				
+					
+						
+							<li id=""><a href="http://www.wowza.com/forums/content.php?188-documentation">Documentation</a></li>
+						
+					
+				
+			</ul>
+		
+
+	
+		<li id="vbtab_forum">
+			<a class="navtab" href="http://www.wowza.com/forums/forum.php">Forum</a>
+		</li>
+		
+		
+
+	
+		<li id="tab_ota0_780">
+			<a class="navtab" href="http://www.wowza.com/forums/forumdisplay.php?77-Find-a-Consultant&amp;tabid=70">Find a Consultant</a>
+		</li>
+		
+		
+
+		
+	</ul>
+
+	
+	<div id="globalsearch" class="globalsearch">
+		<form action="google.php" method="post" id="navbar_search" class="navbar_search">
+			
+			<input name="securitytoken" value="guest" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<span class="textboxcontainer"><span><input name="query" id="query" class="textbox" tabindex="99" type="text"></span></span>
+			<span class="buttoncontainer"><span><input class="searchbutton" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/search.png" name="submit" onclick="getElementById('navbar_search').setAttribute('action', 'google.php?query='+getElementById('query').value); document.getElementById('navbar_search').submit;" tabindex="100" type="image"></span></span>
+		</form>
+		<ul class="navbar_advanced_search">
+			<li style="display:inline-block;padding-right:20px;"><a href="http://www.wowza.com/forums/search.php" accesskey="4">Advanced Search</a></li>
+			<li style="display:inline-block;"><a href="http://www.wowza.com/forums/faq.php">Help</a></li>
+		</ul>
+	</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="http://www.wowza.com/forums/index.php" accesskey="1"><img title="Home" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/navbit-home.png" alt="Home"></a></li>
+		
+	<li class="navbit"><a href="http://www.wowza.com/forums/content.php">Home</a></li>
+
+	<li class="navbit"><a href="http://www.wowza.com/forums/content.php?3-quick-start-guide">Wowza Streaming Engine Quick Start Guides</a></li>
+
+		
+	<li class="navbit lastnavbit"><span>How to get started as a Wowza Streaming Engine Manager administrator</span></li>
+
+	</ul>
+	<hr>
+</div>
+
+ 
+<div id="ad_global_below_navbar"></div>
+
+
+	<form action="profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input name="do" value="dismissnotice" type="hidden">
+		<input name="s" value="" type="hidden">
+		<input name="securitytoken" value="guest" type="hidden">
+		<input id="dismiss_notice_hidden" name="dismiss_noticeid" value="" type="hidden">
+		<input name="url" value="" type="hidden">
+		<ol>
+			<li class="restore" id="navbar_notice_22">
+	
+	Wowza Streaming Engine 4.1 is now available! Click <a href="http://www.wowza.com/forums/content.php?634"> HERE</a> for release notes.
+</li>
+		</ol>
+	</form>
+
+
+
+<div class="vbcms_content">
+<div id="doc3" class="yui-tvb-l3">
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-u yui-panel">
+					<ul class="list_no_decoration widget_list" id="widgetlist_column1">
+<li><!-- styles defined in template: headinclude -->
+
+
+
+<div class="article_width" id="article_content">
+	<div class="title">
+                <h1 class="article_title cms_article_title"><span>How to get started as a Wowza Streaming Engine Manager administrator</span>
+                        
+		</h1>
+	</div>
+	<div class="article_author_date_comment_container">
+                
+		<div class="fullwidth">
+			
+			
+                        
+                        <div class="cms_clear"></div>
+                        
+				<div class=" article_username_container ">
+					
+						
+							Published on 08-11-2014  11:21 AM
+						
+					
+					
+						&nbsp;
+						&nbsp;
+					
+					
+						&nbsp;Number of Views: 4984
+						&nbsp;
+					
+				</div>
+			
+                       
+                        <div class="article_rating_container">
+                            	<a href="http://www.wowza.com/forums/content.php?625-How-to-get-started-as-a-Wowza-Streaming-Engine-Manager-administrator#comments" rel="nofollow"><span id="comments_top_count">0</span> <span id="comments_top_text"> Comments</span></a>
+				<img title="Comments" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/comment.png" alt="Comments" border="0">
+                        </div>
+                       
+		</div>
+	</div>
+    
+    <div class="clear"></div>
+	<div id="yui-gen1" class="article cms_clear restore postcontainer">This
+ guide will help you create and manage streaming apps and perform some 
+basic administrative functions using Wowza Streaming Engine™ software.<br>
+<br>
+<h2>Contents</h2><hr><a href="http://www.wowza.com/forums/content.php?625#intro">Introduction</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#signinManager">Manage credentials</a><br>
+<div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?625#enableAdvanced">Enable access to advanced administrative settings</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?625#createAccount">Create user accounts</a></div><a href="http://www.wowza.com/forums/content.php?625#appConfig">Create applications</a><br>
+<div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?625#configVODapp">Create a simple VOD application</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?625#createOtherApps">Create other types of applications</a></div><a href="http://www.wowza.com/forums/content.php?625#configProperties">Configure properties</a><br>
+<div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?625#enableProperties">Enable default properties</a></div><div style="margin-left:40px"><a href="http://www.wowza.com/forums/content.php?625#addProperty">Add a custom property</a></div><a href="http://www.wowza.com/forums/content.php?625#configModules">Configure modules</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#configListeners">Configure server listeners</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#openPorts">Configure streaming ports</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#enterSerial">Add license keys</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#logging">Change the default log level</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#installExamples">Install example applications</a><br>
+<a href="http://www.wowza.com/forums/content.php?625#related">Related articles</a><br>
+<br>
+<a name="intro"></a><h2>Introduction</h2><hr>Wowza Streaming Engine™ 
+Manager enables you to easily set up, manage, monitor, and measure 
+streams using a web browser on your computer, tablet, or phone. By 
+extending programmatic and command-line configuration and management of 
+the Wowza Streaming Engine software to a web-based user interface, 
+publishers with a diverse range of technical abilities can have greater 
+control and confidence when streaming video.<br>
+<br>
+<a name="signinManager"></a><h2>Manage credentials</h2><hr>The first 
+time you start Wowza Streaming Engine Manager, you'll be asked to sign 
+in with the case-sensitive user name and password that you created when 
+you installed the Wowza Streaming Engine software. This account has 
+administrator access to enable control of the Streaming Engine software 
+through the manager, but it doesn't provide default access to the 
+advanced server and applications settings that are configured on the <b>Properties</b>, <b>Modules</b>, and <b>Server Listeners</b> tabs of Wowza Streaming Engine Manager.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_properties.png" alt="" border="0"><br>
+<br>
+After you sign in, you can enable access to the advanced settings for 
+the default administrator account as well as add accounts for other 
+users.<br>
+<br>
+<a name="enableAdvanced"></a><h3>Enable access to advanced administrative settings</h3><ol class="decimal"><li style="">In Streaming Engine Manager, click the <b>Server</b> tab and then click <b>Users</b> in the contents pane.<br>
+<br></li><li style="">On the <b>Users</b> page, click the <b>Edit</b> icon for the user name for the administrator account.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_users_myuser.png" alt="" border="0"><br></li><li style="">Select the <b>Allow access to advanced properties and features</b> check box.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_myuser_adv.png" alt="" border="0"><br>
+<br></li><li style="">Click <b>Save</b>.</li></ol><br>
+Wowza Streaming Engine Manager signs you out and you must sign in to the manager again.<br>
+<br>
+<a name="createAccount"></a><h3>Create user accounts</h3>New user accounts can have either administrative or read-only access to Wowza Streaming Engine Manager. <br>
+<br>
+<ol class="decimal"><li style="">In Streaming Engine Manager, click the <b>Server</b> tab and then click <b>Users</b> in the contents pane.<br>
+<br></li><li style="">On the <b>Users</b> page, click <b>Add User</b>.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_addnewuser.png" alt="" border="0"><br></li><li style="">Specify a <b>User Name</b>, <b>Password</b>, <b>Access Level</b>, and <b>Preferences</b> for the user.<br>
+<br>
+<ul><li style="">Enter the same value in the <b>Password</b> and <b>Confirm Password</b> fields. Remember, the user name and password are case-sensitive.</li><li style="">Give the user <b>Read-Only</b> or <b>Administrator</b> access to the Wowza Streaming Engine server.</li><li style="">Select <b>Allow access to advanced properties and settings</b> to give <b>Administrator</b> users the ability to edit advanced settings or give <b>Read-Only</b> users the ability to view advanced settings.</li></ul><br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_confignewuser.png" alt="" border="0"></li><li style="">Click <b>Add</b>.</li></ol><br>
+<a name="appConfig"></a><h2>Create applications</h2><hr>To begin using Wowza Streaming Engine, you must create an <i>application</i>. Wowza Streaming Engine supports three types of live applications and three types of video on demand (VOD) applications:<br>
+<br>
+<ul><li style=""><b>Live Single server or origin</b> – Live 
+single-server applications deliver live streams directly to players. 
+Live origin applications deliver streams to other servers running Wowza 
+Media Server® or Wowza Streaming Engine, scaling delivery for a larger 
+number of players. A default <b>Live</b> single-server or origin application is included in the Wowza Streaming Engine installation.<br>
+<br></li><li style=""><b>Live Edge</b> – Live edge applications ingest 
+live streams from an origin server that's running Wowza Media Server or 
+Wowza Streaming Engine and deliver the live streams to players.<br>
+<br></li><li style=""><b>Live HTTP Origin</b> – Live HTTP origin 
+applications deliver live streams to an HTTP caching infrastructure 
+using HTTP streaming protocols (MPEG-DASH, Apple HLS, Adobe HDS, and 
+Microsoft Smooth Streaming).<br>
+<br></li><li style=""><b>VOD Single server</b> – VOD single-server applications stream video on demand files to players. A default <b>VOD</b> single-server application is included in the Wowza Streaming Engine installation.<br>
+<br></li><li style=""><b>VOD Edge</b> – VOD edge applications ingest video on demand files from a Media Cache source and stream the VOD files to players.<br>
+<br></li><li style=""><b>Live HTTP Origin</b> – Live HTTP origin 
+applications deliver live streams to an HTTP caching infrastructure 
+using HTTP streaming protocols (MPEG-DASH, Apple HLS, Adobe HDS, and 
+Microsoft Smooth Streaming).<br>
+<br></li><li style=""><b>VOD HTTP Origin</b> – VOD HTTP origin 
+applications deliver video on demand files to an HTTP caching 
+infrastructure using HTTP streaming protocols (MPEG-DASH, Apple HLS, 
+Adobe HDS, and Microsoft Smooth Streaming).</li></ul><br>
+<a name="configVODapp"></a><h3>Create a simple VOD application</h3><ol class="decimal"><li style="">In Wowza Streaming Engine Manager, click the <b>Applications</b> tab and then click <b>Add Application</b> in the contents pane. <br>
+<br></li><li style="">On the <b>Add Application</b> page, click the <b>VOD Single server</b> button to select that application type.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_add_vod_application.png" alt="" border="0"><br>
+<br></li><li style="">In the <b>New Application</b> dialog box, enter a name, such as <b>myapplication</b>, and then click <b>Add</b>.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_add_application_myapplication.png" alt="" border="0">.<br>
+<br>
+<br>
+The application details page shows that, by default, the <b>VOD Single server</b>
+ application can be played on Adobe Flash Player; Apple iPhone, iPad, or
+ iPod touch devices; Microsoft Silverlight; DASH players, and 
+RTSP/RTP-based players.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_myapplication_playbacktypes.png" alt="" border="0"><br></li><li style="">Click <b>Save</b>.</li></ol><br>
+<a name="createOtherApps"></a><h3>Create other types of applications</h3>For instructions on creating other types of applications, see the following tutorials:<br>
+<br>
+<ul><li style=""><a href="http://www.wowza.com/forums/content.php?36" target="_blank">How to set up live streaming using an RTMP-based encoder</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?39" target="_blank">How to re-stream video from an IP camera</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?37" target="_blank">How to publish and play a live stream (MPEG-TS based encoder)</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?354" target="_blank">How to set up live streaming using an RTSP/RTP-based encoder</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?38" target="_blank">How to set up live streaming using a native RTP encoder with SDP file</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?40" target="_blank">How to re-stream audio from SHOUTcast/Icecast</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?227" target="_blank">How to configure a live stream repeater</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?457" target="_blank">How to configure your Wowza server as an HTTP caching origin</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?35" target="_blank">How to set up video on demand streaming</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?121" target="_blank">How to scale video on demand streaming with Media Cache</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?457" target="_blank">How to configure your Wowza server as an HTTP caching origin</a></li></ul><br>
+<br>
+<a name="configProperties"></a><h2>Configure properties</h2><hr><i>Properties</i>
+ provide a way to tune and modify the default application configuration.
+ Properties can also be used by the server to pass data from 
+applications to custom modules. In Wowza Streaming Engine Manager, you 
+enable and add properties using the <b>Properties</b> tab of a feature or application detail page. <br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> Access to the <b>Properties</b> tab requires an administrator user with advanced permissions.
+			
+		</div>
+	</div>
+</div><a name="enableProperties"></a><h3>Enable default properties</h3><ol class="decimal"><li style="">In the Streaming Engine Manager contents pane, click the server feature or application whose properties you want to configure.<br>
+<br></li><li style="">On the server feature or application details page, click the <b>Properties</b> tab.<br>
+<br></li><li style="">In the <b>Quick Links</b> bar, click the link for the correct property section.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wsem_propertiestab.png" alt="" border="0"><br></li><li style="">In the property section, click <b>Edit</b>.<br>
+<br></li><li style="">To enable a property, do either of the following:<br>
+<br>
+<ul><li style="">Click the <b>Enabled</b> check box for the property and then select the option <b>True</b> for the property (if required).</li><li style="">Click the <b>Enabled</b> check box for the property and then specify an appropriate <b>Value</b>.</li></ul><br></li><li style="">Click <b>Save</b> and then restart the server or application.</li></ol><br>
+<a name="addProperty"></a><h3>Add a custom property</h3><ol class="decimal"><li style="">In the Streaming Engine Manager contents pane, click the server feature or application to which you want to add properties.<br>
+<br></li><li style="">On the <b>Server Setup</b> or the application details page, click the <b>Properties</b> tab.<br>
+<br></li><li style="">In the <b>Quick Links</b> bar, click <b>Custom</b>.<br>
+<br></li><li style="">In the <b>Custom</b> properties section, click <b>Edit</b> and then click the <b>Add Custom Property</b> button.<br>
+<br></li><li style="">In the <b>Add Custom Property</b> dialog box, specify property settings and then click <b>Add</b>.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wsem_addcustomproperty.png" alt="" border="0"><br>
+<br></li><li style="">Click <b>Save</b> and then restart the server or application.</li></ol><br>
+<br>
+<a name="configModules"></a><h2>Configure modules</h2><hr><i>Modules</i>
+ are Java classes that load dynamically with an application and provide 
+additional functionality. The Wowza Streaming Engine software includes 
+several built-in, optional server-side modules; for descriptions, see 
+the <i>Wowza Streaming Engine User's Guide</i>. In addition, a 
+downloadable package of additional utility modules, called the Module 
+Collection, is available on the Wowza Support site. Finally, many AddOn 
+packages use modules for their functionality.<br>
+<br>
+You can see a list of an application's loaded modules on the <b>Modules</b>
+ tab of the application page in Wowza Streaming Engine Manager. The 
+modules load in the order they appear in the list—the module at the top 
+of the list loads first; the module at the bottom of the list loads 
+last. In general, new modules are added to the end of the list.<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> Access to the <b>Modules</b> tab requires an administrator user with advanced permissions.
+			
+		</div>
+	</div>
+</div><img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wsem_modulestab.png" alt="" border="0"><br>
+<br>
+You can use the Eclipse Integrated Development Environment (IDE) tool to
+ develop custom modules and then add them to Wowza Streaming Engine.<br>
+<br>
+To add a custom module to Wowza Streaming Engine, follow these steps:<br>
+<br>
+<ol class="decimal"><li style="">In Wowza Streaming Engine Manager, click the desired application in the contents pane.<br>
+<br></li><li style="">On the details page, click the <b>Modules</b> tab.<br>
+<br></li><li style="">Click <b>Edit</b> and then click the <b>Add Module</b> button.<br>
+<br></li><li style="">In the <b>Add New Module</b> dialog box, complete the required fields:<br>
+<br>
+<ul><li style=""><b>Name</b> – Should be unique.</li><li style=""><b>Description</b> – Additional, useful information about the module. Not used in any operations.</li><li style=""><b>Fully Qualified Class Name</b>
+ – The path to the Java class that provides the module's functionality. 
+The Java class that makes up a server-side module is most often bound to
+ a <b>.jar</b> file in the Streaming Engine software installation.</li></ul><br>
+<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wsem_addnewmodule.png" alt="" border="0"><br>
+<br></li><li style="">Click <b>Add</b>.<br>
+<br></li><li style="">Click <b>Save</b> and then restart the application.</li></ol><br>
+<br>
+<a name="configListeners"></a><h2>Configure server listeners</h2><hr><i>Server listeners</i> are Java classes that provide notification of events that occur at the server level and extend server functionality. <br>
+<br>
+Server event listeners and VHost event listeners are called when events 
+occur at the server or VHost level. Other event listeners can be invoked
+ using API methods and are called when events occur that the listener is
+ configured to listen for. Wowza also includes ready-to-use server 
+listeners in its Module Collection.<br>
+<br>
+You can see a list of listener methods on the <b>Server Listeners</b> tab of the <b>Server Setup</b>
+ page in Wowza Streaming Engine Manager. The methods are called in the 
+order they appear in the list--the method at the top of the list is 
+called first; the method at the bottom of the list is called last. The 
+values that are specified by the last listener that's called are always 
+used.<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> Access to the <b>Server Listeners</b> tab requires an administrator user with advanced permissions.
+			
+		</div>
+	</div>
+</div><img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wsem_serverlistenerstab.png" alt="" border="0"><br>
+<br>
+The <b>Fully Qualified Class Name</b> is the path to the Java class that provides the server listener's functionality. <br>
+<br>
+Follow these steps to add a custom server listener:<br>
+<br>
+<ol class="decimal"><li style="">In Wowza Streaming Engine Manager, click the <b>Server</b> tab and then click <b>Server Setup</b> in the contents pane.<br>
+<br></li><li style="">On the details page, click the <b>Server Listeners</b> tab.<br>
+<br></li><li style="">Click <b>Edit</b> and then click the <b>Add Server Listener</b> button.<br>
+<br></li><li style="">In the <b>Add Server Listener</b> dialog box, specify the <b>Base Class</b> and then click <b>Add</b>.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/wsem_addserverlistener.png" alt="" border="0"><br>
+<br></li><li style="">Click <b>Save</b> and then restart the server.</li></ol><br>
+<a name="openPorts"></a><a name="addtionalPorts"></a><h2>Configure streaming ports</h2><hr>Wowza Streaming Engine uses the following default ports for streaming:<br>
+<br>
+<div class="cms_table"><table class="cms_table" align="left" width="500"><tbody><tr class="cms_table_tr" valign="top"><td class="cms_table_td"><b>TCP 1935</b></td>
+<td class="cms_table_td">RTMP/RTMPE/RTMPT/RTSP-interleaved streaming/WOWZ™</td>
+</tr>
+<tr class="cms_table_tr" valign="top"><td class="cms_table_td"><b>TCP 8086-8088</b></td>
+<td class="cms_table_td">Administration</td>
+</tr>
+<tr class="cms_table_tr" valign="top"><td class="cms_table_td"><b>UDP 6970-9999</b></td>
+<td class="cms_table_td">RTP UDP streaming</td>
+</tr>
+</tbody></table></div>
+<br>
+If desired, you can configure additional ports for streaming in Wowza Streaming Engine Manager. Wowza Streaming Engine <b>cannot</b>
+ share ports with other programs or services, so make sure that there 
+are no other programs or services running that share the added ports. 
+The following ports are also commonly used for streaming:<br>
+<br>
+<div class="cms_table"><table class="cms_table" align="left" width="500"><tbody><tr class="cms_table_tr" valign="top"><td class="cms_table_td"><b>TCP 80</b></td>
+<td class="cms_table_td">Adobe HDS, Apple HLS, Microsoft Smooth Streaming, MPEG-DASH streaming, RTMPT</td>
+</tr>
+<tr class="cms_table_tr" valign="top"><td class="cms_table_td"><b>TCP 443</b></td>
+<td class="cms_table_td">RTMPS, HTTPS</td>
+</tr>
+<tr class="cms_table_tr" valign="top"><td class="cms_table_td"><b>TCP 554</b></td>
+<td class="cms_table_td">RTSP</td>
+</tr>
+</tbody></table></div>
+<br>
+To add a port, follow these steps.<br>
+<br>
+<ol class="decimal"><li style="">In Wowza Streaming Engine Manager, click the <b>Server</b> tab and then click <b>Virtual Host Setup</b> in the contents pane.<br></li><li style="">On the details page, click <b>Edit</b>, scroll down to the <b>Host Ports</b> section of the page, and click the <b>Edit</b> icon for the <b>Default Streaming </b>host port.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsq_wsem_streaming_hostport.png" alt="" border="0"><br></li><li style="">Add the ports to the comma-delimited <b>Port(s)</b> list and click <b>Apply</b>.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_wsem_edit_hostport.png" alt="" border="0"><br></li><li style="">Click <b>Save</b> and then restart the server.</li></ol><br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> Make sure that the ports you use for streaming are open
+ on your firewall. In many enterprise environments, you'll need the 
+approval and the assistance of a network administrator to modify 
+settings in the core router or firewall. In home or small-office 
+environments, you may have to configure "port forwarding" traffic of the
+ port you're using to the port and IP address of your server. For more 
+information, see your router or firewall documentation.
+			
+		</div>
+	</div>
+</div><a name="enterSerial"></a><h2>Add license keys</h2><hr>License keys for all Wowza® products, including the Wowza Streaming Engine software and AddOns, are stored in the <b>Server.license</b> file located at <b>[install-dir]/conf/Server.license</b>.
+ Subscription users can run an unlimited number of server instances and 
+AddOns under a single license key. Perpetual Edition users must enter a 
+separate license key for each server instance and for each AddOn.<br>
+<br>
+To add a license key in Wowza Streaming Engine Manager, do the following:<br>
+<br>
+<ol class="decimal"><li style="">Click the <b>Server</b> tab and then click <b>Server Setup</b> in the contents pane.<br>
+<br></li><li style="">On the <b>Server Setup</b> page, click <b>Edit</b>.<br>
+<br></li><li style="">In the <b>License Keys</b> box, enter each new license key on a separate line.<br>
+<br>
+Licenses are additive, so be sure to keep the original license in the first line of the <b>License Keys</b>
+ box, and add each new key on its own line. The order in which the keys 
+are listed isn't important. The first and last five digits of the 
+license key appear in the <b>License Keys</b> box:<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsq_wsem_license_keys.png" alt="" border="0"><br>
+<br></li><li style="">Click <b>Save</b> and then click <b>Restart Now</b> at the top of the <b>Server Setup</b> page.</li></ol><br>
+After the standalone server is restarted, the new license(s) take effect. <br>
+<br>
+<a name="logging"></a><h2>Change the default log level</h2><hr><br>
+Wowza Streaming Engine log files are written to <b>[install-dir]/logs</b>. The default logging level (<b>INFO</b>)
+ enables monitoring and collects information to help troubleshoot most 
+issues while adding minimal load to the server. When working with Wowza 
+to troubleshoot an issue, you may be asked to temporarily turn on debug 
+logging (increase the amount of information written to the logs). To do 
+this, open <b>[install-dir]/conf/log4j.properties</b> in a text editor and change the log level on the first line from <b>INFO</b> to <b>DEBUG</b>. Debug logging shouldn't be used in a production environment due to its increased load on the server.<br>
+<br>
+<a name="installExamples"></a><h2>Install example applications</h2><hr>The
+ Wowza Streaming Engine software includes example streaming applications
+ that highlight the server functionality and to help you get started. 
+The examples are located in <b>[install-dir]/examples</b>. After you 
+install Wowza Streaming Engine, you can install the example streaming 
+applications and configure the application settings in Wowza Streaming 
+Engine Manager.<br>
+<br>
+<ol class="decimal"><li style="">Install the example files following the instructions for your operating system:<br>
+<br>
+<ul><li style=""><b>(Windows)</b> In Windows Explorer, click <b>Start</b> &gt; <b>All Programs</b> (or <b>All Apps</b>) &gt; <b>Wowza Streaming Engine 4.1.0</b> &gt; <b>Examples</b>. Then, double-click <b>installall.bat</b>.<br></li><li style=""><b>(Mac OS)</b> In the Finder, go to <b>/Library/WowzaStreamingEngine-4.1.0/examples/</b> and double-click <b>installall.command</b>.<br></li><li style=""><b>(Linux)</b> Enter the following commands in a terminal window:<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:48px;">cd /usr/local/WowzaStreamingEngine-4.1.0/examples
+./installall.sh</pre>
+</div></li></ul><br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Note:</b> The default installation of Wowza Streaming Engine includes fully functional <b>live</b> and <b>vod</b> applications, so <b>live</b> and <b>vod</b> example applications aren't installed.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_install_examples.png" alt="" border="0">
+			
+		</div>
+	</div>
+</div></li><li style="">Go to the <b>Server Setup</b> page in Streaming Engine Manager and click <b>Restart Server</b> in the upper-right corner of the page. Then, click the <b>Applications</b> tab in the manager to see the installed example applications in the contents pane.<br>
+<br>
+<img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/qsg_installed_examples.png" alt="" border="0"></li></ol><br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<b>Notes</b>:<br>
+<ul><li style="">You may need to refresh the Streaming Engine Manager browser page to see the example applications in the contents pane.<br></li><li style="">See the <b>README.html</b> file located at <b>[install-dir]/examples/README.html</b> for more information about the example applications.</li></ul>
+			
+		</div>
+	</div>
+</div><a name="related"></a><h2>Related articles</h2><hr><ul><li style=""><a href="http://www.wowza.com/forums/content.php?217" target="_blank">How to install and configure Wowza Streaming Engine</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?577" target="_blank">How to find your way around Wowza Streaming Engine Manager</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?113" target="_blank">Module Collection</a></li><li style=""><a href="http://www.wowza.com/resources/WowzaStreamingEngine_ServerSideAPI.pdf" target="_blank">Wowza Streaming Engine server-side API (PDF)</a></li><li style=""><a href="http://www.wowza.com/forums/content.php?46" target="_blank">How to do performance tuning</a></li><li style=""><a href="http://www.wowza.com/resources/WowzaStreamingEngine_UsersGuide.pdf" target="_blank">Wowza Streaming Engine User's Guide (PDF)</a></li></ul><br>
+<hr><b>Updated:</b> For Wowza Streaming Engine 4.1.0 on 09-11-2014.<br>
+<ul>
+<li><a href="http://www.wowza.com/forums/forumdisplay.php?43">Click here, if you are having problems or would like to discuss this article.</a>
+</li><li>Leave a comment below, if there is some aspect of this article you would like to see changed or improved.
+</li></ul></div>
+
+	
+
+	
+		<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_lightbox.js"></script>
+		<script type="text/javascript">
+		<!--
+		vBulletin.register_control("vB_Lightbox_Container", "article_content", 1);
+		//-->
+		</script>
+	
+
+	
+
+	
+	<div class="cmslinks">
+
+		
+	
+	</div>
+
+    
+	<script type="text/javascript">
+	var THREADID = 38069;
+	var THIS_URL = "http://www.wowza.com/forums/content.php?625-How-to-get-started-as-a-Wowza-Streaming-Engine-Manager-administrator";
+	var MIN_CHARS = 0;
+	vbphrase['comment'] = "Comment";
+	vbphrase['comments'] = "Comments";
+</script>
+<div id="comments" class="cms_comments_page">
+	<a name="comments_start"></a>
+	
+	<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin-editor.js"></script>
+	<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_quick_edit.js"></script>
+	<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/vbulletin_post_loader.js"></script>
+	<div id="node_comments_hide"></div>
+	<!-- EDITOR IS BREAKING THE PAGE -->
+	
+</div>
+
+
+</div></li>
+</ul>
+				</div>
+			</div>
+		</div>
+		<div class="yui-b yui-sidebar">
+			<ul class="list_no_decoration widget_list" id="widgetlist_column2">
+<li><script type="text/javascript">
+<!--
+	var IMGDIR_MISC = "images/misc";
+	var vb_disable_ajax = parseInt("0", 10);
+
+        /* Start Sections Widget Configuration */
+        vbGlobal_SHOW_ALL_TREE_ELEMENTS_THRESHOLD = parseInt("5");
+        /* End Seections Widget Configuration */
+// -->
+</script>
+<script type="text/javascript">
+<!--
+	document.write('<script type="text/javascript" src="' + yuipath + '/treeview/treeview-min.js"></script>');
+	loadVbCss(yuipath + '/treeview/assets/skins/sam/treeview.css');
+//-->
+</script><script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/treeview-min.js"></script>
+<!-- end treeview css -->
+
+<!-- custom treeview styles defined at template: headinclude -->
+
+<!-- END VB Tree-Menu Implementation of YUI TreeView -->
+<div class="cms_widget">
+	<div class="block">
+		<div class="cms_widget_header">
+			<h3><img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/sections.png" alt=""> Article List</h3>
+		</div>
+		<div class="cms_widget_content widget_content">
+			<div id="yui-tv-auto-id-0" class="vb-tree-menu"><div class="ygtvitem" id="ygtv0"><div class="ygtvchildren" id="ygtvc0"><div class="ygtvitem" id="ygtv1"><table id="ygtvtableel1" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt1" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel1" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel1" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?3-quick-start-guide" target="" title="Wowza Streaming Engine Quick Start Guides">Wowza Streaming Engine Quick Start Guides</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc1" style="display:none;"></div></div><div class="ygtvitem" id="ygtv2"><table id="ygtvtableel2" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt2" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel2" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel2" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?4-tutorials" target="" title="Tutorials">Tutorials</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc2" style="display:none;"></div></div><div class="ygtvitem" id="ygtv3"><table id="ygtvtableel3" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt3" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel3" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel3" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?188-documentation" target="" title="Documentation">Documentation</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc3" style="display:none;"></div></div><div class="ygtvitem" id="ygtv6"><table id="ygtvtableel6" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt6" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel6" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel6" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?5-general-tuning" target="" title="Performance Tuning">Performance Tuning</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc6" style="display:none;"></div></div><div class="ygtvitem" id="ygtv7"><table id="ygtvtableel7" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt7" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel7" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel7" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?197-software-updates" target="" title="Software Updates">Software Updates</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc7" style="display:none;"></div></div><div class="ygtvitem" id="ygtv8"><table id="ygtvtableel8" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt8" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel8" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel8" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?6-media-players-and-devices" target="" title="Media Players and Devices">Media Players and Devices</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc8" style="display:none;"></div></div><div class="ygtvitem" id="ygtv16"><table id="ygtvtableel16" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt16" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel16" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel16" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?8-live-streaming-and-encoders" target="" title="Live Streaming and Encoders">Live Streaming and Encoders</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc16" style="display:none;"></div></div><div class="ygtvitem" id="ygtv22"><table id="ygtvtableel22" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt22" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel22" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel22" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?9-video-on-demand-streaming" target="" title="Video On Demand Streaming">Video On Demand Streaming</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc22" style="display:none;"></div></div><div class="ygtvitem" id="ygtv23"><table id="ygtvtableel23" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt23" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel23" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel23" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?473-closed-captioning" target="" title="Closed Captioning">Closed Captioning</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc23" style="display:none;"></div></div><div class="ygtvitem" id="ygtv24"><table id="ygtvtableel24" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt24" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel24" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel24" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?11-server-administration" target="" title="Server Administration">Server Administration</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc24" style="display:none;"></div></div><div class="ygtvitem" id="ygtv26"><table id="ygtvtableel26" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt26" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel26" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel26" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?296-AddOn-Wowza-Transcoder" target="" title="AddOn: Wowza Transcoder">AddOn: Wowza Transcoder</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc26" style="display:none;"></div></div><div class="ygtvitem" id="ygtv27"><table id="ygtvtableel27" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt27" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel27" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel27" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?297-addon-wowza-ndvr" target="" title="AddOn: Wowza nDVR">AddOn: Wowza nDVR</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc27" style="display:none;"></div></div><div class="ygtvitem" id="ygtv28"><table id="ygtvtableel28" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt28" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel28" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel28" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?298-addon-wowza-drm" target="" title="AddOn: Wowza DRM">AddOn: Wowza DRM</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc28" style="display:none;"></div></div><div class="ygtvitem" id="ygtv29"><table id="ygtvtableel29" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt29" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel29" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel29" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?10-addon-packages" target="" title="AddOn: Other">AddOn: Other</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc29" style="display:none;"></div></div><div class="ygtvitem" id="ygtv30"><table id="ygtvtableel30" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt30" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel30" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel30" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?603-Cloud-Technologies" target="" title="Cloud Technologies">Cloud Technologies</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc30" style="display:none;"></div></div><div class="ygtvitem" id="ygtv39"><table id="ygtvtableel39" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt39" class="ygtvcell ygtvtp"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel39" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel39" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?12-server-side-modules-and-code-samples" target="" title="Server-side Modules and Code Samples">Server-side Modules and Code Samples</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc39" style="display:none;"></div></div><div class="ygtvitem" id="ygtv44"><table id="ygtvtableel44" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt44" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel44" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel44" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?592-article-archive" target="" title="Article Archive">Article Archive</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc44" style="display:none;"></div></div><div class="ygtvitem" id="ygtv45"><table id="ygtvtableel45" class="ygtvtable ygtvdepth0 ygtv-collapsed ygtv-highlight0" cellpadding="0" cellspacing="0" border="0"><tbody><tr class="ygtvrow"><td id="ygtvt45" class="ygtvcell ygtvln"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel45" class="ygtvcell  ygtvcontent"><a id="ygtvlabelel45" class="ygtvlabel" href="http://www.wowza.com/forums/content.php?218-List-of-All-Articles" target="" title="List of All Articles">List of All Articles</a></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc45" style="display:none;"></div></div></div></div></div>
+				<noscript>
+					<div class="cms_widget_sectionnav">
+						<div class="cms_widget_sectionnav_page">
+							
+								
+									<div class="active_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?3-quick-start-guide">Wowza Streaming Engine Quick Start Guides</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?4-tutorials">Tutorials</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?188-documentation">Documentation</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?547-white-papers">White Papers</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?642-wowza-streaming-engine-rest-api">Wowza Streaming Engine REST API</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?5-general-tuning">Performance Tuning</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?197-software-updates">Software Updates</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?6-media-players-and-devices">Media Players and Devices</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?17-general">General</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?18-adobe-flash">Adobe Flash</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?20-apple-ios-devices">Apple iOS Devices</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?19-microsoft-silverlight">Microsoft Silverlight</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?21-set-top-mobile-and-quicktime">Set-top, Mobile, and QuickTime</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?581-mpeg-dash">MPEG-DASH</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?566-wowza-example-players">Wowza Example Players</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?8-live-streaming-and-encoders">Live Streaming and Encoders</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?503-wowza-gocoder">Wowza GoCoder</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?27-specific-encoding-technologies">Specific Encoding Technologies</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?573-recording-live-streams">Recording Live Streams</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?533-troubleshooting-live-streaming">Troubleshooting Live Streaming</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?26-advanced-topics">Advanced Topics</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?9-video-on-demand-streaming">Video On Demand Streaming</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?473-closed-captioning">Closed Captioning</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?11-server-administration">Server Administration</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?619-security">Security</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?296-AddOn-Wowza-Transcoder">AddOn: Wowza Transcoder</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?297-addon-wowza-ndvr">AddOn: Wowza nDVR</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?298-addon-wowza-drm">AddOn: Wowza DRM</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?10-addon-packages">AddOn: Other</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?603-Cloud-Technologies">Cloud Technologies</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?7-Amazon">Amazon</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?22-quick-start-guide">Quick Start Guide</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?23-pre-built-amis-(amazon-machine-images)">Pre-built AMIs (Amazon Machine Images)</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?527-cloudfront-integration">CloudFront Integration</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:60px">
+								
+								<a href="http://www.wowza.com/forums/content.php?24-advanced-topics">Advanced Topics</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?607-google">Google</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?626-microsoft">Microsoft</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?604-rackspace">Rackspace</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?12-server-side-modules-and-code-samples">Server-side Modules and Code Samples</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?585-Module-Collection">Module Collection</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?28-basic-modules-and-code-samples">Basic</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?29-advanced">Advanced</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:40px">
+								
+								<a href="http://www.wowza.com/forums/content.php?30-httpproviders">HTTP Providers</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?592-article-archive">Article Archive</a></div>
+							
+								
+									<div class="main_menuitem" style="text-indent:20px">
+								
+								<a href="http://www.wowza.com/forums/content.php?218-List-of-All-Articles">List of All Articles</a></div>
+							
+						</div>
+					</div>
+				</noscript>			
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	initVbTreeMenus(false);
+</script></li><li><div class="cms_widget category_widget">
+	<div class="block">
+		<div class="cms_widget_header">
+			<h3><img src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/categories.png" alt=""> Categories</h3>
+		</div>
+		<div class="cms_widget_content widget_content">
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/1-Adobe-Flash">Adobe Flash (91)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/2-Apple-iOS">Apple iOS (64)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/20-Closed-Captioning">Closed Captioning (7)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/15-Cloud">Cloud (22)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/3-Digital-Rights-Management">Digital Rights Management (8)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/4-IP-Camera">IP Camera (20)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/5-Live">Live (204)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/16-Live-Stream-Repeater">Live Stream Repeater (23)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/7-Microsoft-Silverlight">Microsoft Silverlight (43)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/8-Mobile">Mobile (32)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/21-MPEG-DASH">MPEG-DASH (14)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/9-RTSP/RTP/1">RTSP/RTP (52)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/10-Security">Security (41)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/11-Set-top-Box">Set-top Box (28)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/12-SHOUTcast/Icecast/1">SHOUTcast/Icecast (15)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/13-Video-Chat">Video Chat (6)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/6-Video-On-Demand">Video On Demand (106)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/14-Video-Recording">Video Recording (17)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/19-Wowza-DRM">Wowza DRM (6)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/18-Wowza-nDVR">Wowza nDVR (14)</a>
+				</div>
+			
+				<div class="cat_main_menuitem main_menuitem">
+					<a href="http://www.wowza.com/forums/list.php?category/17-Wowza-Transcoder">Wowza Transcoder (34)</a>
+				</div>
+			
+		</div>
+	</div>
+</div></li>
+</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div style="clear: left">
+   
+   
+</div>
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="forum.php" method="get" id="footer_select" class="footer_select">
+
+		
+			<select name="styleid" onchange="switch_id(this, 'style')">
+				<optgroup label="Quick Style Chooser"><option class="hidden"></option></optgroup>
+				
+					
+					<optgroup label="&nbsp;Standard Styles">
+									
+					
+	<option value="5" class="" selected="selected">-- Wowza VB4</option>
+
+					
+					</optgroup>
+										
+				
+				
+					
+					<optgroup label="&nbsp;Mobile Styles">
+					
+					
+	<option value="6" class="">-- Default Mobile Style</option>
+
+					
+					</optgroup>
+										
+				
+			</select>	
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<!--  -->
+		<li><a href="http://www.wowza.com/">Wowza Media Systems</a></li>
+		
+		
+		<li><a href="http://www.wowza.com/forums/archive/index.php">Archive</a></li>
+		
+		
+		
+		<li><a href="http://www.wowza.com/forums/content.php?625-How-to-get-started-as-a-Wowza-Streaming-Engine-Manager-administrator#top" onclick="document.location.hash='top'; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT -7. The time now is <span class="time">10:53 PM</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	© 2014 Wowza Media Systems, LLC. All rights reserved
+	
+</div>
+ 
+
+</div>
+
+<!-- ClickTale Bottom part -->
+
+<div id="ClickTaleDiv" style="display: none;"></div>
+
+<script type="text/javascript">
+
+document.write(unescape("%3Cscript%20src='"+
+
+(document.location.protocol=='https:'?
+
+ 'https://clicktale.pantherssl.com/':
+
+ 'http://s.clicktale.net/')+
+
+"WRc5.js'%20type='text/javascript'%3E%3C/script%3E"));
+
+</script><script src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/WRc5.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var ClickTaleSSL=1;
+
+if(typeof ClickTale=='function') ClickTale(3694,0.12,"www09");
+
+</script>
+
+<!-- ClickTale end of Bottom part -->
+
+<!-- Async HubSpot Analytics -->
+<script type="text/javascript">
+	(function(d,s,i,r) {
+	if (d.getElementById(i)){return;}
+	var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+	n.id=i;n.src='//js.hubspot.com/analytics/'+(Math.ceil(new Date()/r)*r)+'/229276.js';
+	e.parentNode.insertBefore(n, e);
+	})(document,"script","hs-analytics",300000);
+</script>
+
+<!-- Google Code for Remarketing Tag -->
+
+<!--------------------------------------------------
+
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+
+--------------------------------------------------->
+
+<script type="text/javascript">
+
+	/* <![CDATA[ */
+
+	var google_conversion_id = 1067980474;
+
+	var google_custom_params = window.google_tag_params;
+
+	var google_remarketing_only = true;
+
+	/* ]]> */
+
+</script>
+
+<script type="text/javascript" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/conversion.js">
+
+</script><img alt="" src="How%20to%20get%20started%20as%20a%20Wowza%20Streaming%20Engine%20Manager%20administrator%20-%20Forum,%20Support%20%7C%20Wowza%20Media%20Systems_files/a.html" border="0" height="1" width="1">
+
+<noscript>
+
+	<div style="display:inline;">
+
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1067980474/?value=0&amp;guid=ON&amp;script=0"/>
+
+	</div>
+
+</noscript>
+
+</body></html>

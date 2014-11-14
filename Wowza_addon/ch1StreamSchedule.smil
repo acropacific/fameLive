@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smil>
+    <head>
+    </head>
+    <body>
+
+        <stream name="upcommingStream"></stream>
+        <stream name="readyStream"></stream>
+        <stream name="offlineStream"></stream>
+        <stream name="completedStream"></stream>
+
+        <playlist name="upcommingPL" playOnStream="upcommingStream" repeat="true" scheduled="2014-01-01 00:00:00">
+            <video src="mp4:coming-soon.mp4" start="0" length="10"/>
+        </playlist>
+
+        <playlist name="readyPL" playOnStream="readyStream" repeat="true" scheduled="2014-01-01 00:00:00">
+            <video src="mp4:3D-Man-Animated-Countdown-Red-l.mp4" start="0" length="10"/>
+        </playlist>
+
+        <playlist name="offlinePL" playOnStream="offlineStream" repeat="true" scheduled="2014-01-01 00:00:00">
+            <video src="mp4:just_be_back.mp4" start="0" length="2"/>
+        </playlist>
+
+        <playlist name="completedPL" playOnStream="completedStream" repeat="true" scheduled="2014-01-01 00:00:00">
+            <video src="mp4:i'm done simple.png.mp4" start="0" length="10"/>
+        </playlist>
+    </body>
+</smil>

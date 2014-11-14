@@ -1,0 +1,5 @@
+build 12705
+
+* Modified screen.css to remove 960px width limitation
+
+intial release

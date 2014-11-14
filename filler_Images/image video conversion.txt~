@@ -1,0 +1,12 @@
+gif to mp4
+
+https://cloudconvert.org/gif-to-mp4
+
+
+
+creating video from images
+
+
+http://www.itforeveryone.co.uk/image-to-video.html
+
+ffmpeg -loop 1 -r 25 -qscale 2 -i staytuned.jpg -t 00:00:10 vid/output.mp4

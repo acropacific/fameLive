@@ -1,0 +1,58 @@
+Download tomcat
+
+#wget http://mirrors.gigenet.com/apache/tomcat/tomcat-6/v6.0.41/bin/apache-tomcat-6.0.41.tar.gz
+wget http://apache.cs.utah.edu/tomcat/tomcat-8/v8.0.14/bin/apache-tomcat-8.0.14.tar.gz
+
+Unzip the zipped file 
+
+tar -zxvf apache-tomcat-8.0.14.tar.gz 
+
+
+
+
+
+Install gvm
+
+curl -s get.gvmtool.net | bash
+
+
+Install groovy
+
+gvm install groovy
+
+
+Install grails
+
+gvm install grails
+
+
+
+Intall mysql
+
+yum install mysql-server mysql php-mysql
+How to configure MySQL
+
+    Set the MySQL service to start on boot
+    	chkconfig --levels 235 mysqld on
+    Start the MySQL service
+    	service mysqld start
+    Log into MySQL
+    	mysql -u root
+    Set the root user password for all local domains
+    	SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new-password');
+    	SET PASSWORD FOR 'root'@'localhost.localdomain' = PASSWORD('new-password');
+    	SET PASSWORD FOR 'root'@'127.0.0.1' = PASSWORD('new-password');
+    Drop the Any user
+    	DROP USER ''@'localhost';
+    	DROP USER ''@'localhost.localdomain';
+    Exit MySQL
+    	exit
+
+
+download sun jdk 
+
+wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u5-b13/jdk-8u5-linux-x64.tar.gz
+
+
+
+

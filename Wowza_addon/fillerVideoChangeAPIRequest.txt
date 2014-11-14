@@ -1,0 +1,111 @@
+{
+  "restURI": "http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/adv",
+  "advancedSettings": [
+    {
+      "sectionName": "Application",
+      "canRemove": false,
+      "defaultValue": "",
+      "documented": false,
+      "name": "loopUntilLiveSourceStreams",
+      "section": "/Root/Application",
+      "type": "String",
+      "value": "E00000002",
+      "enabled": true
+    }
+  ],
+  "serverName": "WowzaStreamingEngine",
+  "saveFieldList": [],
+  "version": "1",
+  "modules": [
+    {
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "base",
+      "serverName": "WowzaStreamingEngine",
+      "description": "Base",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wowza.wms.module.ModuleCore",
+      "order": 0
+    },
+	{
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "logging",
+      "serverName": "WowzaStreamingEngine",
+      "description": "Client Logging",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wowza.wms.module.ModuleClientLogging",
+      "order": 0
+    },
+	{
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "flvplayback",
+      "serverName": "WowzaStreamingEngine",
+      "description": "FLVPlayback",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wowza.wms.module.ModuleFLVPlayback",
+      "order": 0
+    },
+	{
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "ModuleCoreSecurity",
+      "serverName": "WowzaStreamingEngine",
+      "description": "Core Security Module for Applications",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wowza.wms.security.ModuleCoreSecurity",
+      "order": 0
+    },
+	{
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "streamPublisher",
+      "serverName": "WowzaStreamingEngine",
+      "description": "Schedules streams and playlists.",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wowza.wms.plugin.collection.module.ModuleStreamPublisher",
+      "order": 0
+    },
+	{
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "ModuleLoopUntilLive",
+      "serverName": "WowzaStreamingEngine",
+      "description": "Loops filler video until live video is available",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wowza.wms.plugin.collection.module.ModuleLoopUntilLive",
+      "order": 0
+    },
+	{
+      "restURI": "com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig",
+      "name": "Wmsauth",
+      "serverName": "WowzaStreamingEngine",
+      "description": "Wmsauth",
+      "saveFieldList": [],
+      "version": "1",
+      "class": "com.wmspanel.Wmsauth",
+      "order": 0
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+	
+Request URL= http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/adv
+method=put
+request content type=json
+
+
+response
+<wmsResponse>
+<success>true</success>
+<message>Saved</message>
+</wmsResponse>

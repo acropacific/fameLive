@@ -1,0 +1,293 @@
+/* Wowza styles */
+
+#global-header {
+    background: #fff;
+    position: relative; 
+    margin: 0 auto;
+    min-width: 980px;
+    height: 90px; 
+    border-top: none;
+}
+
+#global-header .logo { 
+    float: left; 
+    padding: 23px 0 0 10px;
+}
+
+#global-header .logo a { 
+    display: block; 
+    height: 58px; 
+    width: 198px;
+}
+
+#global-header .sub-nav { 
+    position: absolute; 
+    top: 0; 
+    right: 10px; 
+    height: 34px; 
+    background-color: #fff; 
+    z-index:99; 
+}
+
+#global-header .sub-nav ul { 
+    padding: 11px 20px 0 20px; 
+}
+
+#global-header .sub-nav ul li { 
+    float: left; 
+    padding: 0 5px 0 5px!important; 
+    font: 12px/14px "museo-sans", Helvetica, serif !important;
+    border-right: 1px solid #fff; 
+}
+
+#global-header .sub-nav ul li a { 
+    color: #ff8400; 
+}
+
+#global-header .nav { 
+    float: right; 
+    margin-right: 10px;
+    padding: 43px 0 0 0;
+}
+
+#global-header .nav ul { 
+    float: left; 
+    padding: 2px 0 0 0; 
+}
+
+#global-header .nav ul li { 
+    float: left; 
+    padding: 8px 10px; 
+    border-right: 1px dotted #fff; 
+}
+
+#global-header .nav ul li.current { 
+    background-image: url('http://www.wowza.com/images/nav-current.png'); 
+}
+
+#global-header .nav ul li a { 
+    font: 16px/16px "museo-sans", Helvetica, serif;
+    color: #333;
+}
+
+#global-header .nav ul li a:hover { 
+    color: #ff8400;
+    text-decoration: none;
+}
+
+span.blue { 
+    display: block; 
+    float: left; 
+    padding-left: 10px; 
+    padding-top:2px; 
+}
+
+span.blue a { 
+    display: block; 
+    float: left; 
+    padding: 8px 9px 7px 9px; 
+    width: 65px; 
+    height: 18px; 
+    font: 14px/18px "museo-sans", Helvetica, serif; 
+    color: #fff; 
+    background: #48a6c5; 
+    text-decoration: none;     
+}
+
+span.orange { 
+    display: block; 
+    float: left; 
+    padding-left: 10px; 
+    padding-top: 2px;
+}
+
+span.orange a { 
+    display: block; 
+    float: left; 
+    padding: 8px 9px 7px 9px; 
+    width: 60px; 
+    height: 18px; 
+    font: 14px/18px "museo-sans", Helvetica, serif; 
+    color: #fff; 
+    background: #ff8400; 
+    text-decoration: none; 
+}
+
+span.blue a:hover, 
+#global-header span.blue a.active,
+span.orange a:hover, 
+#global-header span.orange a.active { 
+    color: #fff; 
+    text-decoration: none;
+}
+
+/*vBulletin overrides */
+
+html {
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+}
+
+.above_body {
+    background-color: #fff;
+    border-top: 10px solid #333;
+    margin: 0 auto 10px auto;
+    width: 100%;
+}
+
+.body_wrapper {
+    margin: 0 auto;
+    min-width: 920px;
+}
+
+.toplinks {
+    background: #333;
+    right:10px;
+}
+
+.toplinks ul.isuser {
+    height: 20px;
+    padding: 4px 10px 0 10px;
+}
+
+.toplinks ul.isuser li,
+.toplinks ul.isuser li.welcomelink {
+    padding: 0 4px;
+}
+
+.toplinks ul.isuser li a {
+    font-weight: normal;
+    color: #fff;
+    padding: 0 !important;
+}
+
+.toplinks ul.isuser li a:hover {
+    background: none;
+    border-bottom: 1px solid #fff;
+    padding: 0 !important;
+}
+
+.toplinks ul.isuser li.popupmenu a.popupctrl,
+.toplinks ul.isuser .notifications a.popupctrl,
+.toplinks ul.isuser .nonotifications a.popupctrl {
+    background: transparent url('http://www.wowza.com/forums/images/misc/arrow.png') no-repeat right center;
+    padding: 0 12px 0 0 !important;
+}
+
+.toplinks ul.isuser li.popupmenu a.popupctrl:hover, 
+.toplinks ul.isuser .notifications a.popupctrl:hover, 
+.toplinks ul.isuser .nonotifications a.popupctrl:hover {
+    background: transparent url('http://www.wowza.com/forums/images/misc/arrow.png') no-repeat right center;
+    border-bottom: 1px solid #fff;
+    padding: 0 12px 0 0 !important;
+}
+
+.popupbody {
+    font: normal 12px/14px 'ProximaNovaRegular', Helvetica, serif !important;
+    background: #F28333;
+    border: none;
+}
+
+.toplinks ul.isuser li.popupmenu ul li {
+    padding: 4px;
+}
+
+.toplinks ul.isuser li.popupmenu ul li:first-child {
+    color: #fff;
+}
+
+.toplinks form {
+    overflow: auto;
+}
+
+.toplinks .logindetails {
+    background: none;
+    float: left;
+}
+
+.toplinks form input {
+    margin: 0 !important;
+    padding: 3px;
+}
+
+.toplinks form input[type=checkbox] {
+    padding: 0 !important;
+}
+
+.toplinks form input.loginbutton {
+    background: #ff8400;
+    border: none;
+    -o-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    margin: 0;
+    padding: 3px 5px;
+    outline: none;
+}
+
+.toplinks form input.loginbutton:hover {
+    background: #d77001;
+    border: none;
+    cursor: pointer;
+}
+
+.toplinks .remember {
+    float: right;
+    margin: 0 0 0 10px !important;
+    padding: 0 !important;
+}
+
+.toplinks .remember label {
+    font-weight: normal;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.toplinks ul.nouser li a {
+    background: none;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+    height: auto;
+    margin: 3px 15px 0 10px;
+    padding: 0;
+}
+
+.toplinks ul.nouser li a:hover {
+    background: none;
+    border-bottom: 1px solid #fff;
+}
+
+.navbar {
+    min-width: 980px;
+}
+
+.navtabs li a.navtab,
+.navtabs li.selected a.navtab {
+    border-top: none;
+    border-left: none;
+}
+
+.navtabs li.selected a.navtab {
+    padding-top: 0;
+    top: 0;
+}
+
+/* misc necessities */
+
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.endr { margin-right: 0!important; border-right: 0!important; }
