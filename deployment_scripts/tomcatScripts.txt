@@ -1,0 +1,10 @@
+ grails -DbuildModule=stream -Dserver.port=8085 run-app --debug-fork
+
+create war
+grails -DbuildModule=stream -Dgrails.env=development war ~/Setups/apache-tomcat-8.0.15/webapps/ROOT.war
+
+start tomcat 
+~/Setups/apache-tomcat-8.0.15/bin/catalina.sh jpda start
+
+shutdown tomcat
+~/Setups/apache-tomcat-8.0.15/bin/shutdown.sh

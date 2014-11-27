@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smil>
+    <head>
+    </head>
+    <body>
+        <stream name="liveStream"></stream>
+        <playlist name="livePL" playOnStream="liveStream" repeat="true" scheduled="2014-01-01 00:00:00">
+            <video src="mp4:just_be_back.mp4" start="0" length="10"/>
+        </playlist>        
+    </body>
+</smil>

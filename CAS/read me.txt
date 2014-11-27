@@ -1,0 +1,30 @@
+How Spring Security hooks to Central Authentication Service (CAS)=> http://mattfleming.com/node/269
+
+
+Username-password pair corresponds to the key-value pair under <property name="users">. For 4.0.0, it's username = casuser, password = Mellon.
+
+take a look at the deployerConfigContext.xml file.
+
+
+
+create certificates=> https://wiki.jasig.org/display/CASUM/Demo
+
+authentication through db=>  https://wiki.jasig.org/display/CASUM/Using+JDBC+for+Authentication
+(need to add commons-pool2 including other dependencies as given in link)
+
+
+Authentication-Components=> http://jasig.github.io/cas/4.0.0/installation/Configuring-Authentication-Components.html
+
+
+cas-management => http://jasig.github.io/cas/4.0.0/installation/Service-Management.html
+https://wiki.jasig.org/display/CASUM/Configuring
+
+
+cas integration in grails => http://stackoverflow.com/questions/19710841/grails-and-cas-basic-setup
+http://docs.spring.io/spring-security/site/docs/3.1.5.RELEASE/reference/cas.html
+
+config=>https://github.com/grails-plugins/grails-spring-security-cas/blob/master/src/docs/guide/configuration.gdoc
+https://bintray.com/package/readme/jamjon3/maven/spring-security-cas-usf
+
+
+http://docs.spring.io/spring-security/site/docs/3.1.x/reference/springsecurity-single.html#cas-sequence

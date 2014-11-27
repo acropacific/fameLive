@@ -1,0 +1,202 @@
+http://www.wowza.com/forums/content.php?129-Built-in-HTTProviders-that-Provide-Server-Stats
+http://www.wowza.com/forums/content.php?182-How-to-get-detailed-server-info-with-an-HTTPProvider
+There are three built-in HTTP Providers. You can view the data supplied by these providers in a Web browser using the following URLs:
+
+http://[wowza-ip-address]:8086/serverinfo
+http://[wowza-ip-address]:8086/connectioncounts
+http://[wowza-ip-address]:8086/connectioninfo
+
+
+String wowzaAPIVersion = "v2"
+    String serverIP = "54.68.108.229"
+    String serverPort = "8087"
+    String serverName = "WowzaStreamingEngine"
+    String vhostName = "_defaultVHost_"
+String apiVersion = "v2"
+	
+
+	
+
+get /v2/servers/{serverName}/vhosts/{vhostName}/applications/{appName}/instances/{instanceName}/incomingstreams/{streamName} 
+Retrieves the Incoming Stream information for the specifed Incoming Stream
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test	
+	
+<?xml version="1.0" encoding="UTF-8" ?>
+<IncomingStream restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test">
+    <ApplicationInstance>_definst_</ApplicationInstance>
+    <Name>test</Name>
+    <SourceIp>rtsp://115.112.156.2</SourceIp>
+    <IsRecordingSet>false</IsRecordingSet>
+    <IsStreamManagerStream>false</IsStreamManagerStream>
+    <IsPublishedToVOD>false</IsPublishedToVOD>
+    <IsConnected>true</IsConnected>
+</IncomingStream>
+
+
+put /v2/servers/{serverName}/vhosts/{vhostName}/applications/{appName}/instances/{instanceName}/incomingstreams/{streamName}/actions/{action}
+  Take action on given Incoming stream
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test/actions/disconnectStream
+
+<error>
+<wowzaServer>4.0</wowzaServer>
+<code>404</code>
+<message>
+The server has not found anything matching the request URI
+</message>
+</error>
+
+
+get /v2/servers/{serverName}/vhosts/{vhostName}/applications/{appName}/instances/{instanceName}/incomingstreams/{streamName}/monitoring/current 
+Retrieves the Current Incoming Stream statistics for the specifed Incoming Stream
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test/monitoring/current
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<CurrentIncomingStreamStatistics restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test/monitoring/current">
+    <ApplicationInstance>_definst_</ApplicationInstance>
+    <Name>test</Name>
+    <Uptime>545</Uptime>
+    <BytesIn>8510599</BytesIn>
+    <BytesOut>0</BytesOut>
+    <BytesInRate>15598</BytesInRate>
+    <BytesOutRate>0</BytesOutRate>
+    <TotalConnections>0</TotalConnections>
+    <ConnectionCount>
+        <entry>
+            <string>RTMP</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>MPEGDASH</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>CUPERTINO</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>SANJOSE</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>SMOOTH</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>RTP</string>
+            <int>0</int>
+        </entry>
+    </ConnectionCount>
+</CurrentIncomingStreamStatistics>
+
+
+
+
+
+get /v2/servers/{serverName}/vhosts/{vhostName}/applications/{appName}/instances/{instanceName}/outgoingstreams/{streamName}
+    Retrieves the Outgoing Stream information for the specifed Outgoing Stream
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/outgoingstreams/test
+<OutgoingStream restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/outgoingstreams/test">
+    <Name></Name>
+    <SomeProp>some value</SomeProp>
+    <SomeProp2>some value2</SomeProp2>
+</OutgoingStream>
+
+
+
+get /v2/servers/{serverName}/vhosts/{vhostName}/applications/{appName}/monitoring/current
+    Retrieves the current Application statistics (also gives current stream counts and protocols)
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/monitoring/current
+<?xml version="1.0" encoding="UTF-8" ?>
+<CurrentApplicationStatistics restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/monitoring/current">
+    <a>ch1</a>
+    <Uptime>1596</Uptime>
+    <BytesIn>25025640</BytesIn>
+    <BytesOut>25984867</BytesOut>
+    <BytesInRate>16167</BytesInRate>
+    <BytesOutRate>34980</BytesOutRate>
+    <TotalConnections>3</TotalConnections>
+    <ConnectionCount>
+        <entry>
+            <string>WEBM</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>DVRCHUNKS</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>RTMP</string>
+            <long>1</long>
+        </entry>
+        <entry>
+            <string>MPEGDASH</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>CUPERTINO</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>SANJOSE</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>SMOOTH</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>RTP</string>
+            <long>2</long>
+        </entry>
+    </ConnectionCount>
+</CurrentApplicationStatistics>
+
+
+
+
+
+get /v2/servers/{serverName}/vhosts/{vhostName}/monitoring/current
+    Retrieves the current VHost statistics (Also gives total connections info)
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/monitoring/current
+<?xml version="1.0" encoding="UTF-8" ?>
+<CurrentVHostStatistics restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/monitoring/current">
+    <vhostName>_defaultVHost_</vhostName>
+    <Uptime>747863</Uptime>
+    <BytesIn>1204744859</BytesIn>
+    <BytesOut>479301842</BytesOut>
+    <TotalConnections>3</TotalConnections>
+    <ConnectionCount>
+        <entry>
+            <string>WEBM</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>DVRCHUNKS</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>RTMP</string>
+            <long>1</long>
+        </entry>
+        <entry>
+            <string>MPEGDASH</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>CUPERTINO</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>SANJOSE</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>SMOOTH</string>
+            <long>0</long>
+        </entry>
+        <entry>
+            <string>RTP</string>
+            <long>2</long>
+        </entry>
+    </ConnectionCount>
+</CurrentVHostStatistics>

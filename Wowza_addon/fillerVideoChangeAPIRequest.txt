@@ -1,3 +1,5 @@
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch3/actions/start
+
 {
   "restURI": "http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/adv",
   "advancedSettings": [
