@@ -8,10 +8,10 @@ import grails.validation.Validateable
 @Validateable
 class ApiFetchUserEventListCommand extends ApiPaginationCommand {
 
-    Long performerId
+    Long userId
 
     static constraints = {
-        performerId nullable: true
+        userId nullable: true
         max nullable: true
         order nullable: true
         sort nullable: true
@@ -20,7 +20,7 @@ class ApiFetchUserEventListCommand extends ApiPaginationCommand {
 
     @Override
     FetchEventsCommand toRequestCommand() {
-        return new FetchEventsCommand(id: this?.performerId, max: this?.max, order: this?.order, sort: this?.sort, offset: this?.offset)
+        return new FetchEventsCommand(id: this?.userId, max: this?.max, order: this?.order, sort: this?.sort, offset: this?.offset)
     }
 
     @Override

@@ -5,6 +5,6 @@ import grails.validation.Validateable
 @Validateable
 class DataPushCommand {
     String message
-    Set<String> channels
+    List<String> channels
     String senderName
 }

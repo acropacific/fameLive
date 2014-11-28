@@ -28,8 +28,6 @@ class ApiFetchPerformerProfileDto extends ApiResponseDto {
     @APIResponseField(include = true)
     public String dateCreated
     @APIResponseField(include = true)
-    public String userType
-    @APIResponseField(include = true)
     public Boolean isFollower
     @APIResponseField(include = true)
     public Long totalFollowers
@@ -46,7 +44,6 @@ class ApiFetchPerformerProfileDto extends ApiResponseDto {
         this.mobile = userProfileDto?.mobile ?: ''
         this.imageName = userProfileDto?.imageName ?: ''
         this.dateCreated = userProfileDto?.dateCreated?.format(ApiConstants.DATE_TIME_FORMAT)
-        this.userType = userProfileDto?.type?.toString()
         this.isFollower = userProfileDto?.isFollower
         this.totalFollowers = userProfileDto?.totalFollowers
         this.status = ApiConstants.MOBILE_API_SUCCESS_CODE

@@ -4,7 +4,6 @@ import com.famelive.common.constant.CommonConstants
 import com.famelive.common.constant.Constraints
 import com.famelive.common.dto.ResponseDto
 import com.famelive.common.enums.usermanagement.UserRegistrationType
-import com.famelive.common.enums.usermanagement.UserType
 
 class ConfigurationDto extends ResponseDto {
 
@@ -21,9 +20,6 @@ class ConfigurationDto extends ResponseDto {
     UserRegistrationType facebook
     UserRegistrationType gPlus
     UserRegistrationType manual
-
-    UserType performer
-    UserType viewer
 
     //Cloudinary
     String cloudName
@@ -58,8 +54,6 @@ class ConfigurationDto extends ResponseDto {
         this.facebook = UserRegistrationType.FACEBOOK
         this.gPlus = UserRegistrationType.G_PLUS
         this.manual = UserRegistrationType.MANUAL
-        this.performer = UserType.PERFORMER
-        this.viewer = UserType.VIEWER
         this.eventNameMaxSize = Constraints.EVENT_NAME_MAX_SIZE
         this.eventDescriptionMaxSize = Constraints.EVENT_DESCRIPTION_MAX_SIZE
         this.eventSlotDuration = CommonConstants.EVENT_SLOT_DURATIONS.toString()

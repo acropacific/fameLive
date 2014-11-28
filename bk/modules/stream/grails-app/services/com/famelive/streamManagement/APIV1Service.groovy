@@ -134,4 +134,10 @@ class APIV1Service implements APIService {
         WowzaDoActionOnInStreamRequestCO wowzaDoActionOnInStreamRequestCO = new WowzaDoActionOnInStreamRequestCO(jsonSlurper)
         streamingAPIHelperService.disconnectWowzaIncomingStream(wowzaDoActionOnInStreamRequestCO)
     }
+
+    ResponseCO recordWowzaLiveStream(JSONObject json) {
+        def jsonSlurper = new JsonSlurper().parseText(json.toString())
+        //TODO: implement functinality
+        return new ResponseCO()
+    }
 }

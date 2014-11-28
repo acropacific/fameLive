@@ -18,7 +18,6 @@ class AdminUserProfileDto extends AdminResponseDto {
     Date dateCreated
     boolean accountLocked
     String registrationType
-    String type
     List<AdminLinkedSocialAccount> socialAccounts
     List<AdminFollowDto> followers
     List<AdminFollowDto> followings
@@ -36,7 +35,6 @@ class AdminUserProfileDto extends AdminResponseDto {
         this.dateCreated = profileDto?.dateCreated
         this.registrationType = profileDto?.registrationType?.value
         this.accountLocked = profileDto.accountLocked
-        this.type = profileDto?.type?.value
         this.socialAccounts = populateLinkedSocialAccountList(profileDto?.linkedSocialAccounts)
         this.followers = populateFollowDto(profileDto?.followers)
         this.followings = populateFollowDto(profileDto?.followings)
@@ -56,7 +54,7 @@ class AdminUserProfileDto extends AdminResponseDto {
         return apiLinkedSocialAccountList
     }
 
-    static List<AdminFollowDto> populateFollowDto(List<User> userList) {
+    static List<AdminFollowDto> populateFollowDto(List<FollowDto> userList) {
         List<AdminFollowDto> adminFollowDtos = []
         userList?.each { FollowDto followDto ->
             adminFollowDtos << AdminFollowDto.createCommonResponseDto(followDto)

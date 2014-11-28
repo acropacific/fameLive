@@ -20,6 +20,7 @@ class Event {
     User user
     BookedChannelSlot bookedChannelSlot
     boolean isHistory = false
+    String activeChannel
 
     static hasMany = [genres: Genre, channels: String]
 
@@ -37,6 +38,7 @@ class Event {
         bookedChannelSlot nullable: true
         imageName nullable: true
         user nullable: true
+        activeChannel nullable: true
     }
 
     static mapping = {

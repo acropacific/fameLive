@@ -54,5 +54,6 @@ grails.project.dependency.resolution = {
 
         compile ":mail:1.0.7"
         compile ":asynchronous-mail:1.1"
+        compile ":rabbitmq:1.0.0"
     }
 }

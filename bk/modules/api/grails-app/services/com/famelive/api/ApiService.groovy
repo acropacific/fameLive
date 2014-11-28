@@ -1,5 +1,6 @@
 package com.famelive.api
 
+import com.famelive.api.command.chat.ApiFetchChatChannelCommand
 import com.famelive.api.command.followermanagement.ApiFetchFollowersCommand
 import com.famelive.api.command.followermanagement.ApiFollowPerformerCommand
 import com.famelive.api.command.followermanagement.ApiUnFollowPerformerCommand
@@ -9,6 +10,7 @@ import com.famelive.api.command.search.ApiSearchPerformerCommand
 import com.famelive.api.command.slotmanagement.*
 import com.famelive.api.command.usermanagement.*
 import com.famelive.api.dto.ApiResponseDto
+import com.famelive.api.dto.chat.ApiFetchChatChannelDto
 import com.famelive.api.dto.configuration.ApiConfigurationDto
 import com.famelive.api.dto.followermanagement.ApiFollowPerformerDto
 import com.famelive.api.dto.followermanagement.ApiUnFollowPerformerDto
@@ -28,12 +30,15 @@ import com.famelive.api.exceptions.rule.ApiCheckConflictUserEventRuleException
 import com.famelive.api.exceptions.rule.ApiCheckPublishedGenreRuleException
 import com.famelive.api.exceptions.rule.ApiCheckSlotAvailabilityRuleException
 import com.famelive.api.exceptions.slotmanagement.*
+import com.famelive.common.command.chat.FetchChatChannelCommand
 import com.famelive.common.command.followermanagement.FetchFollowersCommand
 import com.famelive.common.command.followermanagement.FollowPerformerCommand
 import com.famelive.common.command.followermanagement.UnFollowPerformerCommand
 import com.famelive.common.command.notification.FetchNotificationChannelsCommand
 import com.famelive.common.command.slotmanagement.*
+import com.famelive.common.command.template.FetchSocialTemplateCommand
 import com.famelive.common.command.usernamagement.*
+import com.famelive.common.dto.chat.FetchChatChannelDto
 import com.famelive.common.dto.followermanagement.FollowPerformerDto
 import com.famelive.common.dto.followermanagement.UnFollowPerformerDto
 import com.famelive.common.dto.notification.FetchNotificationChannelsDto
@@ -59,8 +64,9 @@ class ApiService {
     def eventService
     def springSecurityService
     def followerService
-    def socialTemplateService
+    def templateService
     def notificationService
+    def chatService
 
     ApiConfigurationDto configuration() {
         return ApiConfigurationDto.createApiResponseDto(userService.fetchConfiguration())
@@ -471,23 +477,6 @@ class ApiService {
         }
     }
 
-    ApiUpgradeToTalentDto upgradeToTalent(ApiUpgradeToTalentCommand apiUpgradeToTalentCommand) throws ApiException {
-        try {
-            UpgradeToTalentCommand toTalentCommand = apiUpgradeToTalentCommand.toRequestCommand()
-            UpgradeToTalentDto toTalentDto = userService.upgradeToTalent(toTalentCommand)
-            ApiUpgradeToTalentDto apiUpgradeToTalentDto = ApiUpgradeToTalentDto.createApiResponseDto(toTalentDto)
-            return apiUpgradeToTalentDto
-        } catch (BlankFameNameException blankFameNameException) {
-            throw new ApiBlankFameNameException(blankFameNameException)
-        } catch (FameNameMaxLengthException fameNameMaxLengthException) {
-            throw new ApiFameNameMaxLengthException(fameNameMaxLengthException)
-        } catch (UniqueFameNameException uniqueFameNameException) {
-            throw new ApiUniqueFameNameException(uniqueFameNameException)
-        } catch (UserNotFoundException userNotFoundException) {
-            throw new ApiUserNotFoundException(userNotFoundException)
-        }
-    }
-
     ApiAddSocialAccountDto addSocialAccount(ApiUserSocialAccountCommand apiAddUserSocialAccountCommand) throws ApiException {
         try {
             UserSocialAccountCommand addUserSocialAccountCommand = apiAddUserSocialAccountCommand.toRequestCommand()
@@ -600,6 +589,17 @@ class ApiService {
         }
     }
 
+    ApiFetchChatChannelDto fetchChatChannel(ApiFetchChatChannelCommand apiFetchChatChannelCommand) throws ApiException {
+        try {
+            FetchChatChannelCommand fetchChatChannelCommand = apiFetchChatChannelCommand.toRequestCommand()
+            FetchChatChannelDto fetchChatChannelDto = chatService.fetchChatChannel(fetchChatChannelCommand)
+            ApiFetchChatChannelDto apiFetchChatChannelDto = ApiFetchChatChannelDto.createApiResponseDto(fetchChatChannelDto)
+            return apiFetchChatChannelDto
+        } catch (CommonException commonException) {
+            throw new ApiException(commonException)
+        }
+    }
+
     ApiFetchFollowersDto fetchFollowers(ApiFetchFollowersCommand apiFollowersCommand) throws ApiException {
         try {
             FetchFollowersCommand fetchFollowersCommand = apiFollowersCommand.toRequestCommand()
@@ -620,11 +620,73 @@ class ApiService {
     ApiSocialTemplateDto fetchSocialTemplate(ApiFetchSocialTemplateCommand apiFetchSocialTemplateCommand) throws ApiException {
         try {
             FetchSocialTemplateCommand fetchSocialTemplateCommand = apiFetchSocialTemplateCommand.toRequestCommand()
-            SocialTemplateDto socialTemplateDto = socialTemplateService.fetchSocialTemplate(fetchSocialTemplateCommand)
+            SocialTemplateDto socialTemplateDto = templateService.fetchSocialTemplate(fetchSocialTemplateCommand)
             ApiSocialTemplateDto apiSocialTemplateDto = ApiSocialTemplateDto.createApiResponseDto(socialTemplateDto)
             return apiSocialTemplateDto
         } catch (BlankSocialAccountException blankSocialAccountException) {
             throw new ApiBlankSocialAccountException(blankSocialAccountException)
+        } catch (UserNotFoundException userNotFoundException) {
+            throw new ApiUserNotFoundException(userNotFoundException)
+        } catch (CommonException commonException) {
+            throw new ApiException(commonException)
+        }
+    }
+
+    ApiChangeEmailDto changeEmail(ApiChangeEmailCommand apiChangeEmailCommand) throws ApiException {
+        try {
+            ChangeEmailCommand changeEmailCommand = apiChangeEmailCommand.toRequestCommand()
+            ChangeEmailDto changeEmailDto = userService.changeEmail(changeEmailCommand)
+            ApiChangeEmailDto apiChangeEmailDto = ApiChangeEmailDto.createApiResponseDto(changeEmailDto)
+            return apiChangeEmailDto
+        } catch (BlankEmailException blankEmailException) {
+            throw new ApiBlankEmailException(blankEmailException)
+        } catch (UserNotFoundException userNotFoundException) {
+            throw new ApiUserNotFoundException(userNotFoundException)
+        } catch (UniqueEmailException uniqueEmailException) {
+            throw new ApiUniqueEmailException(uniqueEmailException)
+        } catch (UnauthorizedEmailException unauthorizedEmailException) {
+            throw new ApiUnauthorizedEmailException(unauthorizedEmailException)
+        } catch (CommonException commonException) {
+            throw new ApiException(commonException)
+        }
+    }
+
+    ApiCheckUserAccountDto checkUserAccount(ApiCheckUserAccountCommand apiCheckUserAccountCommand) {
+        try {
+            CheckUserAccountCommand checkUserAccountCommand = apiCheckUserAccountCommand.toRequestCommand()
+            CheckUserAccountDto checkUserAccountDto = userService.checkUserAccount(checkUserAccountCommand)
+            ApiCheckUserAccountDto apiCheckUserAccountDto = ApiCheckUserAccountDto.createApiResponseDto(checkUserAccountDto)
+            return apiCheckUserAccountDto
+        } catch (UserNotFoundException userNotFoundException) {
+            throw new ApiUserNotFoundException(userNotFoundException)
+        } catch (CommonException commonException) {
+            throw new ApiException(commonException)
+        }
+    }
+
+    ApiVerifyUserEmailDto verifyEmail(ApiVerifyUserEmailCommand apiVerifyUserEmailCommand) {
+        try {
+            VerifyUserEmailCommand verifyUserEmailCommand = apiVerifyUserEmailCommand.toRequestCommand()
+            VerifyUserEmailDto verifyUserEmailDto = userService.verifyEmail(verifyUserEmailCommand)
+            ApiVerifyUserEmailDto apiVerifyUserEmailDto = ApiVerifyUserEmailDto.createApiResponseDto(verifyUserEmailDto)
+            return apiVerifyUserEmailDto
+        } catch (BlankVerificationTokenException blankVerificationTokenException) {
+            throw new ApiBlankVerificationTokenException(blankVerificationTokenException)
+        } catch (InvalidVerificationTokenException invalidVerificationTokenException) {
+            throw new ApiInvalidVerificationTokenException(invalidVerificationTokenException)
+        } catch (UserNotFoundException userNotFoundException) {
+            throw new ApiUserNotFoundException(userNotFoundException)
+        } catch (CommonException commonException) {
+            throw new ApiException(commonException)
+        }
+    }
+
+    ApiSendEmailVerificationCodeDto sendEmailVerificationCode(ApiSendEmailVerificationCodeCommand apiSendEmailVerificationCodeCommand) {
+        try {
+            SendEmailVerificationCodeCommand emailVerificationCodeCommand = apiSendEmailVerificationCodeCommand.toRequestCommand()
+            SendEmailVerificationCodeDto sendEmailVerificationCodeDto = userService.sendEmailVerificationCode(emailVerificationCodeCommand)
+            ApiSendEmailVerificationCodeDto apiSendEmailVerificationCodeDto = ApiSendEmailVerificationCodeDto.createApiResponseDto(sendEmailVerificationCodeDto)
+            return apiSendEmailVerificationCodeDto
         } catch (UserNotFoundException userNotFoundException) {
             throw new ApiUserNotFoundException(userNotFoundException)
         } catch (CommonException commonException) {

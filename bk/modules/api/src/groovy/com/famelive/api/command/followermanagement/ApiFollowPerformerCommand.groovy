@@ -6,14 +6,14 @@ import grails.validation.Validateable
 
 @Validateable
 class ApiFollowPerformerCommand extends ApiAuthenticationTokenCommand {
-    Long performerId
+    Long userId
 
     static constraints = {
-        performerId nullable: true
+        userId nullable: true
     }
 
     @Override
     FollowPerformerCommand toRequestCommand() {
-        return new FollowPerformerCommand(id: this?.id, performerId: this?.performerId)
+        return new FollowPerformerCommand(id: this?.id, performerId: this?.userId)
     }
 }

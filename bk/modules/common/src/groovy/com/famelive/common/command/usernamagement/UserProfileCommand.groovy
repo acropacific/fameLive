@@ -2,7 +2,6 @@ package com.famelive.common.command.usernamagement
 
 import com.famelive.common.command.AuthenticationTokenCommand
 import com.famelive.common.constant.Constraints
-import com.famelive.common.enums.usermanagement.UserType
 import com.famelive.common.exceptions.*
 import com.famelive.common.user.User
 import grails.validation.Validateable
@@ -34,15 +33,12 @@ class UserProfileCommand extends AuthenticationTokenCommand {
         mobile nullable: true
         imageName nullable: true
         fameName nullable: true, validator: { val, obj ->
-            User user = User.findByEmail(obj.email)
-            if (user.type == UserType.PERFORMER) {
-                if (!val) {
-                    throw new BlankFameNameException()
-                } else if (val.length() > Constraints.FAMENAME_MAX_SIZE) {
-                    throw new FameNameMaxLengthException()
-                } else if (User.countByFameNameAndEmailNotEqual(val, obj.email)) {
-                    throw new UniqueFameNameException()
-                }
+            if (!val) {
+                throw new BlankFameNameException()
+            } else if (val.length() > Constraints.FAMENAME_MAX_SIZE) {
+                throw new FameNameMaxLengthException()
+            } else if (User.countByFameNameAndEmailNotEqual(val, obj.email)) {
+                throw new UniqueFameNameException()
             }
         }
     }

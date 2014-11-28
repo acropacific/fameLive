@@ -41,6 +41,14 @@ class CommonMailService {
         sendMail(eMailDto, header)
     }
 
+    void sendEmailVerificationMail(User user) {
+        Map header = [:]
+        header.put(MandrillMailTemplateHeaders.X_MC_Template.value, grailsApplication.config.famelive.emailVerification.mail.template)
+        header.put(MandrillMailTemplateHeaders.X_MC_MergeVars.value, '{"VERIFICATION_CODE":"' + user?.verificationToken + '"}')
+        EMailDto eMailDto = new EMailDto(to: [user?.email], subject: "Email Verification code", html: "Please Use below code to login \n ${user?.verificationToken}")
+        sendMail(eMailDto, header)
+    }
+
     void sendRegistrationMailToPerformer(User user) {
         Map header = [:]
         header.put(MandrillMailTemplateHeaders.X_MC_Template.value, grailsApplication.config.famelive.performer.registration.mail.template)

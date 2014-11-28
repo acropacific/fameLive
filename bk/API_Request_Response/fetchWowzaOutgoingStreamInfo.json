@@ -1,23 +1,24 @@
-Post at http://localhost:8085/fameLive/api/v1 with content type application/json
-
+Post at http: //localhost:8085/fameLive/api/v1 with content type application/json
 {
 "appKey": "myAppKey",
 "apiVersion": "1.0",
 "actionName": "fetchWowzaOutgoingStreamInfo",
-"applicationName":"ch1",
-"streamName":"test"
+"applicationName": "ch1",
+"streamName": "test"
 }
 
 
 {
-  "message": "Wowza outgoing stream information fetched successfully",
-  "data": {
-    "restURI": "http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/outgoingstreams/test",
-    "StreamName": "",
-    "StreamProperties": {
-      "SomeProp2": "some value2",
-      "SomeProp": "some value"
-    }
-  },
-  "success": true
+"message": "Wowza outgoing stream information fetched successfully",
+"data": {
+"restURI": "http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/outgoingstreams/test",
+"StreamName": "",
+"StreamProperties":
+{
+"SomeProp2": "some value2",
+"SomeProp": "some value"
+}
+}
+,
+"success": true
 }

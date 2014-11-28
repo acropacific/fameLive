@@ -2,7 +2,6 @@ package com.famelive.common.user
 
 import com.famelive.common.command.usernamagement.UserSearchCommand
 import com.famelive.common.enums.usermanagement.UserRegistrationType
-import com.famelive.common.enums.usermanagement.UserType
 import com.famelive.common.followermanagement.Follow
 import com.famelive.common.slotmanagement.Event
 import com.famelive.common.util.FameLiveUtil
@@ -19,13 +18,14 @@ class User {
     String password
     String imageName
     Date dateCreated
+    String verificationToken
+    boolean isAccountVerified = true
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
     String forgotPasswordCode
     UserRegistrationType registrationType = UserRegistrationType.MANUAL
-    UserType type = UserType.VIEWER
     String channel = FameLiveUtil.getRandomChannel()
 
     static transients = ['springSecurityService']
@@ -61,9 +61,6 @@ class User {
             }
             if (userSearchCommand.registrationTypes) {
                 'in'("registrationType", userSearchCommand.registrationTypes)
-            }
-            if (userSearchCommand.types) {
-                'in'("type", userSearchCommand.types)
             }
         }
     }

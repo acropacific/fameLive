@@ -36,6 +36,5 @@ grails.project.dependency.resolution = {
         compile ":spring-security-rest:1.4.0.RC5", {
             excludes: 'spring-security-core'
         }
-        compile ":rabbitmq:1.0.0"
     }
 }

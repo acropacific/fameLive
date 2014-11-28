@@ -12,7 +12,7 @@ class ChatUtils {
         return new Pubnub(publishKey, subscribeKey);
     }
 
-    public static Set<String> getChannelsFromMap(Map chatInfo) {
+    public static List<String> getChannelsFromMap(Map chatInfo) {
         return chatInfo.channels
     }
 }

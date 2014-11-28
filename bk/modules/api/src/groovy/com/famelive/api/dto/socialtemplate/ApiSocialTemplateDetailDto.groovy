@@ -3,7 +3,7 @@ package com.famelive.api.dto.socialtemplate
 import com.famelive.api.annotation.APIResponseClass
 import com.famelive.api.annotation.APIResponseField
 import com.famelive.api.dto.ApiResponseDto
-import com.famelive.common.user.SocialTemplate
+import com.famelive.common.template.SocialTemplate
 
 @APIResponseClass
 class ApiSocialTemplateDetailDto extends ApiResponseDto {

@@ -15,13 +15,18 @@ class UrlMappings {
             }
         }
 
-        /*"/" {
-            controller = "login"
-            action = "index"
-
-        }*/
-        /*"/"(controller: 'login')*/
-//        "/"(view: "/index")
         "500"(view: '/error')
+
+        "/" {
+            if (System.getProperty('buildModule').equals("stream")) {
+                controller = 'streamingAdmin'
+                action = 'index'
+            } else if (System.getProperty('buildModule').equals("admin")) {
+                controller = 'admin'
+                action = 'index'
+            } else {
+                "/index.gsp"
+            }
+        }
     }
 }

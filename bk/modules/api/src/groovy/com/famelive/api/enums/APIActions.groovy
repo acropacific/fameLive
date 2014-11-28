@@ -28,7 +28,11 @@ public enum APIActions {
     SEARCH_PERFORMER('searchPerformer', 10025),
     FETCH_FOLLOWERS('fetchPerformer', 10026),
     FETCH_SOCIAL_ACCOUNT('fetchSocialAccount', 10027),
-    FETCH_SOCIAL_TEMPLATE('fetchSocialTemplate', 10028)
+    FETCH_SOCIAL_TEMPLATE('fetchSocialTemplate', 10028),
+    CHANGE_EMAIL('changeEmail', 10029),
+    CHECK_USER_ACCOUNT('checkEmail', 10030),
+    VERIFY_EMAIL('verifyEmail', 10031),
+    SEND_EMAIL_VERIFICATION_CODE('sendEmailVerificationCode', 10032)
 
     String successMessage
     int successCode

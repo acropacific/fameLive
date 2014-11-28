@@ -7,7 +7,7 @@ class ChatInfoCommand {
 
     String senderName
     String message
-    Set<String> channels
+    List<String> channels
 
     static constraints = {
         message nullable: false, blank: false

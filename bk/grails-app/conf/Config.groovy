@@ -241,12 +241,12 @@ grails.plugin.springsecurity.authority.className = 'com.famelive.common.user.Rol
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/'              : ['permitAll'],
         '/player.html'   : ['permitAll'],
-        '/player1.html'  : ['permitAll'],
-        '/player.gsp'    : ['permitAll'],
+        '/player1.html': ['permitAll'],
+        '/player.gsp'  : ['permitAll'],
         '/index'         : ['permitAll'],
         '/console/**'    : ['permitAll'],
         '/index.gsp'     : ['permitAll'],
-        '/**/assets/**'  : ['permitAll'],
+        '/**/assets/**': ['permitAll'],
         '/**/js/**'      : ['permitAll'],
         '/**/jwplayer/**': ['permitAll'],
         '/**/pubnub/**'  : ['permitAll'],
@@ -399,6 +399,7 @@ famelive.performer.registration.mail.template = "registration-template"
 famelive.viewer.registration.mail.template = "viewer-registration-template"
 famelive.createEvent.mail.template = "create-event"
 famelive.cancelEvent.mail.template = "cancel-event"
+famelive.emailVerification.mail.template = "emailverificationmail"
 
 social.registration.password.salt = "Fame#123"
 
@@ -409,11 +410,12 @@ famelive.jmx.server.host = "localhost"
 grails.plugin.springsecurity.password.algorithm = "MD5"
 grails.plugin.springsecurity.password.hash.iterations = 1
 
-grails.plugin.springsecurity.providerNames = ['casAuthenticationProvider']
+
 //grails.plugin.springsecurity.rejectIfNoRule = true
 //grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 
-grails.plugin.springsecurity.cas.active = true
+grails.plugin.springsecurity.cas.active = false
+//grails.plugin.springsecurity.providerNames = ['casAuthenticationProvider']
 grails.plugin.springsecurity.cas.serverUrlEncoding = 'UTF-8'
 //grails.plugin.springsecurity.cas.sendRenew = false //if true, ticket validation will only succeed if it. was issued from a login form, but will fail if it was issued from a single sign-on session
 //grails.plugin.springsecurity.cas.key = 'grails-spring-security-cas' //used by CasAuthenticationProvider  to identify tokens it previously authenticated

@@ -35,11 +35,6 @@ class ApiConfigurationDto extends ApiResponseDto {
     @APIResponseField(include = true, parentName = "medium")
     public String manual
 
-    @APIResponseField(include = true, parentName = "userType")
-    public String performer
-    @APIResponseField(include = true, parentName = "userType")
-    public String viewer
-
     //Event Status
     @APIResponseField(include = true, parentName = "eventStatus")
     public String cancelledEvent
@@ -103,8 +98,6 @@ class ApiConfigurationDto extends ApiResponseDto {
         this.facebook = configurationDto?.facebook?.toString()
         this.gPlus = configurationDto?.gPlus?.toString()
         this.manual = configurationDto?.manual?.toString()
-        this.performer = configurationDto?.performer?.toString()
-        this.viewer = configurationDto?.viewer?.toString()
         //Slot Management
         this.eventNameMaxSize = configurationDto.eventNameMaxSize
         this.eventDescriptionMaxSize = configurationDto.eventDescriptionMaxSize

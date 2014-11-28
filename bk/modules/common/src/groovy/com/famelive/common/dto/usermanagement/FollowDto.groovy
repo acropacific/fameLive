@@ -2,7 +2,6 @@ package com.famelive.common.dto.usermanagement
 
 import com.famelive.common.dto.ResponseDto
 import com.famelive.common.enums.usermanagement.UserRegistrationType
-import com.famelive.common.enums.usermanagement.UserType
 import com.famelive.common.user.User
 
 class FollowDto extends ResponseDto {
@@ -16,7 +15,6 @@ class FollowDto extends ResponseDto {
     String imageName
     Date dateCreated
     UserRegistrationType registrationType
-    UserType type
 
     FollowDto() {}
 
@@ -30,7 +28,6 @@ class FollowDto extends ResponseDto {
         this.imageName = user?.imageName ?: ''
         this.dateCreated = user?.dateCreated
         this.registrationType = user?.registrationType
-        this.type = user?.type
     }
 
     static FollowDto createCommonResponseDto(User user) {

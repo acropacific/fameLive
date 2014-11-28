@@ -59,6 +59,7 @@
       }
     })
     window.swaggerUi.load();
+    $('input[name=serverName]').val('WowzaStreamingEngine');
   });
   </script>
 </head>

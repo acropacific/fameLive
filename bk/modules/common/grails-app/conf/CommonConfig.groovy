@@ -26,4 +26,23 @@ commonConfig {
     cloudinary.config['baseUrl'] = "http://res.cloudinary.com/${cloudinary.config['cloud_name']}/image/upload/}"
 
     concurrent.channels = 5
+
+}
+
+rabbitmq {
+    connectionfactory {
+        username = 'guest'
+        password = 'guest'
+        hostname = 'localhost'
+        concurrentConsumers=50
+    }
+    queues = {
+        FAMELIVE_QUEUE()
+    }
+    services {
+        rabbitMQMessageReceiverService {
+            concurrentConsumers = 50
+            disableListening = false
+        }
+    }
 }

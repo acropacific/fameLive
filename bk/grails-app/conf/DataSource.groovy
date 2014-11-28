@@ -28,7 +28,7 @@ environments {
     qa {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost/fameLive_qa"
+            url = "jdbc:mysql://localhost/famelive_qa_temp"
             username = "root"
             password = "igdefault"
 //            loggingSql = true

@@ -194,6 +194,30 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-ticket"></i>
+                        <span class="title">
+                            Templates
+                        </span>
+                        <span class="arrow">
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <g:link controller="admin" action="socialTemplates">
+                                <i class="fa fa-bar-chart-o"></i>
+                                Social Sharing Templates
+                            </g:link>
+                        </li>
+                        <li>
+                            <g:link controller="admin" action="notificationTemplates">
+                                <i class="fa fa-bar-chart-o"></i>
+                                Push Notification Templates
+                            </g:link>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>

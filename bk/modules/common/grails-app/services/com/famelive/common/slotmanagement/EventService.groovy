@@ -2,6 +2,7 @@ package com.famelive.common.slotmanagement
 
 import com.famelive.common.command.slotmanagement.*
 import com.famelive.common.dto.slotmanagement.*
+import com.famelive.common.enums.SystemPushNotification
 import com.famelive.common.enums.slotmanagement.EventStatus
 import com.famelive.common.enums.streamManagement.EventURLTypes
 import com.famelive.common.exceptions.CommonException
@@ -14,6 +15,10 @@ import com.famelive.common.slotManagement.rule.RuleEngine
 import com.famelive.common.streamManagement.*
 import com.famelive.common.user.User
 import com.famelive.common.util.DateTimeUtil
+import com.famelive.common.util.FameLiveUtil
+
+import static com.famelive.common.util.PlaceHolder.EVENT_NAME
+import static com.famelive.common.util.PlaceHolder.getPopulatedContent;
 
 class EventService {
 
@@ -42,6 +47,7 @@ class EventService {
 
         commonMailService.sendCreateEventMail(user)
         sendPushNotificationForEventCreation(event)
+        addChannelToEvent(event)
         EventDto eventDto = EventDto.createCommonResponseDto(event)
         return eventDto
     }
@@ -55,32 +61,38 @@ class EventService {
 
     void sendPushNotificationForEventCreation(Event event) {
         List<String> followerChannels = Follow.getChannelsForPerformer(event.user)
-        pushNotificationService.sendDataToJMX(getPushMessageForEvent(getMessageForEventCreation(event), followerChannels))
+        pushNotificationService.sendDataToRabbidMQ(getPushMessageForEvent(getMessageForEventCreation(event), followerChannels))
     }
 
     void sendPushNotificationForEventCancel(Event event) {
         List<String> followerChannels = Follow.getChannelsForPerformer(event.user)
-        pushNotificationService.sendDataToJMX(getPushMessageForEvent(getMessageForEventCancel(event), followerChannels))
+        pushNotificationService.sendDataToRabbidMQ(getPushMessageForEvent(getMessageForEventCancel(event), followerChannels))
     }
 
     void sendPushNotificationForEventEdit(Event event) {
         List<String> followerChannels = Follow.getChannelsForPerformer(event.user)
-        pushNotificationService.sendDataToJMX(getPushMessageForEvent(getMessageForEventEdit(event), followerChannels))
+        pushNotificationService.sendDataToRabbidMQ(getPushMessageForEvent(getMessageForEventEdit(event), followerChannels))
     }
 
-    //TODO need to remove hardcoded message
     String getMessageForEventCreation(Event event) {
-        return ("New Event Created: ${event.name}")
+        Map placeHoldersMap = [:]
+        placeHoldersMap[EVENT_NAME] = event?.name
+        String html = getPopulatedContent(placeHoldersMap, SystemPushNotification.CREATE_EVENT.displayText)
+        return html
     }
 
-    //TODO need to remove hardcoded message
     String getMessageForEventCancel(Event event) {
-        return ("Event Canceled: ${event.name}")
+        Map placeHoldersMap = [:]
+        placeHoldersMap[EVENT_NAME] = event?.name
+        String html = getPopulatedContent(placeHoldersMap, SystemPushNotification.CANCEL_EVENT.displayText)
+        return html
     }
 
-    //TODO need to remove hardcoded message
     String getMessageForEventEdit(Event event) {
-        return ("New Event Edited: ${event.name}")
+        Map placeHoldersMap = [:]
+        placeHoldersMap[EVENT_NAME] = event?.name
+        String html = getPopulatedContent(placeHoldersMap, SystemPushNotification.EDIT_EVENT.message)
+        return html
     }
 
     Map getPushMessageForEvent(String message, List<String> channels) {
@@ -222,6 +234,11 @@ class EventService {
     void checkSlotAvailability(CheckSlotAvailabilityCommand checkSlotAvailabilityCommand) throws CommonException {
         checkSlotAvailabilityCommand.validate()
         checkSlotAvailabilityRuleEngine.applyRules(checkSlotAvailabilityCommand)
+    }
+
+    void addChannelToEvent(Event event) {
+        event.channels = [FameLiveUtil.randomChannel] as Set<String>
+        event.save()
     }
 
     Map<String, String> fetchEventUrls(EventStreamInfo eventStreamInfo) {

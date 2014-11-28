@@ -51,6 +51,8 @@ public enum APIErrorCode {
     ApiUserInvalidOperationException(180), //User
     ApiPerformerNotFoundException(181), //User
     ApiBlankFameIdException(182), //User
+    ApiBlankVerificationTokenException(183), //User
+    ApiInvalidVerificationTokenException(184), //User
 
 
     ApiInvalidPerformerIdException(200), //Follow Mangement

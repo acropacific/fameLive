@@ -25,7 +25,11 @@ class FameLiveUtil {
     }
 
     static String getPassword() {
-        RandomStringUtils.randomAlphabetic(4).toLowerCase() + RandomStringUtils.randomAlphabetic(2).toUpperCase() + RandomStringUtils.randomNumeric(2)
+        return getRandomCode()
+    }
+
+    static String getRandomCode() {
+        RandomStringUtils.randomNumeric(6)
     }
 
     static String getDefaultPassword() {

@@ -5,7 +5,6 @@ import com.famelive.common.dto.usermanagement.*
 import com.famelive.common.enums.usermanagement.SocialAccount
 import com.famelive.common.enums.usermanagement.UserRegistrationType
 import com.famelive.common.enums.usermanagement.UserRoles
-import com.famelive.common.enums.usermanagement.UserType
 import com.famelive.common.exceptions.*
 import com.famelive.common.followermanagement.Follow
 import com.famelive.common.user.LinkedSocialAccount
@@ -30,14 +29,15 @@ class UserService {
         registrationCommand.validate()
         User user = createUserObject(registrationCommand)
         user.refresh()
-        createUserRoleObject(user, registrationCommand?.userType?.userRoles)
+        createUserRoleObject(user, UserRoles.USER)
         linkSocialAccount(user, registrationCommand?.medium?.socialAccount)
-        sendRegistrationConfirmationEmail(user, registrationCommand)
+        sendRegistrationConfirmationEmail(user)
         return RegistrationDto.createCommonResponseDto(user)
     }
 
-    void sendRegistrationConfirmationEmail(User user, RegistrationCommand registrationCommand) {
-        (registrationCommand?.userType == UserType.PERFORMER) ? commonMailService.sendRegistrationMailToPerformer(user) : commonMailService.sendRegistrationMailToViewer(user)
+    void sendRegistrationConfirmationEmail(User user) {
+        commonMailService.sendRegistrationMailToViewer(user)
+        commonMailService.sendEmailVerificationMail(user)
     }
 
     User createUserObject(RegistrationCommand registrationCommand) {
@@ -48,7 +48,8 @@ class UserService {
         user.fameName = registrationCommand?.fameName
         user.mobile = registrationCommand?.mobile
         user.imageName = registrationCommand?.imageName
-        user.type = registrationCommand.userType
+        user.isAccountVerified = false
+        user.verificationToken = FameLiveUtil.getRandomCode()
         user.registrationType = registrationCommand?.medium
         user.save(flush: true, failOnError: true)
     }
@@ -75,20 +76,6 @@ class UserService {
     UserRole createUserRoleObject(User user, UserRoles userRoles) {
         Role role = Role.findByAuthority(userRoles.value)
         return new UserRole(user: user, role: role).save(failOnError: true)
-    }
-
-    UpgradeToTalentDto upgradeToTalent(UpgradeToTalentCommand toTalentCommand) throws CommonException {
-        toTalentCommand.validate()
-        User user = changeUserTypeToPerformer(toTalentCommand)
-        UpgradeToTalentDto toTalentDto = UpgradeToTalentDto.createCommonResponseDto(user)
-        return toTalentDto
-    }
-
-    User changeUserTypeToPerformer(UpgradeToTalentCommand toTalentCommand) throws CommonException {
-        User user = findUserById(toTalentCommand?.id)
-        user?.type = UserType.PERFORMER
-        user?.fameName = toTalentCommand?.fameName
-        user.save(flush: true, failOnError: true)
     }
 
     ChangePasswordDto changePassword(ChangePasswordCommand changePasswordCommand) throws CommonException {
@@ -256,5 +243,44 @@ class UserService {
         } else {
             throw new InvalidUserSocialAccountException()
         }
+    }
+
+    ChangeEmailDto changeEmail(ChangeEmailCommand changeEmailCommand) throws CommonException {
+        changeEmailCommand.validate()
+        User user = changeEmailAddress(changeEmailCommand)
+        commonMailService.sendEmailVerificationMail(user)
+        ChangeEmailDto changeEmailDto = ChangeEmailDto.createCommonResponseDto(user)
+        return changeEmailDto
+    }
+
+    User changeEmailAddress(ChangeEmailCommand changeEmailCommand) {
+        User user = findUserById(changeEmailCommand?.id)
+        user.email = changeEmailCommand?.email
+        user.isAccountVerified = false
+        user.verificationToken = FameLiveUtil.getRandomCode()
+        user.save(flush: true, failOnError: true)
+    }
+
+    CheckUserAccountDto checkUserAccount(CheckUserAccountCommand checkUserAccountCommand) throws CommonException {
+        checkUserAccountCommand.validate()
+        User user = findUserById(checkUserAccountCommand?.id)
+        CheckUserAccountDto checkUserAccountDto = CheckUserAccountDto.createCommonResponseDto(user)
+        return checkUserAccountDto
+    }
+
+    VerifyUserEmailDto verifyEmail(VerifyUserEmailCommand verifyUserEmailCommand) throws CommonException {
+        verifyUserEmailCommand.validate()
+        User user = findUserById(verifyUserEmailCommand?.id)
+        user.isAccountVerified = true
+        user.save(flush: true, failOnError: true)
+        VerifyUserEmailDto verifyUserEmailDto = VerifyUserEmailDto.createCommonResponseDto(user)
+        return verifyUserEmailDto
+    }
+
+    SendEmailVerificationCodeDto sendEmailVerificationCode(SendEmailVerificationCodeCommand sendEmailVerificationCodeCommand) throws CommonException {
+        User user = findUserById(sendEmailVerificationCodeCommand?.id)
+        commonMailService.sendEmailVerificationMail(user)
+        SendEmailVerificationCodeDto sendEmailVerificationCodeDto = SendEmailVerificationCodeDto.createCommonResponseDto(user)
+        return sendEmailVerificationCodeDto
     }
 }

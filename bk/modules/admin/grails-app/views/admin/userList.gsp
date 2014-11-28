@@ -1,4 +1,4 @@
-<%@ page import="com.famelive.admin.enums.AdminUserType; com.famelive.admin.enums.AdminUserRegistrationType" contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.famelive.admin.enums.AdminUserRegistrationType" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name='layout' content='admin'/>
@@ -64,21 +64,6 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Registered as</label>
-
-                        <div class="col-md-9">
-                            <g:select from="${AdminUserType.values()}" name="type"
-                                      value="${adminUserSearchCommand?.type}" class="form-control"
-                                      optionValue="value" noSelection="['': 'Select']"/>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
                 <div class="col-md-12">
                     <div class="pull-right">
                         <g:submitButton name="Search" class="btn green"/>
@@ -110,7 +95,6 @@
                         <th class="col-md-2">Email Id</th>
                         <th class="col-md-2">Date / Time of Registration</th>
                         <th class="col-md-1">Registered through</th>
-                        <th class="col-md-1">Registered as</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -124,7 +108,6 @@
                                 <td class="col-md-2">${user?.email}</td>
                                 <td class="col-md-2">${user?.dateCreated?.format("MM/dd/yyyy")}</td>
                                 <td class="col-md-1">${user?.registrationType}</td>
-                                <td class="col-md-1">${user?.type}</td>
                                 <td class="col-md-1"><g:link controller="admin" action="userProfile" class="btn green"
                                                              params='[userId: "${user?.id}"]'>View Profile <i
                                             class="fa fa-user"></i></g:link></td>

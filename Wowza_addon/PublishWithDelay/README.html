@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Examples: Publish With Delay</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<img src="header.gif" style="width: 200px; height: 64px; border: 0px;" alt="Wowza Media Systems"/>
+<h1>Wowza Media Server Pro Examples: Publish With Delay</h1>
+
+<h2>To install</h2>
+<ol>
+<li>Copy the jar files in the included <b>lib</b> to the <b>[install-dir]/lib/</b> folder.
+</li>
+<li>Create folder <b>[install-dir]/applications/publishwithdelay</b>.
+</li>
+<li>Create folder <b>[install-dir]/conf/publishwithdelay</b> and copy <b>[install-dir]/conf/Application.xml</b> into this new folder.
+</li>
+<li>Edit the newly copied <b>Application.xml</b> and make the following changes:<br/><br/>
+<ul>
+<li>Set the <b>Streams/StreamType</b> to: <b>live</b>
+</li>
+<li>Add the following &lt;Module&gt; definition as the last enter in the &lt;Modules&gt; list:
+<pre><code>
+&lt;Module&gt;
+	&lt;Name&gt;ModulePublishWithDelay&lt;/Name&gt;
+	&lt;Description&gt;ModulePublishWithDelay&lt;/Description&gt;
+	&lt;Class&gt;com.wowza.wms.plugin.publishwithdelay.ModulePublishWithDelay&lt;/Class&gt;
+&lt;/Module&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+
+<h2>To run</h2>
+<p>Double click <b>client/publishwithdelay.html</b>. Click <b>Connect</b>, click <b>Publish</b>, click first <b>Play</b>, click <b>Start Delay</b> and click second <b>Play</b> button. The first video object is the camera. The second is the non-delayed stream. The third is the delayed stream.
+</p>
+
+<b>Note: </b>The source code for this system is included in the <b>src</b> folder.
+
+</body>
+</html>

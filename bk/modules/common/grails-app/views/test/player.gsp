@@ -92,9 +92,9 @@
             width: 768,
             fallback: true,
             image: "/images/logo.png", /*
-            ga: {
-                idstring: "title",
-                trackingobject: "_gaq"
+             ga: {
+             idstring: "title",
+             trackingobject: "_gaq"
              },*/
             //http://support.jwplayer.com/customer/portal/articles/1417179-integration-with-google-analytics
 //            backcolor: 'transparent',

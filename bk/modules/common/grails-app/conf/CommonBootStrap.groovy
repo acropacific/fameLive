@@ -23,6 +23,7 @@ class CommonBootStrap {
             commonBootStrapService.bootstrapUsers()
             commonBootStrapService.createGenre()
             commonBootStrapService.createSocialAccountTemplate()
+            commonBootStrapService.createPushNotificationTemplate()
             commonBootStrapService.bootstrapWowzaChannels()
             commonBootStrapService.bootStrapStreamManagementConstants()
             commonBootStrapService.bootStrapSlotManagementConstants()

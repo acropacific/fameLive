@@ -1,16 +1,14 @@
-Post at http://localhost:8085/fameLive/api/v1 with content type application/json
-
-
+Post at http: //localhost:8085/fameLive/api/v1 with content type application/json
 {
 "appKey": "myAppKey",
 "apiVersion": "1.0",
 "actionName": "disconnectWowzaIncomingStream",
-"applicationName":"ch1",
-"streamName":"test"
+"applicationName": "ch1",
+"streamName": "test"
 }
 
 
 {
-  "message": "Invalid server response",
-  "success": false
+"message": "Invalid server response",
+"success": false
 }

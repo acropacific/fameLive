@@ -18,7 +18,7 @@ class PubnubChatService {
         Pubnub pubnub = chatUtils.getPubnub()
         JSONObject jsonObject = getJSONObjectForPushNotification(chatInfo)
         println('Json::' + jsonObject)
-        Set<String> channels = ChatUtils.getChannelsFromMap(chatInfo)
+        List<String> channels = ChatUtils.getChannelsFromMap(chatInfo)
         channels.each { String channel ->
             pubnub.publish(channel, jsonObject, new CustomPubnubCallback())
         }

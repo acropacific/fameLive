@@ -110,6 +110,10 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/retry/spring-retry/1.0.0.RELEASE/spring-retry-1.0.0.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/2.8.4/amqp-client-2.8.4.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-amqp/1.1.3.RELEASE/spring-amqp-1.1.3.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/1.1.3.RELEASE/spring-rabbit-1.1.3.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-cas/3.2.0.RC1/spring-security-cas-3.2.0.RC1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/jasig/cas/client/cas-client-core/3.2.1/cas-client-core-3.2.1.jar!/" />
         </CLASSES>

@@ -6,15 +6,15 @@ import grails.validation.Validateable
 
 @Validateable
 class ApiFetchFollowersCommand extends ApiPaginationCommand {
-    Long performerId
+    Long userId
 
     static constraints = {
-        performerId nullable: true
+        userId nullable: true
     }
 
     @Override
     FetchFollowersCommand toRequestCommand() {
-        return new FetchFollowersCommand(id: this?.id, performerId: this?.performerId)
+        return new FetchFollowersCommand(id: this?.id, performerId: this?.userId)
     }
 
     @Override

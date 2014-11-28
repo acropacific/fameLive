@@ -2,7 +2,6 @@ package com.famelive.admin.command
 
 import com.famelive.admin.constant.AdminConstants
 import com.famelive.admin.enums.AdminUserRegistrationType
-import com.famelive.admin.enums.AdminUserType
 import com.famelive.common.command.usernamagement.UserSearchCommand
 import grails.validation.Validateable
 
@@ -13,14 +12,12 @@ class AdminUserSearchCommand extends AdminPaginationCommand {
     String email
     String fameId
     AdminUserRegistrationType registrationType
-    AdminUserType type
 
     static constraints = {
         fameName nullable: true
         email nullable: true
         fameId nullable: true
         registrationType nullable: true
-        type nullable: true
         max nullable: true
         sort nullable: true
         offset nullable: true
@@ -38,7 +35,6 @@ class AdminUserSearchCommand extends AdminPaginationCommand {
         this.email = paginationCommand?.email
         this.fameId = paginationCommand?.fameId
         this.registrationType = paginationCommand?.registrationType
-        this.type = paginationCommand?.type
     }
 
     Integer getMaxValue(Integer max) {
@@ -59,6 +55,6 @@ class AdminUserSearchCommand extends AdminPaginationCommand {
 
     @Override
     UserSearchCommand toRequestCommand() {
-        new UserSearchCommand(max: this?.max, sort: this?.sort, order: this?.order, offset: this?.offset, email: this?.email, fameName: this?.fameName, fameId: this?.fameId, registrationTypes: this?.registrationType?.registrationTypes, types: this?.type?.userTypes)
+        new UserSearchCommand(max: this?.max, sort: this?.sort, order: this?.order, offset: this?.offset, email: this?.email, fameName: this?.fameName, fameId: this?.fameId, registrationTypes: this?.registrationType?.registrationTypes)
     }
 }

@@ -10,13 +10,13 @@ class PushController {
     def pushNotificationService
 
     def index() {
-        [notificationTypes: SystemPushNotification.values(), user: 'Admin', chatInfoCommand: params.chatInfoCommand, pushStatusMessage: params.pushStatusMessage]
+        [notificationTypes: SystemPushNotification.getPublicSystemPushNotification(), user: 'Admin', chatInfoCommand: params.chatInfoCommand, pushStatusMessage: params.pushStatusMessage]
     }
 
     def sendPushNotification(ChatInfoCommand chatInfoCommand) {
         Boolean pushStatus = false
         if (chatInfoCommand.validate()) {
-            pushStatus = pushNotificationService.sendDataToJMX(getChatInfo(chatInfoCommand))
+            pushStatus=pushNotificationService.sendDataToRabbidMQ(getChatInfo(chatInfoCommand))
         }
         String pushStatusMessage = getPushStatusMessage(pushStatus, chatInfoCommand)
         redirect action: 'index', params: [pushStatusMessage: pushStatusMessage]

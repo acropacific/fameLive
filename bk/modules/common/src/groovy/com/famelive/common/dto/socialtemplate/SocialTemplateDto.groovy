@@ -1,20 +1,20 @@
 package com.famelive.common.dto.socialtemplate
 
 import com.famelive.common.dto.ResponseDto
-import com.famelive.common.user.SocialTemplate
+import com.famelive.common.template.SocialTemplate
 
 class SocialTemplateDto extends ResponseDto {
 
-    SocialTemplate socialTemplate
+    List<SocialTemplate> socialTemplates
 
     SocialTemplateDto() {}
 
-    SocialTemplateDto(SocialTemplate socialTemplate) {
-        this.socialTemplate = socialTemplate
+    SocialTemplateDto(List<SocialTemplate> socialTemplates) {
+        this.socialTemplates = socialTemplates
     }
 
-    static SocialTemplateDto createCommonResponseDto(SocialTemplate socialTemplate) {
-        return new SocialTemplateDto(socialTemplate)
+    static SocialTemplateDto createCommonResponseDto(List<SocialTemplate> socialTemplates) {
+        return new SocialTemplateDto(socialTemplates)
     }
 
 }

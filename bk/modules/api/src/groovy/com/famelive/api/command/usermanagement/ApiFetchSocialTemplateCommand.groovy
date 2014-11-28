@@ -2,20 +2,20 @@ package com.famelive.api.command.usermanagement
 
 import com.famelive.api.command.ApiAuthenticationTokenCommand
 import com.famelive.api.enums.ApiSocialAccount
-import com.famelive.common.command.usernamagement.FetchSocialTemplateCommand
+import com.famelive.common.command.template.FetchSocialTemplateCommand
 import grails.validation.Validateable
 
 @Validateable
 class ApiFetchSocialTemplateCommand extends ApiAuthenticationTokenCommand {
 
-    ApiSocialAccount socialAccount
+    List<ApiSocialAccount> socialAccounts
 
     static constraints = {
-        socialAccount nullable: true
+        socialAccounts nullable: true
     }
 
     @Override
     FetchSocialTemplateCommand toRequestCommand() {
-        return new FetchSocialTemplateCommand(id: this?.id, socialAccount: this?.socialAccount?.socialAccount)
+        return new FetchSocialTemplateCommand(id: this?.id, socialAccounts: this?.socialAccounts?.socialAccount)
     }
 }

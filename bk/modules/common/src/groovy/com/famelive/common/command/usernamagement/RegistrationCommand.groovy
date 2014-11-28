@@ -3,7 +3,6 @@ package com.famelive.common.command.usernamagement
 import com.famelive.common.command.RequestCommand
 import com.famelive.common.constant.Constraints
 import com.famelive.common.enums.usermanagement.UserRegistrationType
-import com.famelive.common.enums.usermanagement.UserType
 import com.famelive.common.exceptions.*
 import com.famelive.common.user.User
 import grails.validation.Validateable
@@ -17,7 +16,6 @@ class RegistrationCommand extends RequestCommand {
     String mobile
     String imageName
     UserRegistrationType medium
-    UserType userType
 
     static constraints = {
         username nullable: true, validator: { val, obj ->
@@ -47,24 +45,17 @@ class RegistrationCommand extends RequestCommand {
         }
         mobile nullable: true
         fameName nullable: true, validator: { val, obj ->
-            if (obj.userType == UserType.PERFORMER) {
-                if (!val) {
-                    throw new BlankFameNameException()
-                } else if (val.length() > Constraints.FAMENAME_MAX_SIZE) {
-                    throw new FameNameMaxLengthException()
-                } else if (User.countByFameName(val)) {
-                    throw new UniqueFameNameException()
-                }
+            if (!val) {
+                throw new BlankFameNameException()
+            } else if (val.length() > Constraints.FAMENAME_MAX_SIZE) {
+                throw new FameNameMaxLengthException()
+            } else if (User.countByFameName(val)) {
+                throw new UniqueFameNameException()
             }
         }
         medium nullable: true, validator: { val, obj ->
             if (!val) {
                 throw new BlankUserRegistrationTypeException()
-            }
-        }
-        userType nullable: true, validator: { val, obj ->
-            if (!val) {
-                throw new BlankUserTypeException()
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.famelive
 
+import com.famelive.api.command.chat.ApiFetchChatChannelCommand
 import com.famelive.api.command.followermanagement.ApiFetchFollowersCommand
 import com.famelive.api.command.followermanagement.ApiFollowPerformerCommand
 import com.famelive.api.command.followermanagement.ApiUnFollowPerformerCommand
@@ -132,12 +133,6 @@ class Apiv1Controller extends ApiController {
         render apiService.fetchEventList(apiFetchEventListCommand).toJSON()
     }
 
-    @Secured(['ROLE_USER'])
-    def upgradeToTalent(ApiUpgradeToTalentCommand apiUpgradeToTalentCommand) {
-        apiUpgradeToTalentCommand.id = ApiSessionUtils.fetchCurrentUserId()
-        render apiService.upgradeToTalent(apiUpgradeToTalentCommand).toJSON()
-    }
-
     @Secured(['permitAll'])
     def fetchEventDetails(ApiFetchEventDetailsCommand apiFetchEventDetailsCommand) {
         render apiService.fetchEventDetails(apiFetchEventDetailsCommand).toJSON()
@@ -198,5 +193,35 @@ class Apiv1Controller extends ApiController {
     def fetchNotificationChannels(ApiFetchNotificationChannelsCommand apiFetchNotificationChannelsCommand) {
         apiFetchNotificationChannelsCommand.id = ApiSessionUtils.fetchCurrentUserId()
         render apiService.fetchNotificationChannels(apiFetchNotificationChannelsCommand).toJSON()
+    }
+
+    @Secured(['ROLE_USER'])
+    def changeEmail(ApiChangeEmailCommand apiChangeEmailCommand) {
+        apiChangeEmailCommand.id = ApiSessionUtils.fetchCurrentUserId()
+        render apiService.changeEmail(apiChangeEmailCommand).toJSON()
+    }
+
+    @Secured(['ROLE_USER'])
+    def isAccountVerified(ApiCheckUserAccountCommand apiCheckUserAccountCommand) {
+        apiCheckUserAccountCommand.id = ApiSessionUtils.fetchCurrentUserId()
+        render apiService.checkUserAccount(apiCheckUserAccountCommand).toJSON()
+    }
+
+    @Secured(['ROLE_USER'])
+    def verifyEmail(ApiVerifyUserEmailCommand apiVerifyUserEmailCommand) {
+        apiVerifyUserEmailCommand.id = ApiSessionUtils.fetchCurrentUserId()
+        render apiService.verifyEmail(apiVerifyUserEmailCommand).toJSON()
+    }
+
+    @Secured(['ROLE_USER'])
+    def sendEmailVerificationCode(ApiSendEmailVerificationCodeCommand apiSendEmailVerificationCodeCommand) {
+        apiSendEmailVerificationCodeCommand.id = ApiSessionUtils.fetchCurrentUserId()
+        render apiService.sendEmailVerificationCode(apiSendEmailVerificationCodeCommand).toJSON()
+    }
+
+    @Secured(['permitAll'])
+    def fetchChatChannel(ApiFetchChatChannelCommand apiFetchChatChannelCommand) {
+        apiFetchChatChannelCommand.id = ApiSessionUtils.fetchCurrentUserId()
+        render apiService.fetchChatChannel(apiFetchChatChannelCommand).toJSON()
     }
 }

@@ -1,19 +1,20 @@
 package com.famelive.common
 
 import com.famelive.common.command.slotmanagement.EventCommand
+import com.famelive.common.enums.SystemPushNotification
 import com.famelive.common.enums.slotmanagement.GenreStatus
 import com.famelive.common.enums.slotmanagement.SlotManagementConstantKeys
 import com.famelive.common.enums.streamManagement.StreamManagementConstantKeys
 import com.famelive.common.enums.usermanagement.SocialAccount
 import com.famelive.common.enums.usermanagement.UserRegistrationType
 import com.famelive.common.enums.usermanagement.UserRoles
-import com.famelive.common.enums.usermanagement.UserType
 import com.famelive.common.slotmanagement.*
 import com.famelive.common.streamManagement.StreamManagementConstants
 import com.famelive.common.streamManagement.WowzaChannel
 import com.famelive.common.streamManagement.WowzaChannelServerDetails
+import com.famelive.common.template.NotificationTemplate
+import com.famelive.common.template.SocialTemplate
 import com.famelive.common.user.Role
-import com.famelive.common.user.SocialTemplate
 import com.famelive.common.user.User
 import com.famelive.common.user.UserRole
 import com.famelive.common.util.DateTimeUtil
@@ -40,11 +41,12 @@ class CommonBootStrapService {
     void bootstrapSuperAdmin() {
         String superAdminUsername = grailsApplication.config.superAdmin.username
         String superAdminPassword = grailsApplication.config.superAdmin.password
+        String verificationToken = "abcde"
         if (!User.countByUsername(superAdminUsername)) {
-            User superAdmin = new User(username: superAdminUsername, password: superAdminPassword, email: 'admn.famelive@gmail.com', mobile: '123456', fameName: superAdminUsername).save(failOnError: true)
-            User streamingAdmin = new User(username: 'anil', password: 'admin', email: 'anil@gmail.com', mobile: '123456', fameName: 'anil').save(failOnError: true)
-            User superAdmin1 = new User(username: "Shalabh Agrawal", password: superAdminPassword, email: 'shalabh@intelligrape.com', mobile: '123456', fameName: "Shalabh").save(failOnError: true)
-            User superAdmin3 = new User(username: "Jeevesh Pandey", password: superAdminPassword, email: 'jeevesh@intelligrape.com', mobile: '123456', fameName: "Jeevesh").save(failOnError: true)
+            User superAdmin = new User(username: superAdminUsername, password: superAdminPassword, email: 'admn.famelive@gmail.com', mobile: '123456', fameName: superAdminUsername, verificationToken: verificationToken).save(failOnError: true)
+            User streamingAdmin = new User(username: 'anil', password: 'admin', email: 'anil@gmail.com', mobile: '123456', fameName: 'anil', verificationToken: verificationToken).save(failOnError: true)
+            User superAdmin1 = new User(username: "Shalabh Agrawal", password: superAdminPassword, email: 'shalabh@intelligrape.com', mobile: '123456', fameName: "Shalabh", verificationToken: verificationToken).save(failOnError: true)
+            User superAdmin3 = new User(username: "Jeevesh Pandey", password: superAdminPassword, email: 'jeevesh@intelligrape.com', mobile: '123456', fameName: "Jeevesh", verificationToken: verificationToken).save(failOnError: true)
             [UserRoles.SUPER_ADMIN, UserRoles.USER].each {
                 new UserRole(user: superAdmin, role: Role.findByAuthority(it.value)).save(failOnError: true)
                 new UserRole(user: superAdmin1, role: Role.findByAuthority(it.value)).save(failOnError: true)
@@ -62,14 +64,14 @@ class CommonBootStrapService {
             createUser('watcher' + it, defaultPassword, UserRoles.WATCHER)
         }
         (1..8).each {
-            createUser('performer' + it, defaultPassword, UserRoles.PERFORMER, UserType.PERFORMER, UserRegistrationType.FACEBOOK)
+            createUser('performer' + it, defaultPassword, UserRoles.USER, UserRegistrationType.FACEBOOK)
         }
     }
 
-    void createUser(String userName, String password, UserRoles role, UserType type = UserType.VIEWER, UserRegistrationType registrationType = UserRegistrationType.MANUAL) {
+    void createUser(String userName, String password, UserRoles role, UserRegistrationType registrationType = UserRegistrationType.MANUAL) {
         if (!User.countByUsername(userName)) {
             try {
-                User User = new User(username: userName, password: password, fameName: userName, type: type, email: userName + "@famelive.com", registrationType: registrationType).save(failOnError: true, flush: true)
+                User User = new User(username: userName, password: password, fameName: userName, email: userName + "@famelive.com", registrationType: registrationType, verificationToken: "abcde").save(failOnError: true, flush: true)
                 new UserRole(user: User, role: Role.findByAuthority(role.value)).save(failOnError: true, flush: true)
 
             } catch (Exception e) {
@@ -236,6 +238,12 @@ class CommonBootStrapService {
     void createSocialAccountTemplate() {
         SocialAccount.values().each { SocialAccount socialAccount ->
             new SocialTemplate(socialAccount: socialAccount, message: "${socialAccount} template").save(failOnError: true)
+        }
+    }
+
+    void createPushNotificationTemplate() {
+        SystemPushNotification.values().each { SystemPushNotification pushNotification ->
+            new NotificationTemplate(notification: pushNotification, message: "${pushNotification?.displayText} template").save(failOnError: true)
         }
     }
 }

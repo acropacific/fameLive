@@ -23,7 +23,7 @@ if (buildFile?.equals("admin")) {
     grails.plugin.location.'common' = "./modules/common"
 } else if (buildFile?.equals("web")) {
     println "X~~~~~~~~~~~~~ BUILDING WEB MODULE ~~~~~~~~~~~~~X"
-    grails.plugin.location.'web' = "./modules/web"
+    grails.plugin.location.'web' = "./modules/api"
 } else if (buildFile?.equals("stream")) {
     println "X~~~~~~~~~~~~~ BUILDING STREAM MODULE ~~~~~~~~~~~~~X"
     grails.plugin.location.'stream' = "./modules/stream"

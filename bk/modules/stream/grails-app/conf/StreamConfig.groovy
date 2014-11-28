@@ -6,7 +6,8 @@
 famelive.event.securityToken.beforeStartBufferTime = 5 //In minutes
 
 
-grails.plugin.springsecurity.cas.active = true
+grails.plugin.springsecurity.cas.active = false
+//grails.plugin.springsecurity.providerNames = ['casAuthenticationProvider']
 grails.plugin.springsecurity.cas.serverUrlEncoding = 'UTF-8'
 grails.plugin.springsecurity.cas.sendRenew = false //if true, ticket validation will only succeed if it. was issued from a login form, but will fail if it was issued from a single sign-on session
 grails.plugin.springsecurity.cas.key = 'grails-spring-security-cas' //used by CasAuthenticationProvider  to identify tokens it previously authenticated

@@ -2,7 +2,6 @@ package com.famelive.api.command.usermanagement
 
 import com.famelive.api.command.ApiRequestCommand
 import com.famelive.api.enums.ApiUserRegistrationType
-import com.famelive.api.enums.ApiUserType
 import com.famelive.common.command.usernamagement.RegistrationCommand
 import grails.validation.Validateable
 
@@ -14,7 +13,6 @@ class ApiRegistrationCommand extends ApiRequestCommand {
     String fameName
     String mobile
     ApiUserRegistrationType medium
-    ApiUserType userType
 
     static constraints = {
         email nullable: true
@@ -27,6 +25,6 @@ class ApiRegistrationCommand extends ApiRequestCommand {
 
     @Override
     RegistrationCommand toRequestCommand() {
-        return new RegistrationCommand(email: this.email, password: this?.password, username: this?.username, fameName: this?.fameName, mobile: this?.mobile, medium: this?.medium?.registrationType, userType: this?.userType?.userType)
+        return new RegistrationCommand(email: this.email, password: this?.password, username: this?.username, fameName: this?.fameName, mobile: this?.mobile, medium: this?.medium?.registrationType)
     }
 }

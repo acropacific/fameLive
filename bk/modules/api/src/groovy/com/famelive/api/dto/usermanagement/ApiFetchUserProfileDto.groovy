@@ -27,13 +27,13 @@ class ApiFetchUserProfileDto extends ApiResponseDto {
     @APIResponseField(include = true)
     public String medium
     @APIResponseField(include = true)
-    public String userType
-    @APIResponseField(include = true)
     public List<ApiLinkedSocialAccount> linkedSocialAccounts
     @APIResponseField(include = true)
     public String imageFolder
     @APIResponseField(include = true)
     public Long totalFollowers
+    @APIResponseField(include = true)
+    public boolean isAccountVerified
 
 
     ApiFetchUserProfileDto() {}
@@ -44,9 +44,9 @@ class ApiFetchUserProfileDto extends ApiResponseDto {
         this.email = userProfileDto.email
         this.mobile = userProfileDto?.mobile ?: ''
         this.imageName = userProfileDto?.imageName ?: ''
+        this.isAccountVerified = userProfileDto?.isAccountVerified
         this.dateCreated = userProfileDto?.dateCreated?.format(ApiConstants.DATE_TIME_FORMAT)
         this.medium = userProfileDto?.registrationType?.toString()
-        this.userType = userProfileDto?.type?.toString()
         this.imageFolder = userProfileDto?.imageFolder
         this.totalFollowers = userProfileDto?.totalFollowers
         this.linkedSocialAccounts = populateLinkedSocialAccountList(userProfileDto?.linkedSocialAccounts)

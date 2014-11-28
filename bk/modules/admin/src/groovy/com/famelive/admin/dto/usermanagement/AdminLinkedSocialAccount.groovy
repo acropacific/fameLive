@@ -1,8 +1,9 @@
 package com.famelive.admin.dto.usermanagement
 
+import com.famelive.admin.dto.AdminResponseDto
 import com.famelive.common.user.LinkedSocialAccount
 
-class AdminLinkedSocialAccount {
+class AdminLinkedSocialAccount extends AdminResponseDto{
     String socialAccount
     String token
 

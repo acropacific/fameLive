@@ -4,6 +4,8 @@ import com.famelive.admin.command.AdminUserSearchCommand
 import com.famelive.admin.command.usermanagement.AdminUserProfileCommand
 import com.famelive.admin.constant.AdminConstants
 import com.famelive.admin.dto.AdminUsersDto
+import com.famelive.admin.dto.template.AdminNotificationTemplateDto
+import com.famelive.admin.dto.template.AdminSocialTemplateDto
 import com.famelive.admin.dto.usermanagement.AdminUserInformationDto
 import com.famelive.admin.exception.AdminException
 import grails.plugin.springsecurity.annotation.Secured
@@ -15,6 +17,7 @@ class AdminController {
 
     @Secured(['permitAll'])
     def index() {
+        return redirect(controller: 'admin', action: 'userList')
     }
 
     @Secured(['ROLE_SUPER_ADMIN'])
@@ -44,5 +47,24 @@ class AdminController {
             adminException.printStackTrace(System.out)
         }
         redirect controller: 'admin', action: 'userProfile', params: [userId: adminUserProfileCommand?.userId]
+    }
+
+    @Secured(['ROLE_SUPER_ADMIN'])
+    def socialTemplates() {
+        try {
+            AdminSocialTemplateDto adminSocialTemplateDto = adminService.fetchSocialSharingTemplates()
+            [adminSocialTemplateVo:adminSocialTemplateDto]
+        } catch (AdminException adminException) {
+            adminException.printStackTrace(System.out)
+        }
+    }
+    @Secured(['ROLE_SUPER_ADMIN'])
+    def notificationTemplates() {
+        try {
+            AdminNotificationTemplateDto notificationTemplate = adminService.fetchPushNotificationTemplate()
+            [notificationTemplateVo:notificationTemplate]
+        } catch (AdminException adminException) {
+            adminException.printStackTrace(System.out)
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.famelive.api.command.search
 
 import com.famelive.api.command.ApiPaginationCommand
-import com.famelive.api.enums.ApiUserType
 import com.famelive.common.command.usernamagement.UserSearchCommand
 import grails.validation.Validateable
 
@@ -20,7 +19,7 @@ class ApiSearchPerformerCommand extends ApiPaginationCommand {
 
     @Override
     UserSearchCommand toRequestCommand() {
-        return new UserSearchCommand(id: this?.id, fameName: this?.fameName, types: [ApiUserType.PERFORMER.userType], max: this?.max, offset: this?.offset, order: this?.order, sort: this?.sort)
+        return new UserSearchCommand(id: this?.id, fameName: this?.fameName, max: this?.max, offset: this?.offset, order: this?.order, sort: this?.sort)
     }
 
     @Override

@@ -66,6 +66,22 @@ Brief summary/description of the plugin.
                 'url-pattern'('')
             }
         }*/
+        /*def filter = webXml.'filter-mapping'.find { it.'filter-name'.text() == "charEncodingFilter" }
+
+        filter + { 'filter-mapping'{ 'filter-name'('springSecurityFilterChain') 'url-pattern'('*//*') } }*/
+
+        xml.'welcome-file-list'[0].replaceNode
+                {
+                    'welcome-file-list' {
+                        'welcome-file'('/streamingAdmin/fetchChannels.gsp')
+                    }
+                }
+
+        /*
+        <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+         */
 
 
     }

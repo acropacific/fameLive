@@ -16,8 +16,8 @@ class CommonConstants {
     public static String DEFAULT_API_CALL_BROKER_USER_AGENT = "Mozilla/5.0"
 
     //pushNotification
-    public static final JMX_SERVICE_METHOD_NAME = 'pushMsgToPubnub'
-    public static final JMX_OBJECTNAME_CONSTRUCTOR_PARAMETER = 'fameLive:service=PubnubChat,type=special'
+    public static final JMX_SERVICE_METHOD_NAME='pushMsgToPubnub'
+    public static final JMX_OBJECTNAME_CONSTRUCTOR_PARAMETER='fameLive:service=PubnubChat,type=special'
+    public static final String RABBIDMQ_QUEUENAME = "FAMELIVE_QUEUE"
     final static String WOWZA_API_TEST_RESPONSE_PATH = "/WEB-INF/wowzaAPITestResponses"
-
 }

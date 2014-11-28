@@ -1,9 +1,7 @@
 package com.famelive.api.command.search
 
 import com.famelive.api.command.ApiPaginationCommand
-import com.famelive.api.enums.ApiUserType
 import com.famelive.common.command.slotmanagement.FetchEventsCommand
-import com.famelive.common.command.usernamagement.UserSearchCommand
 import grails.validation.Validateable
 
 @Validateable
