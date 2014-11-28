@@ -1,0 +1,90 @@
+<plugin name='common-features' version='0.1' grailsVersion='2.0.3 &gt; *'>
+  <author>Bhagwat Kumar</author>
+  <authorEmail>bhagwat@intelligrape.com</authorEmail>
+  <title>Common Features Plugin</title>
+  <description>Commonly used tasks are wrapped in this plugin like meta methods, filters etc
+</description>
+  <documentation>http://grails.org/plugin/common-features</documentation>
+  <type>CommonFeaturesGrailsPlugin</type>
+  <resources>
+    <resource>ApplicationFilters</resource>
+    <resource>com.grails.plugin.commonFeatures.SqlLoggingService</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://plugins.grails.org' />
+    <repository name='http://repo.grails.org/grails/plugins' url='http://repo.grails.org/grails/plugins/' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='grailsCore' url='http://svn.codehaus.org/grails/trunk/grails-plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+    <repository name='http://download.java.net/maven/2/' url='http://download.java.net/maven/2/' />
+    <repository name='http://koka1.kokaihop.se:9091/nexus/content/groups/public' url='http://koka1.kokaihop.se:9091/nexus/content/groups/public/' />
+    <repository name='http://m2repo.spockframework.org/snapshots' url='http://m2repo.spockframework.org/snapshots/' />
+    <repository name='http://repository.openmindonline.it' url='http://repository.openmindonline.it/' />
+    <repository name='http://raykrueger.googlecode.com/svn/repository' url='http://raykrueger.googlecode.com/svn/repository/' />
+    <repository name='http://files.couchbase.com/maven2' url='http://files.couchbase.com/maven2/' />
+    <repository name='http://grails.org/plugins' url='http://grails.org/plugins/' />
+    <repository name='http://snapshots.repository.codehaus.org' url='http://snapshots.repository.codehaus.org/' />
+    <repository name='http://repository.codehaus.org' url='http://repository.codehaus.org/' />
+    <repository name='http://repository.jboss.com/maven2/' url='http://repository.jboss.com/maven2/' />
+    <repository name='http://nexus.magnolia-cms.com/content/groups/public/' url='http://nexus.magnolia-cms.com/content/groups/public/' />
+  </repositories>
+  <dependencies>
+    <compile>
+      <dependency group='org.codehaus.gpars' name='gpars' version='0.11' />
+      <dependency group='com.amazonaws' name='aws-java-sdk' version='1.3.0' />
+      <dependency group='com.googlecode' name='hibernate-memcached' version='bonheur-1.0' />
+      <dependency group='spy' name='spymemcached' version='2.8.1' />
+      <dependency group='commons-httpclient' name='commons-httpclient' version='3.1' />
+      <dependency group='commons-io' name='commons-io' version='1.4' />
+      <dependency group='org.slf4j' name='jcl-over-slf4j' version='1.6.1' />
+      <dependency group='commons-codec' name='commons-codec' version='1.5' />
+      <dependency group='se.mat' name='protocol' version='1.0-SNAPSHOT' />
+      <dependency group='net.sourceforge.openutils' name='openutils-mgnlcache' version='1.1.2' />
+      <dependency group='joda-time' name='joda-time' version='2.1' />
+      <dependency group='org.slf4j' name='slf4j-api' version='1.6.1' />
+    </compile>
+    <runtime>
+      <dependency group='org.ocpsoft.prettytime' name='prettytime' version='1.0.8.Final' />
+      <dependency group='org.elasticsearch' name='elasticsearch-lang-groovy' version='0.18.7' />
+      <dependency group='org.freehep' name='freehep-io' version='2.0.5' />
+      <dependency group='com.itextpdf' name='itextpdf' version='5.1.3' />
+      <dependency group='org.elasticsearch' name='elasticsearch' version='0.19.3' />
+      <dependency group='net.sourceforge.openutils' name='openutils-mgnlmedia' version='5.0.0' />
+      <dependency group='info.magnolia' name='magnolia-module-dms' version='1.6' />
+      <dependency group='org.xhtmlrenderer' name='core-renderer' version='R8' />
+      <dependency group='net.sourceforge.jexcelapi' name='jxl' version='2.6' />
+      <dependency group='mysql' name='mysql-connector-java' version='5.1.16' />
+    </runtime>
+  </dependencies>
+  <plugins>
+    <test>
+      <plugin group='org.grails.plugins' name='spock' version='0.6' />
+    </test>
+    <compile>
+      <plugin group='org.grails.plugins' name='spring-security-core' version='1.2.6' />
+      <plugin group='org.grails.plugins' name='webxml' version='1.4.1' />
+      <plugin group='org.grails.plugins' name='spring-security-ui' version='0.2' />
+      <plugin group='org.grails.plugins' name='quartz2' version='0.2.3' />
+      <plugin group='org.grails.plugins' name='maglev' version='0.3.4' />
+      <plugin group='org.grails.plugins' name='rabbitmq' version='1.0.0.RC1' />
+      <plugin group='org.grails.plugins' name='famfamfam' version='1.0.1' />
+      <plugin group='org.grails.plugins' name='remote-pagination' version='0.3' />
+      <plugin group='org.grails.plugins' name='svn' version='1.0.2' />
+      <plugin group='org.grails.plugins' name='jquery-ui' version='1.8.15' />
+      <plugin group='org.grails.plugins' name='asynchronous-mail' version='0.6' />
+      <plugin group='org.grails.plugins' name='console' version='1.1' />
+      <plugin group='org.grails.plugins' name='profiler' version='0.4' />
+      <plugin group='org.grails.plugins' name='mail' version='1.0' />
+      <plugin group='org.grails.plugins' name='rest' version='0.6.1' />
+    </compile>
+    <runtime>
+      <plugin group='org.grails.plugins' name='jquery' version='1.7.1' />
+      <plugin group='org.grails.plugins' name='hibernate' version='2.0.3' />
+    </runtime>
+    <build>
+      <plugin group='org.grails.plugins' name='tomcat' version='2.0.3' />
+    </build>
+  </plugins>
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

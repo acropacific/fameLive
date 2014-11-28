@@ -1,0 +1,7 @@
+[
+  "Child 1",
+  {
+    "text": "Child 2",
+    "children": ["One more"]
+  }
+]

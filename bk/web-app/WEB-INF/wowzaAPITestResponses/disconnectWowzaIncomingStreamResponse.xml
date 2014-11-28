@@ -1,0 +1,7 @@
+<error>
+    <wowzaServer>4.0</wowzaServer>
+    <code>404</code>
+    <message>
+        The server has not found anything matching the request URI
+    </message>
+</error>

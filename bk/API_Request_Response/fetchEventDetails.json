@@ -1,0 +1,26 @@
+{
+    "appKey": "myAppKey",
+    "apiVersion": "1.0",
+    "eventID": "E00000001",
+    "actionName": "fetchEventDetails"
+}
+
+
+{
+"status": "1",
+"message": "Event details fetched successfully",
+"data": {
+"eventId": "1",
+"name": "demo event X01",
+"imageName": "",
+"description": "demo event description X01",
+"duration": "30",
+"startTime": "03/11/2014 14:41",
+"endTime": "03/11/2014 15:11",
+"genre": "com.famelive.api.dto.slotmanagement.ApiGenreDto@29986a61",
+"status": "1",
+"eventUrl": "http://54.68.108.229:1935/ch1/E00000001",
+"eventUId": "E00000001"
+},
+"code": "10020"
+}

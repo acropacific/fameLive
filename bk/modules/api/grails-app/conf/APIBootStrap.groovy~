@@ -1,0 +1,20 @@
+import com.famelive.BootStrapService
+import com.famelive.util.CommonMessagesUtil
+import grails.plugin.springsecurity.SpringSecurityUtils
+
+class CommonBootStrap {
+    BootStrapService bootStrapService
+
+    def init = { servletContext ->
+        new CommonMessagesUtil().initializeMessageSource()
+        bootStrapService.bootstrapUserRoles()
+        bootStrapService.bootstrapSuperAdmin()
+        bootStrapService.bootstrapUsers()
+//        grails.plugin.springsecurity.SpringSecurityUtils.registerFilter('restAPIValidationFilter',0)
+//        SpringSecurityUtils.clientRegisterFilter('restAPIValidationFilter', SecurityFilterPosition.SECURITY_CONTEXT_FILTER.order + 0)
+        SpringSecurityUtils.clientRegisterFilter('restAPIValidationFilter', 0)
+    }
+
+    def destroy = {
+    }
+}

@@ -1,0 +1,101 @@
+package com.grails.plugin.commonFeatures
+
+import com.intellij.patterns.PsiJavaPatterns
+import com.intellij.patterns.PlatformPatterns
+
+def requestContext = context(ctype: "javax.servlet.http.HttpServletRequest")
+
+contributor(requestContext) {
+    property name: "remoteIPAddress", type: "java.lang.String"
+    method name: 'getRemoteIPAddress', type: 'java.lang.String'
+
+    property name: 'ajax', type: 'java.lang.Boolean'
+    method name: 'isAjax', type: 'java.lang.Boolean'
+
+    property name: 'siteUrl', type: 'java.lang.String'
+    method name: 'getSiteUrl', type: 'java.lang.String'
+
+    property name: 'userAgent', type: 'java.lang.String'
+    method name: 'getUserAgent', type: 'java.lang.String'
+    property name: 'referer', type: 'java.lang.String'
+    method name: 'getReferer', type: 'java.lang.String'
+}
+
+def stringContext = context(ctype: "java.lang.String")
+
+contributor(stringContext) {
+    method name: 'initCap', type: psiClass.qualifiedName
+    method name: 'trimString', type: 'java.lang.String', params: [trimLength: Integer]
+    method name: 'trimString', type: 'java.lang.String', params: [trimLength: Integer, suffix: String]
+    method name: 'properCase', type: 'java.lang.String'
+    method name: 'removeHTMLSpaces', type: 'java.lang.String'
+    method name: 'initialWordCap', type: 'java.lang.String'
+    method name: 'customCollate', type: 'java.lang.String'
+}
+
+def integerContext = context(ctype: "java.lang.Integer")
+
+contributor(integerContext) {
+    method name: 'parseInteger', type: 'java.lang.Integer', params: [s: String]
+}
+
+def listContext = context(ctype: "java.util.List")
+
+contributor(listContext) {
+    method name: 'collectWithIndex', type: 'java.util.List'
+}
+
+def dateContext = context(ctype: "java.util.Date")
+
+contributor(dateContext) {
+    property name: 'formattedDay', type: 'java.lang.String'
+    method name: 'getFormattedDay', type: 'java.lang.String'
+
+    property name: 'formattedMonth', type: 'java.lang.String'
+    method name: 'getFormattedMonth', type: 'java.lang.String'
+}
+
+def domainContext = context(
+        ctype: PsiJavaPatterns.psiClass().withName(PlatformPatterns.string().matches(/.*/))
+)
+
+contributor(domainContext) {
+    def path = ""
+    try {
+        path = psiClass.containingFile.originalFile.virtualFile.path
+    } catch (Exception e) {/*This is to prevent any non Class null matches*/}
+    if (path =~ ".*/*grails-app/domain/.*") {
+        method name: 'mySave', type: psiClass.qualifiedName
+        method name: 'getAllFields', type: 'List', params: [fields: "List<String>"]
+        method name: 'getAllIdentifiers', type: 'List<Long>'
+    }
+}
+
+def ctx = context(ctype: "se.mat.mycroft.Product")
+
+contributor(ctx) {
+    method name: 'addQuantityToShoppingCart', type: 'se.mat.mycroft.Product', params: [quantity: 'java.lang.Long']
+    method name: 'addQuantityToShoppingCartWithSessionID', type: 'se.mat.mycroft.Product', params: [quantity: 'java.lang.Long', previousSessionId: 'String']
+    method name: 'removeQuantityFromShoppingCart', type: 'se.mat.mycroft.Product', params: [quantity: 'java.lang.Long']
+    method name: 'removeQuantityFromShoppingCartWithSessionID', type: 'se.mat.mycroft.Product', params: [quantity: 'java.lang.Long', previousSessionId: 'String']
+}
+
+def mailContext = context(scope: closureScope(isArg: true))
+
+contributor(mailContext) {
+    if (enclosingCall("sendAsynchronousMail")) {
+        method name: "to", params: [toAddress: List]
+        method name: "from", params: [fromAddress: String]
+        method name: "bcc", params: [toAddress: List]
+        method name: "subject", params: [subject: String]
+        method name: "html", params: [content: String]
+        method name: "attachBytes", params: [fileName: String, mimeType: String, bytes: "byte[]"]
+    }
+}
+
+def multipartFileContext = context(ctype: "org.springframework.web.multipart.MultipartFile")
+
+contributor(multipartFileContext) {
+    method name:  'isAllowedImage', type: 'java.lang.Boolean', params: [types: List]
+    method name:  'isAllowedImage', type: 'java.lang.Boolean', params: [types: String]
+}

@@ -1,0 +1,14 @@
+{
+    "appKey": "myAppKey",
+    "apiVersion": "1.0",
+    "actionName": "logout"
+}
+
+{
+"status": "0",
+"message": "logout failed",
+"data": {
+"email": null
+},
+"code": "-1"
+}

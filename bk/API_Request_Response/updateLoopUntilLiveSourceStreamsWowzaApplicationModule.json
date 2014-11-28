@@ -1,0 +1,18 @@
+Request Body:
+
+{
+"appKey": "myAppKey",
+"apiVersion": "1.0",
+"actionName": "updateLoopUntilLiveSourceStreamsWowzaApplicationModule",
+"applicationName":"ch1",
+"newValue":"E00000001"
+}
+
+
+
+Response Body:
+
+{
+"message": "Wowza application module LoopUntilLiveSourceStreams configuration updated successfully",
+"success": true
+}

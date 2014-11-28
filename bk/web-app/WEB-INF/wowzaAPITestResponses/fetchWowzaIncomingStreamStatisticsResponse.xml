@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CurrentIncomingStreamStatistics
+        restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test/monitoring/current">
+    <ApplicationInstance>_definst_</ApplicationInstance>
+    <Name>test</Name>
+    <Uptime>545</Uptime>
+    <BytesIn>8510599</BytesIn>
+    <BytesOut>0</BytesOut>
+    <BytesInRate>15598</BytesInRate>
+    <BytesOutRate>0</BytesOutRate>
+    <TotalConnections>0</TotalConnections>
+    <ConnectionCount>
+        <entry>
+            <string>RTMP</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>MPEGDASH</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>CUPERTINO</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>SANJOSE</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>SMOOTH</string>
+            <int>0</int>
+        </entry>
+        <entry>
+            <string>RTP</string>
+            <int>0</int>
+        </entry>
+    </ConnectionCount>
+</CurrentIncomingStreamStatistics>

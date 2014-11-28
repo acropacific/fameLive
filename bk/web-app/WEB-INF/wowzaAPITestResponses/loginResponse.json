@@ -1,0 +1,12 @@
+{
+    "status": 1,
+    "message": "success",
+    "detail": "",
+    "data": {
+        "email": "admin",
+        "roles": [
+            "ROLE_SUPER_ADMIN"
+        ],
+        "access_token": "mmhv907un18eslmcqakl44dkrdcd9sms"
+    }
+}

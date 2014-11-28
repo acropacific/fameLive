@@ -1,0 +1,15 @@
+{
+    "appKey": "myAppKey",
+    "apiVersion": "1.0",
+    "eventID": "E00000002",
+    "clientIP": "127.0.0.1",
+    "actionName": "changeEventStateToLive"
+}
+
+
+
+
+{
+"message": "event state changed successfully",
+"success": true
+}

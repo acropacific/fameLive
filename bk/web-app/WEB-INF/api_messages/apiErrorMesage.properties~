@@ -1,0 +1,47 @@
+100=Api Exception
+101=Api Invalid Token Exception
+102=Api Password Not Equal Exception
+103=Api Validation Exception
+104=Api Email Not Found Exception
+105=Api Blank Email Exception
+106=Api Blank Forgot Password Code Exception
+107=Api Blank Password Exception
+108=Api Invalid Forgot Password Code Exception
+109=Api Unauthorized Email Exception
+110=Api Blank User Name Exception
+111=Api User Name Max Size Exception
+112=Api Password Min Length Exception
+113=Api Unique Email Exception
+114=Api Blank Mobile Exception
+115=Api Mobile Number Length Exception
+116=Api Mobile Number Invalid Exception
+117=Api Blank Fame Name Exception
+118=Api Fame Name Max Length Exception
+119=Api Unique FameName Exception
+120=User Not Found Exception
+121=Api Blank New Password Exception
+122=Api Invalid Login Credential Exception
+123=Api New Password Confirm Password Not Same Exception
+124=Api Blank User Type Exception
+125=Api Blank User Registration Type Exception
+126=Api User Account Block Exception
+
+#Slot Management
+130=Blank Event Name Exception
+131=Event Name Max Length Exception
+132=Event Description Max Length Exception
+133=Blank Event StartTime Exception
+134=Blank Event Genre Exception
+135=Api Blank Event Duration Exception
+136=Api Event Not Found Exception
+137=Api Blank Event Id Exception
+138=Api Blank Event Image Name Exception
+139=Api Event Cancel Time Invalid Exception
+140=Api Check Slot Availability Rule Exception
+141=Api Blank Event Status Exception
+142=Api Check Published Genre Rule Exception
+143=Api Check Conflict User Event Rule Exception
+144=Api Event Stream Information Not Found Exception
+
+5000=Validation error
+5001=User name cannot be null

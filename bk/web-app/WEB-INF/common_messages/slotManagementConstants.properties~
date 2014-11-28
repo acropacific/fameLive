@@ -1,0 +1,4 @@
+common.famelive.slotManagementConstant.isCleanReservedChannelSlotDataOnReinitialization.defaultValue=false
+common.famelive.slotManagementConstant.allowEventSlotBookingTillDaysFromCurrentDate.defaultValue=10
+common.famelive.slotManagementConstant.eventStartBuffer.defaultValue=0
+common.famelive.slotManagementConstant.eventEndBuffer.defaultValue=0

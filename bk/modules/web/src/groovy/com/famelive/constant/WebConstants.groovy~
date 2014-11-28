@@ -1,0 +1,8 @@
+package com.famelive.constant
+
+/**
+ * Created by anil on 25/9/14.
+ */
+class WebConstants {
+    final static String Messages_PATH="/WEB-INF/api_messages"
+}

@@ -1,0 +1,16 @@
+Request method= PUT
+
+request body
+{
+"appKey": "myAppKey",
+"apiVersion": "1.0",
+"actionName": "startWowzaApplication",
+"applicationName":"ch3"
+}
+
+
+response
+{
+"message": "Wowza application started successfully",
+"success": true
+}

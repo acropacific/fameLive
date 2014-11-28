@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<IncomingStream
+        restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test">
+    <ApplicationInstance>_definst_</ApplicationInstance>
+    <Name>test</Name>
+    <SourceIp>rtsp://115.112.156.2</SourceIp>
+    <IsRecordingSet>false</IsRecordingSet>
+    <IsStreamManagerStream>false</IsStreamManagerStream>
+    <IsPublishedToVOD>false</IsPublishedToVOD>
+    <IsConnected>true</IsConnected>
+</IncomingStream>

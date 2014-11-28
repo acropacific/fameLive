@@ -1,0 +1,1053 @@
+<ApplicationAdv
+        restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/adv">
+    <Version>1415944861000</Version>
+    <AdvancedSettings>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugAACTimecodes</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugMP3Timecodes</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoChunkDurationTarget</Name>
+            <Value>0</Value>
+            <DefaultValue>10000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoMaxChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>10</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoPlaylistChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>3</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoRepeaterChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>3</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoEnableDataEvents</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoPacketizeAllStreamsAsTS</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoCreateAudioOnlyRendition</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoAlwaysSendZeroPacketLen</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>cupertinostreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothPacketSortTime</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothAlignAudioWithVideo</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothBufferMinFragmentCount</Name>
+            <Value>0</Value>
+            <DefaultValue>4</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothManifestTargetDuration</Name>
+            <Value>0</Value>
+            <DefaultValue>24000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothManifestMinFragmentCount</Name>
+            <Value>0</Value>
+            <DefaultValue>4</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothRepeaterTargetDuration</Name>
+            <Value>0</Value>
+            <DefaultValue>24000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothRepeaterMinFragmentCount</Name>
+            <Value>0</Value>
+            <DefaultValue>4</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothFragmentTargetAudioDuration</Name>
+            <Value>0</Value>
+            <DefaultValue>2000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>smoothstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sanjoseChunkDurationTarget</Name>
+            <Value>0</Value>
+            <DefaultValue>10000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>sanjosestreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sanjoseMaxChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>10</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>sanjosestreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sanjosePlaylistChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>4</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>sanjosestreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sanjoseRepeaterChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>4</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>sanjosestreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegdashChunkDurationTarget</Name>
+            <Value>0</Value>
+            <DefaultValue>10000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>mpegdashstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegdashMaxChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>5</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>mpegdashstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegdashPlaylistChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>5</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>mpegdashstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegdashRepeaterChunkCount</Name>
+            <Value>0</Value>
+            <DefaultValue>5</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>mpegdashstreamingpacketizer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>captionUndefinedLanguageId</Name>
+            <Value/>
+            <Type>String</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>captionLanguages</Name>
+            <Value/>
+            <DefaultValue>*</DefaultValue>
+            <Type>String</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cea608CaptionConverterColor</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>maximumCaptionDuration</Name>
+            <Value>0</Value>
+            <DefaultValue>5000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoVODCaptionsUseWebVTT</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugVODCaptionLanguageSelection</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugVODCaptionProviderDetermination</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugVODCaptionFileDetermination</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugTTMLCaptionParser</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debugTTMLVODCaptionFileDetermination</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>debug3GPPCaptionParser</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>closedCaptionLiveMaxDisplayTime</Name>
+            <Value>0</Value>
+            <DefaultValue>10000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>ccIngestCEA608EnableField1</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>ccIngestCEA608EnableField2</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>ccIngestCEA608LogCaptions</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>ccIngestCEA608VerboseLogging</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>ccIngestCEA608MaxWarnMessages</Name>
+            <Value>0</Value>
+            <DefaultValue>20</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoLiveCaptionsUseWebVTT</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>captionLiveIngestLanguages</Name>
+            <Value/>
+            <Type>String</Type>
+            <SectionName>TimedText</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>httpOriginMode</Name>
+            <Value/>
+            <DefaultValue/>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoCacheControlPlaylist</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoCacheControlMediaChunk</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothCacheControlPlaylist</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothCacheControlMediaChunk</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothCacheControlDataChunk</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>smoothStreamingEncryptionRandomIV</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sanjoseCacheControlPlaylist</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sanjoseCacheControlMediaChunk</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegdashCacheControlPlaylist</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegdashCacheControlMediaChunk</Name>
+            <Value/>
+            <DefaultValue>no-cache</DefaultValue>
+            <Type>String</Type>
+            <SectionName>HTTPCacheOrigin</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>rtspSessionName</Name>
+            <Value/>
+            <DefaultValue/>
+            <Type>String</Type>
+            <SectionName>RTSPRTPWindowTitle</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoExtXVersion</Name>
+            <Value>0</Value>
+            <DefaultValue>3</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoFloatingPointDurations</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoCodecStringFormatId</Name>
+            <Value>0</Value>
+            <DefaultValue>1</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoAutoCreateMultibitratePlaylist</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoUseCalculatedVideoBitrate</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoUseCalculatedAudioBitrate</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoDefaultVideoBitrate</Name>
+            <Value>0</Value>
+            <DefaultValue>250000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoMaxCalculatedVideoBitrate</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoDefaultAudioBitrate</Name>
+            <Value>0</Value>
+            <DefaultValue>64000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoMaxCalculatedAudioBitrate</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoBitrateAdjustmentFactor</Name>
+            <Value>0</Value>
+            <DefaultValue>110</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoRelativePlaylistPlaylists</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoCalculateCodecs</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoCalculateResolution</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoEnableDataEventsVOD</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>cupertinoPacketizeAllStreamsAsTSVOD</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>HTTPStreamersCupertinoSettings</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>rtpDePacketizerWrapper</Name>
+            <Value/>
+            <DefaultValue/>
+            <Type>String</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>rtpDePacketizerPacketSorterBufferTime</Name>
+            <Value>0</Value>
+            <DefaultValue>500</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>rtpDePacketizerPacketSorterFlushTime</Name>
+            <Value>0</Value>
+            <DefaultValue>10</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>rtpDePacketizerPacketSorterLogPacketLoss</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegtsLogIncompleteVideoFrames</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegtsVideoIsAligned</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mpegtsAudioIsAligned</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>RTPJitterBuffer</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sortPackets</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>Streams</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>sortBufferSize</Name>
+            <Value>0</Value>
+            <DefaultValue>250</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>Streams</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>seekTarget</Name>
+            <Value/>
+            <DefaultValue/>
+            <Type>String</Type>
+            <SectionName>Streams</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mp4WriterRecordData</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>Streams</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>mp4WriterRecordOnMetaData</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>Streams</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>enable</Name>
+            <Value>true</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>resetNameGroups</Name>
+            <Value>true</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>streamStartTimeout</Name>
+            <Value>20000</Value>
+            <DefaultValue>20000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>streamTimeout</Name>
+            <Value>12000</Value>
+            <DefaultValue>12000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>videoStartTimeout</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>videoTimeout</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>audioStartTimeout</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>audioTimeout</Name>
+            <Value>0</Value>
+            <DefaultValue>0</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>videoTCToleranceEnable</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>videoTCPosTolerance</Name>
+            <Value>3000</Value>
+            <DefaultValue>3000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>videoTCNegTolerance</Name>
+            <Value>-500</Value>
+            <DefaultValue>-500</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>audioTCToleranceEnable</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>audioTCPosTolerance</Name>
+            <Value>3000</Value>
+            <DefaultValue>3000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>audioTCNegTolerance</Name>
+            <Value>-500</Value>
+            <DefaultValue>-500</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>dataTCToleranceEnable</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>dataTCPosTolerance</Name>
+            <Value>3000</Value>
+            <DefaultValue>3000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>dataTCNegTolerance</Name>
+            <Value>-500</Value>
+            <DefaultValue>-500</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>avSyncToleranceEnable</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>avSyncTolerance</Name>
+            <Value>1500</Value>
+            <DefaultValue>1500</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>debugLog</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>MediaCasterStreamMonitor</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderDebugEnable</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderUseSimpleFileVersionNaming</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderStartOnKeyFrame</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderRecordData</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderMoveFirstVideoFrameToZero</Name>
+            <Value>false</Value>
+            <DefaultValue>true</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderSplitOnTcDiscontinuity</Name>
+            <Value>false</Value>
+            <DefaultValue>false</DefaultValue>
+            <Type>Boolean</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderSegmentSize</Name>
+            <Value>0</Value>
+            <DefaultValue>10485760</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderSegmentDuration</Name>
+            <Value>0</Value>
+            <DefaultValue>900000</DefaultValue>
+            <Type>Integer</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderSegmentSchedule</Name>
+            <Value/>
+            <DefaultValue>0 * * * * *</DefaultValue>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderOutputPath</Name>
+            <Value/>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderOutputFile</Name>
+            <Value/>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderSegmentationType</Name>
+            <Value/>
+            <DefaultValue>none</DefaultValue>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderFileFormat</Name>
+            <Value/>
+            <DefaultValue>mp4</DefaultValue>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderVersioningOption</Name>
+            <Value/>
+            <DefaultValue>version</DefaultValue>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderNotifyListener</Name>
+            <Value/>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="false" canRemove="true">
+            <Name>streamRecorderFileVersionDelegate</Name>
+            <Value/>
+            <DefaultValue>com.wowza.wms.livestreamrecord.model.LiveStreamRecordFileVersionDelegate</DefaultValue>
+            <Type>String</Type>
+            <SectionName>StreamRecorder</SectionName>
+            <Documented>true</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>securityPublishBlockDuplicateStreamNames</Name>
+            <Value>true</Value>
+            <Type>Boolean</Type>
+            <SectionName>Application</SectionName>
+            <Section>/Root/Application</Section>
+            <Documented>false</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>loopUntilLiveSourceStreams</Name>
+            <Value>E00000002</Value>
+            <Type>String</Type>
+            <SectionName>Application</SectionName>
+            <Section>/Root/Application</Section>
+            <Documented>false</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>loopUntilLiveOutputStreams</Name>
+            <Value>offlineStream</Value>
+            <Type>String</Type>
+            <SectionName>Application</SectionName>
+            <Section>/Root/Application</Section>
+            <Documented>false</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>streamPublisherVHost</Name>
+            <Value>_defaultVHost_</Value>
+            <Type>String</Type>
+            <SectionName>Application</SectionName>
+            <Section>/Root/Application</Section>
+            <Documented>false</Documented>
+        </AdvancedSetting>
+        <AdvancedSetting enabled="true" canRemove="false">
+            <Name>streamPublisherApplication</Name>
+            <Value>ch1/_definst_</Value>
+            <Type>String</Type>
+            <SectionName>Application</SectionName>
+            <Section>/Root/Application</Section>
+            <Documented>false</Documented>
+        </AdvancedSetting>
+    </AdvancedSettings>
+    <Modules>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>base</Name>
+            <Description>Base</Description>
+            <Class>com.wowza.wms.module.ModuleCore</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>logging</Name>
+            <Description>Client Logging</Description>
+            <Class>com.wowza.wms.module.ModuleClientLogging</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>flvplayback</Name>
+            <Description>FLVPlayback</Description>
+            <Class>com.wowza.wms.module.ModuleFLVPlayback</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>ModuleCoreSecurity</Name>
+            <Description>Core Security Module for Applications</Description>
+            <Class>com.wowza.wms.security.ModuleCoreSecurity</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>streamPublisher</Name>
+            <Description>Schedules streams and playlists.</Description>
+            <Class>com.wowza.wms.plugin.collection.module.ModuleStreamPublisher</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>ModuleLoopUntilLive</Name>
+            <Description>Loops filler video until live video is available.</Description>
+            <Class>com.wowza.wms.plugin.collection.module.ModuleLoopUntilLive</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+        <com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+            <Order>0</Order>
+            <Name>Wmsauth</Name>
+            <Description>Wmsauth</Description>
+            <Class>com.wmspanel.Wmsauth</Class>
+        </com.wowza.wms.rest.vhosts.applications.modules.ModuleConfig>
+    </Modules>
+</ApplicationAdv>

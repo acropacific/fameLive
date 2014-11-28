@@ -1,0 +1,36 @@
+Post at http://localhost:8085/fameLive/api/v1 with content type application/json
+
+
+{
+"appKey": "myAppKey",
+"apiVersion": "1.0",
+"actionName": "fetchWowzaIncomingStreamStatistics",
+"applicationName":"ch1",
+"streamName":"test"
+}
+
+
+
+{
+  "message": "Wowza incoming stream statistics fetched successfully",
+  "data": {
+    "BytesOutRate": 0,
+    "restURI": "http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/incomingstreams/test/monitoring/current",
+    "BytesInRate": 15660,
+    "BytesOut": 0,
+    "TotalConnections": 0,
+    "Uptime": 4515,
+    "StreamName": "test",
+    "ApplicationInstance": "_definst_",
+    "BytesIn": 70759778,
+    "OutConnections": {
+      "CUPERTINO": 0,
+      "RTP": 0,
+      "MPEGDASH": 0,
+      "SMOOTH": 0,
+      "SANJOSE": 0,
+      "RTMP": 0
+    }
+  },
+  "success": true
+}

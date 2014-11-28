@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OutgoingStream
+        restURI="http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/outgoingstreams/test">
+    <Name></Name>
+    <SomeProp>some value</SomeProp>
+    <SomeProp2>some value2</SomeProp2>
+</OutgoingStream>

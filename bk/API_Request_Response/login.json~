@@ -1,0 +1,22 @@
+{
+    "appKey": "myAppKey",
+    "apiVersion": "1.0",
+    "email": "admn.famelive@gmail.com",
+    "password": "admin",
+    "actionName": "login",
+--"_isTestRequest":true
+}
+
+
+{
+"status": 1,
+"message": "success",
+"detail": "",
+"data": {
+"email": "admin",
+"roles": [
+"ROLE_SUPER_ADMIN"
+],
+"access_token": "mmhv907un18eslmcqakl44dkrdcd9sms"
+}
+}
