@@ -4,7 +4,7 @@ export GRAILS_ENV=qa
 export TOMCAT_PORT=8080
 export MYSQL_DATABSE_NAME=famelive_qa
 ## The Jettty Distribution has been modified to read the JAVA_OPTS from enviornment. So custom -D properties can be set from here##
-export JAVA_OPTS="-XX:MaxPermSize=512m -Xms812m -Xmx1812m -server"
+export JAVA_OPTS="-XX:MaxPermSize=512m -Xms812m -Xmx1812m -server -Duser.timezone=UTC"
 
 #export PATH=$PATH:/opt/groovy/bin
 #export GRAILS_HOME=/opt/grails-$GRAILS_VERSION/

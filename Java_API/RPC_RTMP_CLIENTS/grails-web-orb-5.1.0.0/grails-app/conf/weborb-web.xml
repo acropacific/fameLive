@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    
+    <bean id="weborb.context" class="org.red5.server.Context" 
+        autowire="byType" />
+    
+    <bean id="weborb.scope" class="org.red5.server.WebScope"
+         init-method="register">
+        <property name="server" ref="red5.server" />
+        <property name="parent" ref="global.scope" />
+        <property name="context" ref="weborb.context" />
+        <property name="handler" ref="weborb.handler" />        
+        <property name="contextPath" value="/weborb" />
+        <property name="virtualHosts" value="*,localhost, localhost:1935, localhost:8080, 127.0.0.1:8080" />
+    </bean>
+
+    <bean id="weborb.handler" 
+        class="weborb.messaging.WebORBApplication" 
+        singleton="true" />
+        
+</beans>

@@ -1,0 +1,14 @@
+export GRAILS_PROJECT_HOME=/home/ec2-user/famelive-webapp
+export GRAILS_VERSION=2.4.3
+export GRAILS_ENV=qa
+export TOMCAT_PORT=8080
+export MYSQL_DATABSE_NAME=famelive_qa
+## The Jettty Distribution has been modified to read the JAVA_OPTS from enviornment. So custom -D properties can be set from here##
+export JAVA_OPTS="-XX:MaxPermSize=512m -Xms812m -Xmx1812m -server"
+
+#export PATH=$PATH:/opt/groovy/bin
+#export GRAILS_HOME=/opt/grails-$GRAILS_VERSION/
+#export PATH=$PATH:$GRAILS_HOME/bin
+#export JETTY_HOME=~/jetty
+#export JETTY_PID=~/WEB_SERVER_PID
+export CATALINA_PID=~/WEB_SERVER_PID

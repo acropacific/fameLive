@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011 Midnight Coders, Inc. All rights reserved.
+  ~ MIDNIGHT CODERS, INC PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  -->
+
+<service id="message-service"
+         class="weborb.messaging.v3.MessagingServiceHandler"
+         messageTypes="flex.messaging.messages.AsyncMessage">
+
+    <destination id="SamplePollingDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+    <destination id="SamplePollingClusteredDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.cluster.ClusterMessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+  <destination id="SampleRTMPDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+        <allow-subtopics>true</allow-subtopics>
+      </server>
+
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="weborb-rtmp-messaging"/>
+    </channels>
+
+  </destination>
+
+  <destination id="DataService">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+        <hide-in-console>true</hide-in-console>
+      </server>
+
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="my-polling-amf"/>
+    </channels>
+
+  </destination>
+
+  <destination id="RabbitMQPollingDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+      </server>
+
+      <rabbitmq>
+        <!-- can be replaced with single <uri> tag. Read http://www.rabbitmq.com/uri-spec.html for more info. -->
+        <!-- If non of uri or other specified then default is used: amqp://guest:guest@localhost:5672/%2f -->
+        <uri>amqp://guest:guest@localhost:5672/%2f</uri>
+        <!--host>localhost</host>
+            <port>5672</port>
+            <vhost>/</vhost>
+            <user>guest</user>
+            <password>guest</password-->
+
+        <!-- optional, default 'true' -->
+        <auto-ack>false</auto-ack>
+        <!-- 0 to 9, optional -->
+        <message-priority>6</message-priority>
+        <!-- NON_PERSISTENT (default) || PERSISTENT -->
+        <delivery-mode>NON_PERSISTENT</delivery-mode>
+        <!-- Should implement weborb.util.io.ISerializer -->
+        <serializer>weborb.util.io.Serializer</serializer>
+        <!-- Should implement weborb.messaging.v3.amqp.rabbitmq.IMessageFactory -->
+        <message-factory>weborb.messaging.v3.amqp.rabbitmq.DefaultMessageFactory</message-factory>
+
+        <!-- basicly 'queue' is 'direct' exchange -->
+        <!--queue>
+          <name>simpleQueue</name>
+        </queue-->
+
+        <exchange>
+          <name>topic1</name>
+          <!-- default 'topic'-->
+          <exchange-type>topic</exchange-type>
+          <!--routing-key></routing-key-->
+        </exchange>
+      </rabbitmq>
+      <message-service-handler>weborb.messaging.v3.amqp.rabbitmq.RabbitMQServiceHandler</message-service-handler>
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="my-polling-amf"/>
+    </channels>
+
+  </destination>
+
+  <destination id="RabbitMQRTMPDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+      </server>
+
+      <rabbitmq>
+        <!-- can be replaced with single <uri> tag. Read http://www.rabbitmq.com/uri-spec.html for more info. -->
+        <!-- If non of uri or other specified then default is used: amqp://guest:guest@localhost:5672/%2f -->
+        <uri>amqp://guest:guest@localhost:5672/%2f</uri>
+        <!--host>localhost</host>
+            <port>5672</port>
+            <vhost>/</vhost>
+            <user>guest</user>
+            <password>guest</password-->
+
+        <!-- optional, default 'true' -->
+        <auto-ack>false</auto-ack>
+        <!-- 0 to 9, optional -->
+        <message-priority>6</message-priority>
+        <!-- NON_PERSISTENT (default) || PERSISTENT -->
+        <delivery-mode>NON_PERSISTENT</delivery-mode>
+        <!-- Should implement weborb.util.io.ISerializer -->
+        <serializer>weborb.util.io.Serializer</serializer>
+        <!-- Should implement weborb.messaging.v3.amqp.rabbitmq.IMessageFactory -->
+        <message-factory>weborb.messaging.v3.amqp.rabbitmq.DefaultMessageFactory</message-factory>
+
+        <!-- basicly 'queue' is 'direct' exchange -->
+        <!--queue>
+          <name>simpleQueue</name>
+        </queue-->
+
+        <exchange>
+          <name>topic1</name>
+          <!-- default 'topic'-->
+          <exchange-type>topic</exchange-type>
+          <!--routing-key></routing-key-->
+        </exchange>
+      </rabbitmq>
+      <message-service-handler>weborb.messaging.v3.amqp.rabbitmq.RabbitMQServiceHandler</message-service-handler>
+    </properties>
+
+    <channels>
+      <channel ref="weborb-rtmp-messaging"/>
+    </channels>
+
+  </destination>
+
+  <destination id="ChatDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+        <hide-in-console>true</hide-in-console>
+      </server>
+
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="my-polling-amf"/>
+    </channels>
+
+  </destination>
+
+  <destination id="WdmfMessagingDestination">
+    <properties>
+      <server>
+        <durable>false</durable>
+        <allow-subtopics>true</allow-subtopics>
+        <hide-in-console>true</hide-in-console>
+      </server>
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+    </properties>
+    <channels>
+      <channel ref="weborb-rtmp-messaging"/>
+      <channel ref="my-polling-amf"/>
+    </channels>
+  </destination>
+
+</service>

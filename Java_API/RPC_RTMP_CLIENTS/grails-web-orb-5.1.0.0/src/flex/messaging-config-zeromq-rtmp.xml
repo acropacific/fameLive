@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="message-service"
+         class="weborb.messaging.v3.MessagingServiceHandler"
+         messageTypes="flex.messaging.messages.AsyncMessage">
+
+    <destination id="SamplePollingDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+    <destination id="SamplePollingClusteredDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.cluster.ClusterMessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+  <destination id="SampleRTMPDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+        <allow-subtopics>true</allow-subtopics>
+      </server>
+
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="weborb-rtmp-messaging"/>
+    </channels>
+
+  </destination>
+
+  <destination id="DataService">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+        <hide-in-console>true</hide-in-console>
+      </server>
+
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="my-polling-amf"/>
+    </channels>
+
+  </destination>
+
+  <destination id="ZMQPollingDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+      </server>
+
+      <zmq>
+        <!-- url to bind server at. This is the 0mq socket weborb will publish messages to -->
+        <publish-uri>tcp://*:5551</publish-uri>
+        <!-- url for subscribers, this is the endpoint from where the messages will be read -->
+        <subscribe-uri>tcp://localhost:5551</subscribe-uri>
+        <!-- can be 'topic' or 'queue' values -->
+        <type>topic</type>
+        <serializer>weborb.util.io.Serializer</serializer>
+        <message-factory>weborb.messaging.v3.zmq.DefaultMessageFactory</message-factory>
+      </zmq>
+      <message-service-handler>weborb.messaging.v3.zmq.ZMQServiceHandler</message-service-handler>
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="my-polling-amf"/>
+    </channels>
+
+  </destination>
+
+  <destination id="ZMQRTMPDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+      </server>
+
+      <zmq>
+          <!-- url to bind server at. This is the 0mq socket weborb will publish messages to -->
+          <publish-uri>tcp://*:5552</publish-uri>
+          <!-- url for subscribers, this is the endpoint from where the messages will be read -->
+          <subscribe-uri>tcp://localhost:5552</subscribe-uri>
+          <!-- can be 'topic' or 'queue' values -->
+          <type>topic</type>
+          <serializer>weborb.util.io.Serializer</serializer>
+          <message-factory>weborb.messaging.v3.zmq.DefaultMessageFactory</message-factory>
+      </zmq>
+      <message-service-handler>weborb.messaging.v3.zmq.ZMQServiceHandler</message-service-handler>
+    </properties>
+
+    <channels>
+      <channel ref="weborb-rtmp-messaging"/>
+    </channels>
+
+  </destination>
+
+  <destination id="ChatDestination">
+    <properties>
+
+      <server>
+        <durable>false</durable>
+        <hide-in-console>true</hide-in-console>
+      </server>
+
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+    </properties>
+
+    <channels>
+      <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+      <channel ref="my-polling-amf"/>
+    </channels>
+
+  </destination>
+
+  <destination id="WdmfMessagingDestination">
+    <properties>
+      <server>
+        <durable>false</durable>
+        <allow-subtopics>true</allow-subtopics>
+        <hide-in-console>true</hide-in-console>
+      </server>
+      <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+      <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+    </properties>
+    <channels>
+      <channel ref="my-polling-amf"/>
+    </channels>
+  </destination>
+
+</service>

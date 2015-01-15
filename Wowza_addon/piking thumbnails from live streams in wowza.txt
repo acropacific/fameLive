@@ -1,0 +1,6 @@
+http://www.wowza.com/forums/content.php?307-HTTPProvider-that-requests-a-thumbnail-image-of-a-frame-from-Wowza-Transcoder
+
+
+using libstreaming to get the thumbnail of stream being published
+
+http://stackoverflow.com/questions/24323998/using-libstreaming-to-get-the-thumbnail-of-stream-being-published

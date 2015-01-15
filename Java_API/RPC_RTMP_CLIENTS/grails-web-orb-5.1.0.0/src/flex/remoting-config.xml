@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"    
+    class="weborb.v3types.core.RemotingHandler"
+    messageTypes="flex.messaging.messages.RemotingMessage">
+
+    <adapters />
+        
+
+    <default-channels>
+        <channel ref="my-amf"/>
+        <channel ref="my-secure-amf"/>
+    </default-channels>
+        
+    <destination id="PrimitiveTest">
+        <properties>
+            <source>tests.PrimitiveTest</source>
+        </properties>
+    </destination>
+    
+    <destination id="DatabaseTestMsSql">
+        <properties>
+            <source>tests.DatabaseTestMsSql</source>
+        </properties>
+    </destination>  
+    
+    <destination id="DatabaseTestMySql">
+        <properties>
+            <source>tests.DatabaseTestMySql</source>
+        </properties>
+    </destination>  
+     
+    <destination id="MultipleArgsTest">
+        <properties>
+            <source>tests.MultipleArgsTest</source>
+        </properties>
+    </destination>
+    
+    <destination id="StringsTest">
+        <properties>
+            <source>tests.StringsTest</source>
+        </properties>
+    </destination>    
+    
+    <destination id="PrimitiveArrayTest">
+        <properties>
+            <source>tests.PrimitiveArrayTest</source>
+        </properties>
+    </destination>   
+    
+    <destination id="ComplexTypesTest">
+        <properties>
+            <source>tests.ComplexTypesTest</source>
+        </properties>
+    </destination>   
+    
+    <destination id="InfoServiceDestination">
+        <properties>
+            <source>InfoService</source>
+        </properties>
+    </destination>  
+
+    <destination id="AccountBalanceDestination">
+      <properties>
+        <source>weborb.examples.AccountBalance</source>
+      </properties>
+      <security>
+        <security-constraint>
+          <auth-method>Custom</auth-method>
+          <roles>
+        <role>examplesuser</role>
+          </roles>
+        </security-constraint> 
+      </security> 
+    </destination> 
+    
+    <destination id="SecureTest">
+        <properties>
+            <source>weborb.HelloWorld</source>
+        </properties>
+        <security>
+          <security-constraint>
+        <auth-method>Custom</auth-method>
+          <roles>
+            <role>administrator</role>
+          </roles>
+          </security-constraint>        
+        </security>
+    </destination>   
+
+    <destination id="WeborbManagement">
+        <properties>
+            <source>weborb.management.ManagementService</source>
+        </properties>
+    </destination>
+
+     <destination id="ClusterManagement">
+        <properties>
+            <source>weborb.management.cluster.ClusterManagement</source>
+        </properties>
+    </destination>
+    
+     <destination id="WeborbSecurity">
+        <properties>
+            <source>weborb.management.SecurityService</source>
+        </properties>
+    </destination>  
+    
+    <destination id="WeborbConfiguration">
+        <properties>
+            <source>weborb.management.ConfigurationService</source>
+        </properties>
+    </destination>
+    
+    <destination id="WeborbMessaging">
+        <properties>
+            <source>weborb.management.MessagingService</source>
+        </properties>
+    </destination> 
+
+    <destination id="WDMFCodeGen">
+        <properties>
+            <source>weborb.management.datamanagement.codegen.WDMFCodeGenerator</source>
+        </properties>
+    </destination> 
+    
+    <destination id="DataServiceSubcriptionManager">
+        <properties>
+            <source>weborb.data.management.DataServiceClientRegistry</source>
+        </properties>
+    </destination>
+
+    <destination id="DataQueryService">
+        <properties>
+            <source>weborb.examples.DataBinding</source>
+        </properties>
+    </destination>
+
+	<destination id="BusinessIntelligenceDestination">
+        <properties>
+            <source>weborb.management.RBIManagementService</source>
+        </properties>
+    </destination>
+    
+    <destination id="GenericDestination">
+        <properties>
+            <source>*</source>
+        </properties>
+    </destination> 
+
+    <destination channels="session-channel" id="GenericSessionDestination">
+        <channels>
+           <channel ref="session-channel"/>
+        </channels>
+        <properties>
+            <source>*</source>
+        </properties>
+    </destination> 
+
+    <destination channels="singleton-channel" id="GenericSingletonDestination">
+        <channels>
+           <channel ref="singleton-channel"/>
+        </channels>
+        <properties>
+            <source>*</source>
+        </properties>
+    </destination>
+    
+
+</service>

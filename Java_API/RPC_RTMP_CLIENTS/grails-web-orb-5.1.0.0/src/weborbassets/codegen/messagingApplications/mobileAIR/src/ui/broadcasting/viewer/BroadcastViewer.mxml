@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	initialize="onInitialize()"
+	width="100%" height="100%">
+	
+	<fx:Script>
+		<![CDATA[
+			
+			[Bindable]
+			private var controller:BroadcastViewerController;
+			
+			private function onInitialize():void
+			{
+				controller = new BroadcastViewerController(this);
+			}
+			
+		]]>
+	</fx:Script>
+	
+		<s:VGroup width="100%" gap="1">
+			<s:Label id="lblError" width="100%" fontWeight="bold"
+					 verticalCenter="0" horizontalCenter="0"
+					 color="red" visible="true" x="0" y="23"/>			
+			<s:BorderContainer backgroundColor="0x000000" borderVisible="false" width="100%" height="100%">
+				<mx:UIComponent id="videoContainer" width="100%" height="100%" />
+			</s:BorderContainer>
+			<s:Button label="Close Viewer" click="{controller.onClose()}" width="100%"/>
+		</s:VGroup>
+</s:Group>

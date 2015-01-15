@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+  <acl>
+	<user>
+		<name>admin</name>
+		<password>changeme</password>
+		<role>administrator</role>
+	</user>	
+	<user>
+		<name>testuser</name>
+		<password>password</password>
+		<role>examplesuser</role>
+	</user>	
+	<user>
+		<name>flexuser</name>
+		<password>password</password>
+		<role>databaseuser</role>
+	</user>
+  </acl>

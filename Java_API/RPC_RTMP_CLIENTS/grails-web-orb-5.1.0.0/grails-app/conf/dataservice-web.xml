@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    
+    <bean id="dataservice.context" class="org.red5.server.Context" 
+        autowire="byType" />
+    
+    <bean id="dataservice.scope" class="org.red5.server.WebScope"
+         init-method="register">
+        <property name="server" ref="red5.server" />
+        <property name="parent" ref="global.scope" />
+        <property name="context" ref="dataservice.context" />
+        <property name="handler" ref="dataservice.handler" />        
+        <property name="contextPath" value="/DataService" />
+        <property name="virtualHosts" value="*,localhost, localhost:1935, localhost:8080, 127.0.0.1:8080" />
+        <property name="attributes">
+            <map>
+                <entry>
+                    <key><value>codegenDisabled</value></key>
+                    <value>true</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="dataservice.handler"
+        class="weborb.data.management.DataService"
+        singleton="true">
+        <property name="schedulingService" ref="schedulingService" />
+    </bean>
+        
+</beans>

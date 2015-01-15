@@ -1,0 +1,37 @@
+Reference=> http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html
+
+remove old mysql =>>>>
+
+	apt-get remove mysql-common mysql-server-5.5 mysql-server-core-5.5 mysql-client-5.5 mysql-client-core-5.5
+	apt-get autoremove
+	
+	
+Install new=>>>
+	apt-get install mysql-client-5.6
+	apt-get install mysql-server-5.6
+	apt-get install mysql-common-5.6
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	https://rtcamp.com/tutorials/mysql/mysql-5-6-ubuntu-12-04/
+	
+Download new one=>>>
+	wget -O mysql-5.6.deb http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.22-debian6.0-x86_64.deb
+
+Then install Mysql 5.6.22=>>>>
+	dpkg -i  mysql-5.6.deb
+
+and install dependency=>>>
+	apt-get install libaio1
+	
+	
+	

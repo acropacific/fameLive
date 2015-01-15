@@ -1,0 +1,10 @@
+<project name="weborb" default="fix" basedir=".">
+
+    <property name="fb.release.java.macosx.dir" location="integration"/>
+
+    <target name="fix" >
+        <echo>chmod fix</echo>
+	<chmod file="${fb.release.java.macosx.dir}/setup.app/Contents/MacOS/JavaApplicationStub" perm="+x"/>
+    </target>
+
+</project>

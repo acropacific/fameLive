@@ -1,0 +1,31 @@
+Adaptive streaming urls
+
+
+
+Video on S3 =>
+	http://54.68.108.229:1935/mediacache/_definst_/smil:amazons3/ufame/vod/CELEBRITY_TIPS/VIDEO/Recording_Video_On_Phone.smil/playlist.m3u8
+	
+	
+	
+Video on Wowza server =>
+	http://54.68.108.229:1935/vod/smil:bigbuckbunny.smil/playlist.m3u8
+	
+	
+Live content =>
+
+
+
+
+Calculate Video bitrate=>
+	
+	VBR = (size - ABR*t)/t
+	
+	VBR(Video Bit Rate)
+	ABR(Audio Bit Rate)
+	t(length of video in seconds)
+	size(Size of video in bits)
+				
+				
+				
+				
+	

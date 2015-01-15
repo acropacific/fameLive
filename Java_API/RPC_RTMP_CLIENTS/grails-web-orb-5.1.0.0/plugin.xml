@@ -1,0 +1,12 @@
+<plugin name='web-orb' version='0.2' grailsVersion='1.3.6 &gt; *'>
+  <author>Midnight Coders</author>
+  <authorEmail>info@themidnightcoders.com</authorEmail>
+  <title>WebORB plugin for Grails</title>
+  <documentation>http://grails.org/plugin/weborb</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>UrlMappings</resource>
+  </resources>
+  <dependencies />
+  <behavior />
+</plugin>

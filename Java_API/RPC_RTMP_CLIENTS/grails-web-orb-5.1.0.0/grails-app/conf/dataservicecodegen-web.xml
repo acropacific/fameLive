@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    
+    <bean id="datamgmtcodegen.context" class="org.red5.server.Context" 
+        autowire="byType" />
+    
+    <bean id="datamgmtcodegen.scope" class="org.red5.server.WebScope"
+         init-method="register">
+        <property name="server" ref="red5.server" />
+        <property name="parent" ref="global.scope" />
+        <property name="context" ref="datamgmtcodegen.context" />
+        <property name="handler" ref="datamgmtcodegen.handler" />        
+        <property name="contextPath" value="/DataServiceCodegen" />
+        <property name="virtualHosts" value="*,localhost, localhost:8080, localhost:1935, 127.0.0.1:8080" />
+        <property name="attributes">
+            <map>
+                <entry>
+                    <key><value>codegenDisabled</value></key>
+                    <value>true</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="datamgmtcodegen.handler" 
+        class="weborb.management.datamanagement.codegen.AppHandler" 
+        singleton="true" />
+        
+</beans>

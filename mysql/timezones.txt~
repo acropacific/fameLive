@@ -1,0 +1,27 @@
+sudo apt-get install mysql-client-5.6
+sudo apt-get install mysql-common-5.6
+sudo apt-get install mysql-server-5.6
+
+
+Command to install=> mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -uroot -pigdefault mysql
+
+If above command not worked
+ step 1 => mysql_tzinfo_to_sql /usr/share/zoneinfo > tzinfo.sql
+ step 2 => verify the queries in tzinfo.sql (remove -- if any , you can use UNSET for any unspecified value)
+ step 3 => cat tzinfo.sql | mysql -uroot -pigdefault mysql
+
+
+SELECT CONVERT_TZ('2012-06-07 12:00:00', 'GMT', 'America/New_York');
+
+USE mysql;
+SELECT * FROM `time_zone_name`;
+
+
+Reference=>
+
+http://stackoverflow.com/questions/19023978/should-mysql-have-its-timezone-set-to-utc
+http://stackoverflow.com/questions/9808160/mysql-time-zones
+
+
+
+mysql timezones

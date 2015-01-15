@@ -200,3 +200,42 @@ http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/
         </entry>
     </ConnectionCount>
 </CurrentVHostStatistics>
+
+
+
+
+
+
+post /v2/servers/{serverName}/vhosts/{vhostName}/applications/{appName}/instances/{instanceName}/streamrecorders
+    Creates a new Stream Recorder in the specified Application Instance and starts recording
+http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/streamrecorders/E00000001
+
+{
+    "instanceName": "_definst_",
+    "fileVersionDelegateName": "com.wowza.wms.livestreamrecord.manager.StreamRecorderFileVersionDelegate",
+    "serverName": "WowzaStreamingEngine",
+    "recorderName": "E00000001",
+    "currentSize": 0,
+    "restURI": "http://54.68.108.229:8087/v2/servers/WowzaStreamingEngine/vhosts/_defaultVHost_/applications/ch1/instances/_definst_/streamrecorders/E00000001",
+    "segmentSchedule": "0 * * * * *",
+    "startOnKeyFrame": true,
+    "outputPath": "/usr/local/WowzaStreamingEngine/content",
+    "currentFile": "default.mp4",
+    "saveFieldList": [],
+    "recordData": false,
+    "applicationName": "h1",
+    "moveFirstVideoFrameToZero": true,
+    "recorderErrorString": "",
+    "segmentSize": 10485760,
+    "defaultRecorder": false,
+    "version": "v2",
+    "baseFile": "E00000001.mp4",
+    "segmentDuration": 900000,
+    "recordingStartTime": "",
+    "fileTemplate": "${BaseFileName}_${RecordingStartTime}_${SegmentNumber}",
+    "segmentationType": "None",
+    "currentDuration": 0,
+    "fileFormat": "MP4",
+    "recorderState": "Waiting for stream",
+    "option": "Append to existing file"
+}

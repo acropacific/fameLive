@@ -1,0 +1,15 @@
+<project name="imported" basedir="." default="declare">	
+	<target name="declare">
+		<path id="lib.classpath">
+		  <fileset dir="${weborb.path}/WEB-INF/lib/">
+			<include name="weborb.jar"/>
+			<include name="javaee-api-5.1.1.jar"/>
+			<include name="red5.jar"/>
+		  </fileset>
+		  <pathelement location="${weborb.path}/WEB-INF/classes"/>
+		</path>
+		
+		
+		<taskdef name="wogen" classpathref="lib.classpath" classname="weborb.client.ant.RemotingCodegenTask"/>
+	</target>
+</project>

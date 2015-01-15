@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="message-service"
+    class="weborb.messaging.v3.MessagingServiceHandler"
+    messageTypes="flex.messaging.messages.AsyncMessage">
+
+    <destination id="SamplePollingDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+    <destination id="SamplePollingClusteredDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.cluster.ClusterMessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+    <destination id="DataService">
+        <properties>
+        
+            <server>
+                <durable>false</durable>
+                <hide-in-console>true</hide-in-console>
+            </server>
+            
+            <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+            
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>         
+        
+    </destination>
+
+    <destination id="ChatDestination">
+        <properties>
+
+            <server>
+                <durable>false</durable>
+                <hide-in-console>true</hide-in-console>
+            </server>
+
+            <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+
+        </properties>
+
+        <channels>
+            <!-- for RTMP change channel ref to "weborb-rtmp-messaging" -->
+            <channel ref="my-polling-amf"/>
+        </channels>
+
+    </destination>
+
+    <destination id="WdmfMessagingDestination">
+        <properties>
+            <server>
+                <durable>false</durable>
+                <allow-subtopics>true</allow-subtopics>
+                <hide-in-console>true</hide-in-console>
+            </server>
+            <message-service-handler>weborb.messaging.v3.MessagingServiceHandler</message-service-handler>
+            <message-storage-policy>weborb.messaging.v3.MemoryStoragePolicy</message-storage-policy>
+        </properties>
+        <channels>
+            <channel ref="my-polling-amf"/>
+        </channels>
+    </destination>
+</service>

@@ -1,0 +1,22 @@
+<project name="imported" basedir="." default="declare">	
+	  <target name="declare">
+		<path id="lib.classpath">
+		  <fileset dir="${weborb.path}/WEB-INF/lib/">
+			<include name="javaee-api-5.1.1.jar"/>		
+			<include name="mysql-connector-java-5.1.13-bin.jar"/>
+			<include name="red5.jar"/>
+			<include name="xalan.jar"/>
+			<include name="serializer-2.7.jar"/>
+			<include name="xmlrpc-2.0.1.jar"/>
+			<include name="sqljdbc4.jar"/>
+			<include name="weborb.jar"/>
+		  </fileset>
+		    <pathelement location="${weborb.path}/WEB-INF/classes"/>
+			<pathelement location="${weborb.path}"/>
+
+
+		</path>
+		
+		<taskdef name="wdmcodegen" classname="weborb.client.ant.wdm.WDMCodegen" classpathref="lib.classpath" />
+	  </target>
+</project>

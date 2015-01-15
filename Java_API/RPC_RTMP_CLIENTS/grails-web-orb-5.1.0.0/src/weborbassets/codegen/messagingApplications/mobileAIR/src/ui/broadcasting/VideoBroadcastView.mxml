@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:supportClasses="spark.skins.mobile.supportClasses.*"
+		initialize="onInitialize()" title="Video Broadcast">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.core.FlexGlobals;
+			
+			import ui.controls.Alert;
+			
+			[Bindable]
+			private var controller:VideoBroadcastController;
+			
+			private function onInitialize():void
+			{
+				controller = new VideoBroadcastController(this);
+			}
+			
+			override public function setCurrentState(stateName:String, playTransition:Boolean=true):void
+			{
+				if (stateName == "landscape")
+				{
+					if (FlexGlobals.topLevelApplication.width<500)
+						super.setCurrentState("landscapeSmall", playTransition);
+					else
+						super.setCurrentState("landscapeLarge", playTransition);
+				}
+				else if( stateName == "portrait" )
+				{
+					if (FlexGlobals.topLevelApplication.width<500)
+						super.setCurrentState("portraitSmall", playTransition);
+					else
+						super.setCurrentState("portraitLarge", playTransition);					
+				}
+				else
+				{
+					super.setCurrentState(stateName, playTransition);
+				}
+			}			
+			
+			protected function onHome(event:MouseEvent):void
+			{
+				controller.onHome();
+				navigator.popView();
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+	</fx:Declarations>
+	
+	<s:states>
+		<s:State name="portrait" />
+		<s:State name="landscape" />
+		<s:State name="landscapeLarge" />
+		<s:State name="landscapeSmall" />
+		<s:State name="portraitLarge" />
+		<s:State name="portraitSmall" />
+	</s:states>
+
+	<fx:Binding source="{cameras.selectedIndex}" destination="controller.model.selectedCameraIndex" />
+	
+	<s:navigationContent>
+		<s:Button id="btnHome" click="onHome(event)">
+			<s:icon>
+				<s:MultiDPIBitmapSource 
+					source160dpi="@Embed('assets/Home_160.png')" 
+					source240dpi="@Embed('assets/Home_240.png')" 
+					source320dpi="@Embed('assets/Home_320.png')"/>
+			</s:icon>
+		</s:Button>
+	</s:navigationContent>
+	
+	<s:Scroller left="0" right="0" bottom="0" top="6">
+		<s:VGroup horizontalAlign="center" horizontalCenter="0">
+			<s:HGroup width="100%" height="100%">
+				<s:BorderContainer backgroundColor="0x000000" borderVisible="false" 
+								   width.landscapeLarge="320" 
+								   width.landscapeSmall="160"
+								   width.portraitLarge="320"
+								   width.portraitSmall="160"
+								   height="100%">
+					<s:VGroup  id="videoContainerParent" width.landscapeLarge="320" 
+							   width.landscapeSmall="160"
+							   width.portraitLarge="320"
+							   width.portraitSmall="160" height="100%">
+						
+					</s:VGroup>
+				</s:BorderContainer>
+				<s:VGroup width="100%" height="100%">
+					<s:Button id="btnConnection" width="100%"
+						label="{controller.model.connected ? 'Disconnect' : 'Connect'}"
+						click="{controller.onConnect()}" />
+					<s:List width="100%" id="cameras" includeInLayout="{controller.model.cameraNames.length > 1}"
+							dataProvider="{controller.model.cameraNames}" selectedIndex="0" height="{controller.model.cameraNames.length * 45}">
+					</s:List>
+					<s:Button id="btnStartBroadcast" width="100%"
+						label="{controller.model.broadcasting ? 'Stop' : 'Start'} Broadcast" 
+						enabled="{controller.model.connected}" 
+						click="{controller.onBroadcast()}" />
+					<s:Button id="btnViewBroadcast" label="View Broadcast" width="100%"
+						visible="{controller.model.broadcasting}" 
+						includeInLayout="{controller.model.broadcasting}" 
+						click="{controller.onViewBroadcast()}" />
+				</s:VGroup>
+			</s:HGroup>
+		</s:VGroup>
+	</s:Scroller>
+	
+</s:View>

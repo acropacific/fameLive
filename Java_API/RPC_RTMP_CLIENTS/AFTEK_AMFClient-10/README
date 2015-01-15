@@ -1,0 +1,62 @@
+This is a beta version of the Aftek Android AMF Client library. The usage of
+this library is limited to the number of remote procedural calls (RPC) that an
+application can make using this library. You will need to purchase the library
+to remove this restriction. If you are satisfied with using this library in your
+applications, please write to android@aftek.com for purchasing a licensed copy.
+
+We would soon be streamlining beta library API usage with the licensed version
+API usage so as to facilitate a smooth transition for the licensed users.
+Currently the only way they differ from each other is to instantiate the AMF
+Channel. Licensed users do not need to explicitly create this channel and can
+directly get the Library client instance after specifying the necessary license
+key. For additional information, please refer the Javadoc accompanying this
+library.
+
+To use the beta version of the library(v10), use the following sample code:
+
+public class TestAMF extends Activity 
+	implements OnClickListener, RemoteListener 
+{
+	public ArrayCollection resultarr;
+
+	public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		Button button = (Button) findViewById(R.id.sendButton);
+		button.setOnClickListener(this);
+	}
+
+	public void onClick(View v) 
+	{
+		System.out.println(" button clicked");
+		EditText username=(EditText) findViewById(R.id.username);
+		EditText password=(EditText) findViewById(R.id.password);
+
+		try
+		{
+			AMFChannel channel = new AMFChannel("http://sampleserver.com/TestRemoting", this);
+			RemoteObject remoteObject = channel.getRemoteObject("messageBO");
+
+			remoteObject.addRemoteListener(this);
+			Object[] params = new Object[]{};
+			client.call("login", params);
+		}
+		catch(LibraryInitException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	// Invoked on successful remote procedure call.
+	public void onResult(ResultEvent resultEvent)
+	{
+		System.out.println("success:" + resultEvent.getData());
+	}
+
+	// Invoked on remote procedure call failure.   
+	public void onError(ErrorEvent errorEvent)
+	{
+		System.out.println("Error occured:" + errorEvent.getData());
+	}
+}
